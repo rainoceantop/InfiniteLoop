@@ -31,7 +31,7 @@
     <!-- mapper扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 扫描包，如果要扫描多个中间用逗号隔开 -->
-        <property name="basePackage" value="mapper"/>
+        <property name="basePackage" value="com.InfinitelyLoop.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

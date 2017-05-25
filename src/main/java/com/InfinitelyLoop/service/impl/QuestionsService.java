@@ -1,8 +1,6 @@
 package com.InfinitelyLoop.service.impl;
 
-import com.InfinitelyLoop.dao.QuestionLanguageMapper;
 import com.InfinitelyLoop.dao.QuestionsMapper;
-import com.InfinitelyLoop.pojo.QuestionLanguage;
 import com.InfinitelyLoop.pojo.Questions;
 import com.InfinitelyLoop.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed5dd8d7-6bc8-48bd-8ce5-fb8601e101c6" name="Default" comment="">
+    <list default="true" id="ed5dd8d7-6bc8-48bd-8ce5-fb8601e101c6" name="Default" comment="basic setup  --&gt; done">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/nav.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/Test.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/QuestionsController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,11 +28,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="spring-context-tx.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-tx.xml">
+      <file leaf-file-name="nav.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/nav.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -35,9 +44,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -72,9 +81,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/sqlMapConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-tx.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/springMvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/Comments.java" />
@@ -96,12 +102,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserLanguageMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/CommonService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/CommentsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/RepliesService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserAccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserDetailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserLanguageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/QuestionsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/RepliesService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/nav.jsp" />
       </list>
     </option>
   </component>
@@ -150,7 +161,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,6 +188,74 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinitelyLoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinitelyLoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinitelyLoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinitelyLoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,6 +458,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,19 +487,19 @@
       <recent name="D:\InfinitelyLoop\src\main\java\com\InfinitelyLoop" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.index.jsp">
-    <configuration default="false" name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.14" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+  <component name="RunManager" selected="Tomcat Server.index.jsp (1)">
+    <configuration default="false" name="index.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.14" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/view/index.jsp" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="InfinitelyLoop:war exploded">
+        <artifact name="InfinitelyLoop:war">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="index_jsp_InfinitelyLoop" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+        <option name="BASE_DIRECTORY_NAME" value="_InfinitelyLoop" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -429,7 +508,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64199" />
+        <option name="DEBUG_PORT" value="59518" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -478,19 +557,87 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="InfinitelyLoop:war exploded" />
+          <artifact name="InfinitelyLoop:war" />
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_InfinitelyLoop" />
+      </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
       <predefined_log_file id="Tomcat Manager" enabled="false" />
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59518" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" value="" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59517" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -873,7 +1020,7 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.14" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+    <configuration default="false" name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.14" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="InfinitelyLoop:war">
@@ -883,7 +1030,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_InfinitelyLoop_2" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_InfinitelyLoop_4" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -892,7 +1039,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62009" />
+        <option name="DEBUG_PORT" value="59518" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -946,12 +1093,12 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.index.jsp (1)" />
     </list>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
+        <item index="0" class="java.lang.String" itemvalue="Tomcat Server.index.jsp (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -974,7 +1121,10 @@
       <workItem from="1495631908343" duration="3495000" />
       <workItem from="1495636720505" duration="9000" />
       <workItem from="1495636750968" duration="12000" />
-      <workItem from="1495637608955" duration="8000" />
+      <workItem from="1495637608955" duration="71000" />
+      <workItem from="1495693592638" duration="3644000" />
+      <workItem from="1495697268149" duration="4279000" />
+      <workItem from="1495705563335" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1495549811584</created>
@@ -1018,11 +1168,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495635096085</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="basic setup  --&gt; done">
+      <created>1495637637843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1495637637843</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16269000" />
+    <option name="totallyTimeSpent" value="25366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -1044,7 +1201,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1078,7 +1235,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1087,51 +1244,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-tx.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1495600755884" expanded="true" signature="47:152" ph="..." />
-            <marker date="1495600755884" expanded="true" signature="264:296" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1495600755884" expanded="true" signature="47:152" ph="..." />
-            <marker date="1495600755884" expanded="true" signature="264:296" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <marker date="1495598390559" expanded="true" signature="97:1608" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="499:560" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="756:1007" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="806:820" ph="com.mysql.jdbc.Driver" />
-            <marker date="1495598390559" expanded="true" signature="860:871" ph="jdbc:mysql://localhost:3306/infinitelyloop?useSSL=false" />
-            <marker date="1495598390559" expanded="true" signature="916:932" ph="root" />
-            <marker date="1495598390559" expanded="true" signature="977:993" ph="12345678" />
-            <marker date="1495598390559" expanded="true" signature="1122:1324" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="1417:1598" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,31 +1279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
           <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <marker date="1495545704721" expanded="true" signature="43:826" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="1091:5661" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="2489:2601" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="2619:5649" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="2637:2775" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="2793:2925" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="2943:3095" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3113:3262" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3280:3428" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3446:3597" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3615:3763" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3781:3941" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="3959:4111" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4129:4256" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4274:4412" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4430:4573" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4591:4737" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4755:4884" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="4902:5020" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="5038:5178" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="5196:5337" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="5355:5481" ph="..." />
-            <marker date="1495545704721" expanded="true" signature="5499:5629" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,22 +1299,199 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/Comments.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/UserLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/codehelper.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/RepliesMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserAccountMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="835">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-tx.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/Questions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/RepliesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/QuestionLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/QuestionsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="338">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <marker date="1495599252564" expanded="true" signature="43:823" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="832:899" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="925:2292" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1161:1266" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1307:1438" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1477:1929" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1615:1770" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1789:1916" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="1949:2281" ph="..." />
-            <marker date="1495599252564" expanded="true" signature="2002:2225" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="43:823" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="833:900" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="926:2299" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1162:1267" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1308:1439" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1478:1930" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1616:1771" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1790:1917" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="1950:2282" ph="..." />
+            <marker date="1495697238651" expanded="true" signature="2003:2226" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionLanguageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springMvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserLanguageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/CommentsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/CommentsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-948">
+          <caret line="65" column="36" lean-forward="true" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserAccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserLanguageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6356">
+          <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserLanguageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1241,959 +1509,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <marker date="1495598390559" expanded="true" signature="97:1608" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="499:560" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="756:1007" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="806:820" ph="com.mysql.jdbc.Driver" />
-            <marker date="1495598390559" expanded="true" signature="860:871" ph="jdbc:mysql://localhost:3306/infinitelyloop?useSSL=false" />
-            <marker date="1495598390559" expanded="true" signature="916:932" ph="root" />
-            <marker date="1495598390559" expanded="true" signature="977:993" ph="12345678" />
-            <marker date="1495598390559" expanded="true" signature="1122:1324" ph="..." />
-            <marker date="1495598390559" expanded="true" signature="1417:1598" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/Comments.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/UserLanguage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <marker date="1495632275145" expanded="false" signature="656:667" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="685:691" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="742:753" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="782:788" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="820:831" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="845:851" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="894:905" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="926:932" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="959:970" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="982:988" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1024:1035" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1052:1058" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1084:1095" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1106:1112" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1146:1157" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1172:1178" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1207:1218" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1232:1238" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1278:1289" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1310:1316" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1349:1360" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1378:1384" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1432:1443" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1472:1478" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1507:1518" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1532:1538" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1578:1589" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1610:1616" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1640:1651" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1660:1666" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1696:1707" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1718:1724" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1753:1764" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1778:1784" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1824:1835" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1856:1862" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1888:1899" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1910:1916" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="1950:1961" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="1976:1982" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2010:2021" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2034:2040" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2078:2089" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2108:2114" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2139:2150" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2160:2166" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2198:2209" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2222:2228" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2255:2266" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2278:2284" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2320:2331" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2348:2354" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2383:2394" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2408:2414" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2454:2465" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2486:2492" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2521:2532" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2546:2552" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2592:2603" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2624:2630" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2656:2667" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2678:2684" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2718:2729" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2744:2750" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2777:2788" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2800:2806" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2842:2853" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2870:2876" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2902:2913" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2924:2930" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="2964:2975" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="2990:2996" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3029:3040" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3058:3064" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3112:3123" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3152:3158" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3182:3193" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3202:3208" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3238:3249" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3260:3266" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3300:3311" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3330:3336" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3386:3397" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3428:3434" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3461:3472" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3484:3490" ph=" }" />
-            <marker date="1495632275145" expanded="false" signature="3526:3537" ph=" { " />
-            <marker date="1495632275145" expanded="false" signature="3554:3560" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/QuestionLanguage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <marker date="1495632275112" expanded="false" signature="664:675" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="693:699" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="750:761" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="790:796" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="832:843" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="861:867" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="918:929" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="958:964" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="991:1002" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1014:1020" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1056:1067" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1084:1090" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1116:1127" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1138:1144" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1178:1189" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1204:1210" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1239:1250" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1264:1270" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1310:1321" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1342:1348" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1381:1392" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1410:1416" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1464:1475" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1504:1510" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1539:1550" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1564:1570" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1610:1621" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1642:1648" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1672:1683" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1692:1698" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1728:1739" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1750:1756" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1785:1796" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1810:1816" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1856:1867" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1888:1894" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1920:1931" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="1942:1948" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="1982:1993" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2008:2014" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2042:2053" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2066:2072" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2110:2121" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2140:2146" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2171:2182" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2192:2198" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2230:2241" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2254:2260" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2287:2298" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2310:2316" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2352:2363" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2380:2386" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2415:2426" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2440:2446" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2486:2497" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2518:2524" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2553:2564" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2578:2584" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2624:2635" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2656:2662" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2688:2699" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2710:2716" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2750:2761" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2776:2782" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2809:2820" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2832:2838" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2874:2885" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2902:2908" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2934:2945" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="2956:2962" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="2996:3007" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3022:3028" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3061:3072" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3090:3096" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3144:3155" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3184:3190" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3214:3225" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3234:3240" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3270:3281" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3292:3298" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3332:3343" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3362:3368" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3418:3429" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3460:3466" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3493:3504" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3516:3522" ph=" }" />
-            <marker date="1495632275112" expanded="false" signature="3558:3569" ph=" { " />
-            <marker date="1495632275112" expanded="false" signature="3586:3592" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/Comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <marker date="1495632275197" expanded="false" signature="306:317" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="334:340" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="389:400" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="427:433" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="469:480" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="498:504" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="555:566" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="595:601" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="633:644" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="658:664" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="707:718" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="739:745" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="781:792" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="813:819" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="873:884" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="919:925" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="963:974" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="994:1000" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="1055:1066" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="1099:1105" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="1137:1148" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="1163:1169" ph=" }" />
-            <marker date="1495632275197" expanded="false" signature="1213:1224" ph=" { " />
-            <marker date="1495632275197" expanded="false" signature="1279:1285" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codehelper.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <marker date="1495547925674" expanded="true" signature="185:471" ph="..." />
-            <marker date="1495547925674" expanded="true" signature="230:303" ph="..." />
-            <marker date="1495547925674" expanded="true" signature="339:454" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/CommentsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <marker date="1495633301081" expanded="true" signature="204:4464" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="253:651" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="729:818" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="848:925" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="955:976" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1076:1259" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1082:1248" ph="select , fro... " />
-            <marker date="1495633301081" expanded="true" signature="1328:1418" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1334:1407" ph="delete from " />
-            <marker date="1495633301081" expanded="true" signature="1466:1813" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1472:1802" ph="insert into comments... " />
-            <marker date="1495633301081" expanded="true" signature="1870:2991" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1948:2373" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="1984:2016" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2053:2086" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2119:2148" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2188:2224" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2263:2298" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2332:2361" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2433:2979" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2469:2520" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2557:2609" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2642:2690" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2730:2787" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2826:2880" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="2914:2967" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3060:3680" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3066:3669" ph="update comme... " />
-            <marker date="1495633301081" expanded="true" signature="3090:3615" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3127:3193" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3226:3284" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3324:3398" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3437:3507" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3541:3604" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3749:4096" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="3755:4085" ph="update comme... " />
-            <marker date="1495633301081" expanded="true" signature="4156:4454" ph="..." />
-            <marker date="1495633301081" expanded="true" signature="4162:4443" ph="update comme... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionLanguageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="268" column="49" lean-forward="false" selection-start-line="268" selection-start-column="49" selection-end-line="268" selection-end-column="49" />
-          <folding>
-            <marker date="1495633301043" expanded="true" signature="212:9771" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="269:1752" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="1782:1972" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="2067:2214" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="2073:2203" ph="select from question_language" />
-            <marker date="1495633301043" expanded="true" signature="2283:2384" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="2289:2373" ph="delete from " />
-            <marker date="1495633301043" expanded="true" signature="2440:3367" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="2446:3356" ph="insert into question_language... " />
-            <marker date="1495633301043" expanded="true" signature="3432:6689" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3519:4851" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3556:3589" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3626:3659" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3690:3716" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3746:3771" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3804:3832" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3869:3901" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3934:3962" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="3990:4013" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4046:4074" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4104:4129" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4161:4188" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4217:4241" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4272:4298" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4331:4359" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4392:4420" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4450:4475" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4506:4532" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4562:4587" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4624:4657" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4685:4708" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4746:4782" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4813:4839" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4911:6677" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="4948:5000" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5037:5089" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5120:5166" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5196:5241" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5274:5322" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5359:5411" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5444:5492" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5520:5563" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5596:5644" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5674:5719" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5751:5798" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5827:5871" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5902:5948" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="5981:6029" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6062:6110" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6140:6185" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6216:6262" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6292:6337" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6374:6426" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6454:6497" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6535:6588" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6619:6665" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6766:8724" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6772:8713" ph="update quest... " />
-            <marker date="1495633301043" expanded="true" signature="6805:8657" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6842:6908" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="6939:6992" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7022:7073" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7106:7163" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7200:7265" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7298:7355" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7383:7430" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7463:7520" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7550:7601" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7633:7688" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7717:7766" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7797:7850" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7883:7940" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="7973:8030" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8060:8111" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8142:8195" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8225:8276" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8313:8379" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8407:8454" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8492:8562" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8593:8646" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8792:9761" ph="..." />
-            <marker date="1495633301043" expanded="true" signature="8798:9750" ph="update quest... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/RepliesMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <marker date="1495633301015" expanded="true" signature="203:3790" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="251:707" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="737:819" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="914:1045" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="920:1034" ph="select from replies" />
-            <marker date="1495633301015" expanded="true" signature="1114:1199" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1120:1188" ph="delete from " />
-            <marker date="1495633301015" expanded="true" signature="1246:1576" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1252:1565" ph="insert into replies... " />
-            <marker date="1495633301015" expanded="true" signature="1632:2724" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1709:2124" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1743:1773" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1809:1841" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1878:1912" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="1947:1979" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2013:2042" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2079:2112" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2184:2712" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2218:2267" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2303:2354" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2391:2443" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2478:2528" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2562:2611" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2648:2700" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2792:3391" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2798:3380" ph="update repli... " />
-            <marker date="1495633301015" expanded="true" signature="2821:3330" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2857:2921" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="2958:3025" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="3060:3123" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="3157:3216" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="3253:3319" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="3450:3780" ph="..." />
-            <marker date="1495633301015" expanded="true" signature="3456:3769" ph="update repli... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserAccountMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <marker date="1495633333643" expanded="true" signature="207:4659" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="259:845" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="875:1002" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="1097:1231" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="1103:1220" ph="select from user_account" />
-            <marker date="1495633333643" expanded="true" signature="1300:1388" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="1306:1377" ph="delete from " />
-            <marker date="1495633333643" expanded="true" signature="1439:1872" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="1445:1861" ph="insert into user_account... " />
-            <marker date="1495633333643" expanded="true" signature="1932:3289" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2014:2550" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2047:2076" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2115:2150" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2189:2224" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2263:2298" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2334:2366" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2410:2452" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2496:2538" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2610:3277" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2643:2691" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2730:2784" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2823:2877" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="2916:2970" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3006:3057" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3101:3162" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3206:3265" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3361:4146" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3367:4135" ph="update user_... " />
-            <marker date="1495633333643" expanded="true" signature="3395:4087" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3434:3504" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3543:3613" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3652:3722" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3758:3822" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3866:3950" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="3994:4076" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="4209:4649" ph="..." />
-            <marker date="1495633333643" expanded="true" signature="4215:4638" ph="update user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserLanguageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
-          <folding>
-            <marker date="1495633396010" expanded="true" signature="208:9662" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="261:1736" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="1766:1947" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="2042:2185" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="2048:2174" ph="select from user_language" />
-            <marker date="1495633396010" expanded="true" signature="2254:2351" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="2260:2340" ph="delete from " />
-            <marker date="1495633396010" expanded="true" signature="2403:3318" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="2409:3307" ph="insert into user_language... " />
-            <marker date="1495633396010" expanded="true" signature="3379:6616" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3462:4786" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3499:3532" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3565:3594" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3625:3651" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3681:3706" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3739:3767" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3804:3836" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3869:3897" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3925:3948" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="3981:4009" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4039:4064" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4096:4123" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4152:4176" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4207:4233" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4266:4294" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4327:4355" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4385:4410" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4441:4467" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4497:4522" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4559:4592" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4620:4643" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4681:4717" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4748:4774" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4846:6604" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4883:4935" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="4968:5016" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5047:5093" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5123:5168" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5201:5249" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5286:5338" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5371:5419" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5447:5490" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5523:5571" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5601:5646" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5678:5725" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5754:5798" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5829:5875" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5908:5956" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="5989:6037" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6067:6112" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6143:6189" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6219:6264" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6301:6353" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6381:6424" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6462:6515" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6546:6592" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6689:8631" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6695:8620" ph="update user_... " />
-            <marker date="1495633396010" expanded="true" signature="6724:8564" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6757:6815" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6846:6899" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="6929:6980" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7013:7070" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7107:7172" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7205:7262" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7290:7337" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7370:7427" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7457:7508" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7540:7595" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7624:7673" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7704:7757" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7790:7847" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7880:7937" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="7967:8018" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8049:8102" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8132:8183" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8220:8286" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8314:8361" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8399:8469" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8500:8553" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8695:9652" ph="..." />
-            <marker date="1495633396010" expanded="true" signature="8701:9641" ph="update user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <marker date="1495633300933" expanded="true" signature="205:4767" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="255:674" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="753:859" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="889:977" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="1007:1037" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="1137:1323" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="1143:1312" ph="select , fro... " />
-            <marker date="1495633300933" expanded="true" signature="1392:1485" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="1398:1474" ph="delete from " />
-            <marker date="1495633300933" expanded="true" signature="1534:1920" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="1540:1909" ph="insert into questions... " />
-            <marker date="1495633300933" expanded="true" signature="1978:3174" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2057:2520" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2094:2127" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2160:2189" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2233:2274" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2314:2350" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2391:2428" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2470:2508" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2580:3162" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2617:2669" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2702:2750" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2794:2855" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2895:2950" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="2991:3047" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3089:3150" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3244:3920" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3250:3909" ph="update quest... " />
-            <marker date="1495633300933" expanded="true" signature="3275:3853" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3308:3366" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3410:3493" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3533:3605" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3646:3720" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3762:3842" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3990:4376" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="3996:4365" ph="update quest... " />
-            <marker date="1495633300933" expanded="true" signature="4437:4757" ph="..." />
-            <marker date="1495633300933" expanded="true" signature="4443:4746" ph="update quest... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springMvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <marker date="1495599474598" expanded="true" signature="97:1711" ph="..." />
-            <marker date="1495599474598" expanded="true" signature="674:718" ph="..." />
-            <marker date="1495599474598" expanded="true" signature="796:934" ph="..." />
-            <marker date="1495599474598" expanded="true" signature="1104:1213" ph="..." />
-            <marker date="1495599474598" expanded="true" signature="1300:1415" ph="..." />
-            <marker date="1495599474598" expanded="true" signature="1600:1702" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserAccountMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <marker date="1495633921883" expanded="true" signature="40:126" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserDetailMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <marker date="1495633922090" expanded="true" signature="40:125" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserLanguageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1495633922058" expanded="true" signature="40:127" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/CommonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="54" />
-          <folding>
-            <marker date="1495633921956" expanded="true" signature="40:124" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/RepliesMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <marker date="1495633922022" expanded="true" signature="40:122" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <marker date="1495634879172" expanded="true" signature="49:291" ph="..." />
-            <marker date="1495634879172" expanded="false" signature="488:499" ph=" { " />
-            <marker date="1495634879172" expanded="false" signature="554:560" ph=" }" />
-            <marker date="1495634879172" expanded="false" signature="602:613" ph=" { " />
-            <marker date="1495634879172" expanded="false" signature="652:658" ph=" }" />
-            <marker date="1495634879172" expanded="false" signature="709:720" ph=" { " />
-            <marker date="1495634879172" expanded="false" signature="768:774" ph=" }" />
-            <marker date="1495634879172" expanded="false" signature="835:846" ph=" { " />
-            <marker date="1495634879172" expanded="false" signature="900:906" ph=" }" />
-            <marker date="1495634879172" expanded="true" signature="970:1046" ph="{...}" />
-            <marker date="1495634879172" expanded="false" signature="1099:1110" ph=" { " />
-            <marker date="1495634879172" expanded="false" signature="1161:1167" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/UserLanguageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <marker date="1495634879241" expanded="true" signature="49:295" ph="..." />
-            <marker date="1495634879241" expanded="false" signature="500:511" ph=" { " />
-            <marker date="1495634879241" expanded="false" signature="568:574" ph=" }" />
-            <marker date="1495634879241" expanded="false" signature="618:629" ph=" { " />
-            <marker date="1495634879241" expanded="false" signature="670:676" ph=" }" />
-            <marker date="1495634879241" expanded="false" signature="729:740" ph=" { " />
-            <marker date="1495634879241" expanded="false" signature="790:796" ph=" }" />
-            <marker date="1495634879241" expanded="true" signature="860:932" ph="{...}" />
-            <marker date="1495634879241" expanded="true" signature="998:1076" ph="{...}" />
-            <marker date="1495634879241" expanded="false" signature="1131:1142" ph=" { " />
-            <marker date="1495634879241" expanded="false" signature="1195:1201" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1495600755884" expanded="true" signature="47:152" ph="..." />
-            <marker date="1495600755884" expanded="true" signature="264:296" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <marker date="1495632275014" expanded="false" signature="353:364" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="378:384" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="427:438" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="459:465" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="502:513" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="533:539" ph=" }" />
-            <marker date="1495632275014" expanded="true" signature="594:680" ph="{...}" />
-            <marker date="1495632275014" expanded="false" signature="717:728" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="748:754" ph=" }" />
-            <marker date="1495632275014" expanded="true" signature="809:895" ph="{...}" />
-            <marker date="1495632275014" expanded="false" signature="932:943" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="963:969" ph=" }" />
-            <marker date="1495632275014" expanded="true" signature="1024:1110" ph="{...}" />
-            <marker date="1495632275014" expanded="false" signature="1144:1155" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="1172:1178" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="1226:1237" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="1298:1304" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="1344:1355" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="1380:1386" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="1448:1459" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="1502:1508" ph=" }" />
-            <marker date="1495632275014" expanded="false" signature="1550:1561" ph=" { " />
-            <marker date="1495632275014" expanded="false" signature="1586:1592" ph=" }" />
-            <marker date="1495632275014" expanded="true" signature="1657:1758" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserDetailMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <marker date="1495633364314" expanded="true" signature="206:5577" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="257:996" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="1026:1179" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="1274:1420" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="1280:1409" ph="select from user_detail" />
-            <marker date="1495633364314" expanded="true" signature="1489:1589" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="1495:1578" ph="delete from " />
-            <marker date="1495633364314" expanded="true" signature="1639:2174" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="1645:2163" ph="insert into user_detail... " />
-            <marker date="1495633364314" expanded="true" signature="2233:3908" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2314:2991" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2353:2389" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2422:2451" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2488:2521" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2555:2585" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2624:2659" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2700:2737" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2778:2816" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2852:2884" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="2933:2979" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3051:3896" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3090:3144" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3177:3225" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3262:3314" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3348:3397" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3436:3490" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3531:3587" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3628:3684" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3720:3771" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3820:3884" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3979:4963" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="3985:4952" ph="update user_... " />
-            <marker date="1495633364314" expanded="true" signature="4012:4891" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4045:4103" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4140:4206" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4240:4300" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4339:4409" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4450:4524" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4565:4640" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4676:4740" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="4789:4880" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="5025:5567" ph="..." />
-            <marker date="1495633364314" expanded="true" signature="5031:5556" ph="update user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionLanguageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <marker date="1495634413604" expanded="true" signature="49:344" ph="..." />
-            <marker date="1495634413604" expanded="false" signature="564:575" ph=" { " />
-            <marker date="1495634413604" expanded="false" signature="636:642" ph=" }" />
-            <marker date="1495634413604" expanded="false" signature="690:701" ph=" { " />
-            <marker date="1495634413604" expanded="false" signature="746:752" ph=" }" />
-            <marker date="1495634413604" expanded="false" signature="809:820" ph=" { " />
-            <marker date="1495634413604" expanded="false" signature="874:880" ph=" }" />
-            <marker date="1495634413604" expanded="true" signature="948:1024" ph="{...}" />
-            <marker date="1495634413604" expanded="true" signature="1094:1176" ph="{...}" />
-            <marker date="1495634413604" expanded="false" signature="1235:1246" ph=" { " />
-            <marker date="1495634413604" expanded="false" signature="1303:1309" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/CommentsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <marker date="1495633921991" expanded="true" signature="40:123" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionLanguageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <marker date="1495633922123" expanded="true" signature="40:131" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/pojo/Questions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <marker date="1495632275174" expanded="false" signature="325:336" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="354:360" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="411:422" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="451:457" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="489:500" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="514:520" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="563:574" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="595:601" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="641:652" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="677:683" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="745:756" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="799:805" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="843:854" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="875:881" ph=" }" />
-            <marker date="1495632275174" expanded="true" signature="938:1027" ph="{...}" />
-            <marker date="1495632275174" expanded="false" signature="1067:1078" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="1100:1106" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="1165:1176" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="1213:1219" ph=" }" />
-            <marker date="1495632275174" expanded="false" signature="1259:1270" ph=" { " />
-            <marker date="1495632275174" expanded="false" signature="1293:1299" ph=" }" />
-            <marker date="1495632275174" expanded="true" signature="1360:1455" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/CommentsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <marker date="1495634413817" expanded="true" signature="49:287" ph="..." />
-            <marker date="1495634413817" expanded="false" signature="478:489" ph=" { " />
-            <marker date="1495634413817" expanded="false" signature="542:548" ph=" }" />
-            <marker date="1495634413817" expanded="false" signature="588:599" ph=" { " />
-            <marker date="1495634413817" expanded="false" signature="636:642" ph=" }" />
-            <marker date="1495634413817" expanded="false" signature="691:702" ph=" { " />
-            <marker date="1495634413817" expanded="false" signature="748:754" ph=" }" />
-            <marker date="1495634413817" expanded="false" signature="813:824" ph=" { " />
-            <marker date="1495634413817" expanded="false" signature="876:882" ph=" }" />
-            <marker date="1495634413817" expanded="true" signature="944:1018" ph="{...}" />
-            <marker date="1495634413817" expanded="false" signature="1069:1080" ph=" { " />
-            <marker date="1495634413817" expanded="false" signature="1129:1135" ph=" }" />
-            <marker date="1495634413817" expanded="true" signature="1195:1269" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/QuestionsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding>
-            <marker date="1495634465008" expanded="true" signature="49:392" ph="..." />
-            <marker date="1495634465008" expanded="false" signature="586:597" ph=" { " />
-            <marker date="1495634465008" expanded="false" signature="651:657" ph=" }" />
-            <marker date="1495634465008" expanded="false" signature="698:709" ph=" { " />
-            <marker date="1495634465008" expanded="false" signature="747:753" ph=" }" />
-            <marker date="1495634465008" expanded="false" signature="803:814" ph=" { " />
-            <marker date="1495634465008" expanded="false" signature="861:867" ph=" }" />
-            <marker date="1495634465008" expanded="false" signature="927:938" ph=" { " />
-            <marker date="1495634465008" expanded="false" signature="991:997" ph=" }" />
-            <marker date="1495634465008" expanded="true" signature="1060:1135" ph="{...}" />
-            <marker date="1495634465008" expanded="false" signature="1187:1198" ph=" { " />
-            <marker date="1495634465008" expanded="false" signature="1248:1254" ph=" }" />
-            <marker date="1495634465008" expanded="true" signature="1316:1391" ph="{...}" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/RepliesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -2201,49 +1534,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <marker date="1495634652772" expanded="true" signature="49:293" ph="..." />
-            <marker date="1495634652772" expanded="false" signature="493:504" ph=" { " />
-            <marker date="1495634652772" expanded="false" signature="560:566" ph=" }" />
-            <marker date="1495634652772" expanded="false" signature="609:620" ph=" { " />
-            <marker date="1495634652772" expanded="false" signature="660:666" ph=" }" />
-            <marker date="1495634652772" expanded="false" signature="718:729" ph=" { " />
-            <marker date="1495634652772" expanded="false" signature="778:784" ph=" }" />
-            <marker date="1495634652772" expanded="false" signature="846:857" ph=" { " />
-            <marker date="1495634652772" expanded="false" signature="912:918" ph=" }" />
-            <marker date="1495634652772" expanded="true" signature="983:1060" ph="{...}" />
-            <marker date="1495634652772" expanded="false" signature="1114:1125" ph=" { " />
-            <marker date="1495634652772" expanded="false" signature="1177:1183" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/service/impl/RepliesService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/UserDetailMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <marker date="1495634652840" expanded="true" signature="49:285" ph="..." />
-            <marker date="1495634652840" expanded="false" signature="470:481" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="533:539" ph=" }" />
-            <marker date="1495634652840" expanded="false" signature="578:589" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="625:631" ph=" }" />
-            <marker date="1495634652840" expanded="false" signature="679:690" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="735:741" ph=" }" />
-            <marker date="1495634652840" expanded="false" signature="799:810" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="861:867" ph=" }" />
-            <marker date="1495634652840" expanded="false" signature="927:938" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="995:1001" ph=" }" />
-            <marker date="1495634652840" expanded="false" signature="1051:1062" ph=" { " />
-            <marker date="1495634652840" expanded="false" signature="1110:1116" ph=" }" />
-          </folding>
+        <state relative-caret-position="26">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context-tx.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/ext/access-bridge-64.jar!/com/sun/java/accessibility/AccessBridge.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="194" column="65" lean-forward="false" selection-start-line="194" selection-start-column="65" selection-end-line="194" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/javax/accessibility/AccessibleRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8462">
+          <caret line="314" column="7" lean-forward="true" selection-start-line="314" selection-start-column="7" selection-end-line="314" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/dao/QuestionLanguageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6136">
+          <caret line="278" column="36" lean-forward="true" selection-start-line="278" selection-start-column="36" selection-end-line="278" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/nav.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
