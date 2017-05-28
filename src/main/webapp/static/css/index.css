@@ -1,15 +1,31 @@
-.question{
-    width: 80%;
+.question_box{
+    width: 100%;
     height: auto;
-    background: salmon;
+    max-height: 80px;
 }
+
 .q_title{
-    width: inherit;
-    height: 50px;
-    background: skyblue;
+    font-size: 18px;
+    font-weight: bold;
 }
 .q_language{
-    width: inherit;
-    height: 50px;
-    background: aquamarine;
+    width: auto;
+    height: auto;
+    max-height: 30px;
+}
+.q_language_box{
+    width: auto;
+    height: 25px;
+    min-width: 40px;
+    border: 1px solid 	#E0EEEE;
+    border-radius: 8px;
+    background: #E0FFFF;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px 5px;
+}
+hr{
+    clear: both;
+    margin: 10px 0;
 }

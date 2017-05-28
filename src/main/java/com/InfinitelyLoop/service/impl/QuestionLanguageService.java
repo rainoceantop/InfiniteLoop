@@ -6,6 +6,8 @@ import com.InfinitelyLoop.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QuestionLanguageService implements CommonService<QuestionLanguage>{
     @Autowired
@@ -25,6 +27,9 @@ public class QuestionLanguageService implements CommonService<QuestionLanguage>{
 
     public QuestionLanguage selectByPrimaryKey(Integer commentId) {
         return questionLanguageMapper.selectByPrimaryKey(commentId);
+    }
+    public List<String> selectColumnName(){
+        return questionLanguageMapper.selectColumnName();
     }
 
     public int updateByPrimaryKeySelective(QuestionLanguage record) {

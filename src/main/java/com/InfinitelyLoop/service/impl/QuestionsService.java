@@ -6,6 +6,8 @@ import com.InfinitelyLoop.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QuestionsService implements CommonService<Questions> {
 
@@ -26,6 +28,9 @@ public class QuestionsService implements CommonService<Questions> {
 
     public Questions selectByPrimaryKey(Integer commentId) {
         return questionsMapper.selectByPrimaryKey(commentId);
+    }
+    public List<Questions> selectAllWithoutBlobs(){
+        return questionsMapper.selectAllWithoutBlobs();
     }
 
     public int updateByPrimaryKeySelective(Questions record) {

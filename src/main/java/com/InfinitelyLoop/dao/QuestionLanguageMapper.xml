@@ -36,6 +36,9 @@
     from question_language
     where language_id = #{languageId,jdbcType=INTEGER}
   </select>
+  <select id="selectColumnName" resultType="java.lang.String">
+    select  column_name from Information_schema.columns  where table_Name = 'question_language'
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from question_language
     where language_id = #{languageId,jdbcType=INTEGER}

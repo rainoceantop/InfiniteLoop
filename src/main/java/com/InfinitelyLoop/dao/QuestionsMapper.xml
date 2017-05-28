@@ -25,6 +25,11 @@
     from questions
     where question_id = #{questionId,jdbcType=INTEGER}
   </select>
+  <select id="selectAllWithoutBlobs" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from questions
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from questions
     where question_id = #{questionId,jdbcType=INTEGER}

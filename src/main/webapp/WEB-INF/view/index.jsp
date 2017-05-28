@@ -9,20 +9,37 @@
     </jsp:include>
     <link rel="stylesheet" href="/static/css/index.css">
     <script src="/static/js/index.js"></script>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 </head>
 <body>
+<!-- 导航条 -->
 <%@include file="staticHtml/nav.jsp"%>
+
+
 <div class="container">
-    <h3>全部问题</h3>
-    <hr>
-    <div class="question">
-        <div class="q_title">
-
-        </div>
-        <div class="q_language">
-
-        </div>
+    <h3 class="text-left">全部问题</h3>
+    <div class="text-right">
+        <a href="/newQuestion">提问问题</a>
     </div>
+    <hr>
+    <!-- 问题陈列 -->
+    <c:forEach items="${questions}" var="question">
+        <div class="question_box">
+            <div class="q_title">
+                <a href="#">${question.questionTitle}</a>
+            </div>
+            <div class="q_language">
+                <div class="q_language_box">
+                    java
+                </div>
+                <div class="q_language_box">
+                    H5
+                </div>
+            </div>
+        </div>
+        <hr>
+    </c:forEach>
 </div>
 </body>
 </html>

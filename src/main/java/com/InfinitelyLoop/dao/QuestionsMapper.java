@@ -3,6 +3,8 @@ package com.InfinitelyLoop.dao;
 import com.InfinitelyLoop.pojo.Questions;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface QuestionsMapper {
     int deleteByPrimaryKey(Integer questionId);
@@ -12,6 +14,8 @@ public interface QuestionsMapper {
     int insertSelective(Questions record);
 
     Questions selectByPrimaryKey(Integer questionId);
+
+    List<Questions> selectAllWithoutBlobs();
 
     int updateByPrimaryKeySelective(Questions record);
 
