@@ -12,6 +12,7 @@ public interface UserDetailMapper {
     int insertSelective(UserDetail record);
 
     UserDetail selectByPrimaryKey(Integer userDetailId);
+    UserDetail selectByUserId(Integer userId);
 
     int updateByPrimaryKeySelective(UserDetail record);
 

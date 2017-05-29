@@ -17,7 +17,7 @@ public class UserDetail {
 
     private String userMotto;
 
-    private Integer userLanguagesAttention;
+    private String userLanguagesAttention;
 
     public Integer getUserDetailId() {
         return userDetailId;
@@ -83,11 +83,11 @@ public class UserDetail {
         this.userMotto = userMotto == null ? null : userMotto.trim();
     }
 
-    public Integer getUserLanguagesAttention() {
+    public String getUserLanguagesAttention() {
         return userLanguagesAttention;
     }
 
-    public void setUserLanguagesAttention(Integer userLanguagesAttention) {
+    public void setUserLanguagesAttention(String userLanguagesAttention) {
         this.userLanguagesAttention = userLanguagesAttention;
     }
 }

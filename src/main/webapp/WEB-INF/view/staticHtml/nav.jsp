@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">问题</a></li>
+                <li><a href="/">问题</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">语言 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -33,17 +33,26 @@
                 </div>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>
+
+
+
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">个人资料</a></li>
-                        <li><a href="#">。。。</a></li>
-                        <li><a href="#">。。。</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">注销</a></li>
-                    </ul>
-                </li>
+                <c:if test="${empty sessionScope.userId}">
+                    <li><a href="/user/login">登陆</a></li>
+                    <li><a href="/user/register">注册</a></li>
+                </c:if>
+                <c:if test="${not empty sessionScope.userId}">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><c:if test="${not empty sessionScope.nickname}">${sessionScope.nickname}</c:if><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user/detail">个人资料</a></li>
+                            <li><a href="#">。。。</a></li>
+                            <li><a href="#">。。。</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user/logout">注销</a></li>
+                        </ul>
+                    </li>
+                </c:if>
             </ul>
         </div>
     </div>

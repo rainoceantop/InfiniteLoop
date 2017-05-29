@@ -6,13 +6,14 @@
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="question_asked_time" jdbcType="TIMESTAMP" property="questionAskedTime" />
     <result column="question_title" jdbcType="VARCHAR" property="questionTitle" />
-    <result column="questions_likes" jdbcType="INTEGER" property="questionsLikes" />
+    <result column="question_likes" jdbcType="INTEGER" property="questionLikes" />
+    <result column="question_language" jdbcType="VARCHAR" property="questionLanguage" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="Questions">
     <result column="question_content" jdbcType="LONGVARCHAR" property="questionContent" />
   </resultMap>
   <sql id="Base_Column_List">
-    question_id, user_id, question_asked_time, question_title, questions_likes
+    question_id, user_id, question_asked_time, question_title, question_likes, question_language
   </sql>
   <sql id="Blob_Column_List">
     question_content
@@ -36,11 +37,11 @@
   </delete>
   <insert id="insert" parameterType="Questions">
     insert into questions (question_id, user_id, question_asked_time, 
-      question_title, questions_likes, question_content
-      )
+      question_title, question_likes, question_language, 
+      question_content)
     values (#{questionId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{questionAskedTime,jdbcType=TIMESTAMP}, 
-      #{questionTitle,jdbcType=VARCHAR}, #{questionsLikes,jdbcType=INTEGER}, #{questionContent,jdbcType=LONGVARCHAR}
-      )
+      #{questionTitle,jdbcType=VARCHAR}, #{questionLikes,jdbcType=INTEGER}, #{questionLanguage,jdbcType=VARCHAR}, 
+      #{questionContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="Questions">
     insert into questions
@@ -57,8 +58,11 @@
       <if test="questionTitle != null">
         question_title,
       </if>
-      <if test="questionsLikes != null">
-        questions_likes,
+      <if test="questionLikes != null">
+        question_likes,
+      </if>
+      <if test="questionLanguage != null">
+        question_language,
       </if>
       <if test="questionContent != null">
         question_content,
@@ -77,8 +81,11 @@
       <if test="questionTitle != null">
         #{questionTitle,jdbcType=VARCHAR},
       </if>
-      <if test="questionsLikes != null">
-        #{questionsLikes,jdbcType=INTEGER},
+      <if test="questionLikes != null">
+        #{questionLikes,jdbcType=INTEGER},
+      </if>
+      <if test="questionLanguage != null">
+        #{questionLanguage,jdbcType=VARCHAR},
       </if>
       <if test="questionContent != null">
         #{questionContent,jdbcType=LONGVARCHAR},
@@ -97,8 +104,11 @@
       <if test="questionTitle != null">
         question_title = #{questionTitle,jdbcType=VARCHAR},
       </if>
-      <if test="questionsLikes != null">
-        questions_likes = #{questionsLikes,jdbcType=INTEGER},
+      <if test="questionLikes != null">
+        question_likes = #{questionLikes,jdbcType=INTEGER},
+      </if>
+      <if test="questionLanguage != null">
+        question_language = #{questionLanguage,jdbcType=VARCHAR},
       </if>
       <if test="questionContent != null">
         question_content = #{questionContent,jdbcType=LONGVARCHAR},
@@ -111,7 +121,8 @@
     set user_id = #{userId,jdbcType=INTEGER},
       question_asked_time = #{questionAskedTime,jdbcType=TIMESTAMP},
       question_title = #{questionTitle,jdbcType=VARCHAR},
-      questions_likes = #{questionsLikes,jdbcType=INTEGER},
+      question_likes = #{questionLikes,jdbcType=INTEGER},
+      question_language = #{questionLanguage,jdbcType=VARCHAR},
       question_content = #{questionContent,jdbcType=LONGVARCHAR}
     where question_id = #{questionId,jdbcType=INTEGER}
   </update>
@@ -120,7 +131,8 @@
     set user_id = #{userId,jdbcType=INTEGER},
       question_asked_time = #{questionAskedTime,jdbcType=TIMESTAMP},
       question_title = #{questionTitle,jdbcType=VARCHAR},
-      questions_likes = #{questionsLikes,jdbcType=INTEGER}
+      question_likes = #{questionLikes,jdbcType=INTEGER},
+      question_language = #{questionLanguage,jdbcType=VARCHAR}
     where question_id = #{questionId,jdbcType=INTEGER}
   </update>
 </mapper>

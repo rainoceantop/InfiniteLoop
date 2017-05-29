@@ -11,9 +11,10 @@ public class Questions {
 
     private String questionTitle;
 
-    private Integer questionsLikes;
+    private Integer questionLikes;
 
     private String questionContent;
+    private String questionLanguage;
 
     public Integer getQuestionId() {
         return questionId;
@@ -47,12 +48,12 @@ public class Questions {
         this.questionTitle = questionTitle == null ? null : questionTitle.trim();
     }
 
-    public Integer getQuestionsLikes() {
-        return questionsLikes;
+    public Integer getQuestionLikes() {
+        return questionLikes;
     }
 
-    public void setQuestionsLikes(Integer questionsLikes) {
-        this.questionsLikes = questionsLikes;
+    public void setQuestionLikes(Integer questionsLikes) {
+        this.questionLikes = questionsLikes;
     }
 
     public String getQuestionContent() {
@@ -61,5 +62,13 @@ public class Questions {
 
     public void setQuestionContent(String questionContent) {
         this.questionContent = questionContent == null ? null : questionContent.trim();
+    }
+
+    public String getQuestionLanguage() {
+        return questionLanguage;
+    }
+
+    public void setQuestionLanguage(String questionLanguage) {
+        this.questionLanguage = questionLanguage;
     }
 }

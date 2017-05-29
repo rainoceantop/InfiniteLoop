@@ -1,6 +1,6 @@
 package com.InfinitelyLoop.pojo;
 
-public class UserLanguage {
+public class Language {
     private Integer languageId;
 
     private Integer userId;
@@ -44,6 +44,8 @@ public class UserLanguage {
     private Byte visualBasic;
 
     private Byte perl;
+
+    private Integer questionId;
 
     public Integer getLanguageId() {
         return languageId;
@@ -219,5 +221,13 @@ public class UserLanguage {
 
     public void setPerl(Byte perl) {
         this.perl = perl;
+    }
+
+    public Integer getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(Integer questionId) {
+        this.questionId = questionId;
     }
 }

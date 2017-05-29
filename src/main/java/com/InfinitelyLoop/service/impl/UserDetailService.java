@@ -26,6 +26,9 @@ public class UserDetailService implements CommonService<UserDetail> {
     public UserDetail selectByPrimaryKey(Integer commentId) {
         return userDetailMapper.selectByPrimaryKey(commentId);
     }
+    public UserDetail selectByUserId(Integer userId){
+        return userDetailMapper.selectByUserId(userId);
+    }
 
     public int updateByPrimaryKeySelective(UserDetail record) {
         return userDetailMapper.updateByPrimaryKeySelective(record);

@@ -26,6 +26,9 @@ public class UserAccountService implements CommonService<UserAccount>{
     public UserAccount selectByPrimaryKey(Integer commentId) {
         return userAccountMapper.selectByPrimaryKey(commentId);
     }
+    public UserAccount selectByUsername(String username){
+        return userAccountMapper.selectByUsername(username);
+    }
 
     public int updateByPrimaryKeySelective(UserAccount record) {
         return userAccountMapper.updateByPrimaryKeySelective(record);

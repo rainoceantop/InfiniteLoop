@@ -13,6 +13,9 @@ public interface UserAccountMapper {
 
     UserAccount selectByPrimaryKey(Integer userId);
 
+    UserAccount selectByUsername(String username);
+
+
     int updateByPrimaryKeySelective(UserAccount record);
 
     int updateByPrimaryKey(UserAccount record);

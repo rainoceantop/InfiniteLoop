@@ -17,6 +17,8 @@ public class UserAccount {
 
     private String userLastLoginCity;
 
+    private UserDetail userDetail;
+
     public Integer getUserId() {
         return userId;
     }
@@ -71,5 +73,26 @@ public class UserAccount {
 
     public void setUserLastLoginCity(String userLastLoginCity) {
         this.userLastLoginCity = userLastLoginCity == null ? null : userLastLoginCity.trim();
+    }
+
+    public UserDetail getUserDetail() {
+        return userDetail;
+    }
+
+    public void setUserDetail(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "userId=" + userId +
+                ", userUsername='" + userUsername + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userNickname='" + userNickname + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userLastLoginTime=" + userLastLoginTime +
+                ", userLastLoginCity='" + userLastLoginCity + '\'' +
+                '}';
     }
 }

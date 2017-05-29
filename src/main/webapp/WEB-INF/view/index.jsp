@@ -30,12 +30,11 @@
                 <a href="#">${question.questionTitle}</a>
             </div>
             <div class="q_language">
-                <div class="q_language_box">
-                    java
-                </div>
-                <div class="q_language_box">
-                    H5
-                </div>
+                <c:forEach items="${question.questionLanguage}" var="question_language">
+                    <div class="q_language_box">
+                         ${question_language}
+                    </div>
+                </c:forEach>
             </div>
         </div>
         <hr>
