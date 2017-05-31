@@ -14,8 +14,6 @@
         <jsp:param name="keywords" value="java,spring,springmvc"/>
         <jsp:param name="description" value="个人资料"/>
     </jsp:include>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 </head>
 <body>
 用户id：${userDetail.userId}<br>
@@ -25,5 +23,6 @@
 用户职业：${userDetail.userProfession}<br>
 现居城市：${userDetail.userLivingCity}<br>
 关注语言：${userDetail.userLanguagesAttention}<br>
+<a href="/user/detail-update">修改</a>
 </body>
 </html>

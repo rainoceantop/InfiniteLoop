@@ -9,9 +9,10 @@
     font-weight: bold;
 }
 .q_language{
-    width: auto;
+    width: 50%;
     height: auto;
     max-height: 30px;
+    float: left;
 }
 .q_language_box{
     width: auto;
@@ -24,6 +25,13 @@
     text-align: center;
     vertical-align: middle;
     margin: 5px 5px;
+}
+.post_time{
+    width: auto;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: lightsteelblue;
 }
 hr{
     clear: both;

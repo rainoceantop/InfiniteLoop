@@ -1,5 +1,6 @@
 package com.InfinitelyLoop.pojo;
 
+
 import java.util.Date;
 
 public class Questions {
@@ -7,7 +8,15 @@ public class Questions {
 
     private Integer userId;
 
+    //store in the database
     private Date questionAskedTime;
+    //get questionAskedTime from database and format it then show this var instead of questionAskedTime
+    private String questionAskedTimeHumanReadableFormat;
+
+    //format
+    public void setQuestionAskedTimeHumanReadableFormat(String questionAskedTimeHumanReadableFormat) {
+        this.questionAskedTimeHumanReadableFormat = questionAskedTimeHumanReadableFormat;
+    }
 
     private String questionTitle;
 
@@ -71,4 +80,9 @@ public class Questions {
     public void setQuestionLanguage(String questionLanguage) {
         this.questionLanguage = questionLanguage;
     }
+
+    public String getQuestionAskedTimeHumanReadableFormat() {
+        return questionAskedTimeHumanReadableFormat;
+    }
+
 }

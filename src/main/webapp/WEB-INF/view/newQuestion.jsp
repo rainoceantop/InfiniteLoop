@@ -17,7 +17,7 @@
 <body>
 <%@include file="staticHtml/nav.jsp"%>
 <form action="/newQuestionHandle" method="post" name="newQuestionForm">
-    <input type="hidden" name="userId" value="1">
+    <input type="hidden" name="userId" value="${sessionScope.userId}">
     题目：<input type="text" name="questionTitle"><br>
     内容：<textarea cols="50" rows="20" name="questionContent"></textarea><br>
     语言：<c:forEach items="${questionLanguage}" var="language">

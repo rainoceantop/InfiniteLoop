@@ -36,6 +36,10 @@
                     </div>
                 </c:forEach>
             </div>
+            <%-- show formatted asked time(questionAskedTimeHumanReadableFormat) --%>
+            <div class="post_time">
+                ${question.questionAskedTimeHumanReadableFormat}
+            </div>
         </div>
         <hr>
     </c:forEach>

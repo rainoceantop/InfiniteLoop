@@ -82,9 +82,17 @@ public class UserController {
         return "/userDetail";
     }
 
+    //修改用户资料
+    @RequestMapping("/detail-update")
+    public String detailUpdate(HttpSession httpSession,Model model){
+        UserDetail userDetail = userDetailService.selectByUserId((Integer) httpSession.getAttribute("userId"));
+        model.addAttribute("userDetail", userDetail);
+        return "/userDetailUpdate";
+    }
+
     @RequestMapping("detailHandle")
     public String detailHandle(UserDetail userDetail){
         userDetailService.updateByPrimaryKeySelective(userDetail);
-        return "/userDetail";
+        return "redirect:/user/detail";
     }
 }
