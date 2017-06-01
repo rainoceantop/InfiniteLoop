@@ -3,7 +3,7 @@ package com.InfinitelyLoop.controller;
 import com.InfinitelyLoop.pojo.Questions;
 import com.InfinitelyLoop.service.impl.QuestionsService;
 import com.InfinitelyLoop.service.impl.LanguageService;
-import com.InfinitelyLoop.tool.humanReadableTimeFormat;
+import com.InfinitelyLoop.tool.HumanReadableTimeFormat;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,10 +26,11 @@ public class QuestionsController {
     @RequestMapping("/")
     public String queryItems(Model model) throws Exception {
         List<Questions> questions = questionsService.selectAllWithoutBlobs();
-        humanReadableTimeFormat hr = new humanReadableTimeFormat();
+        HumanReadableTimeFormat hr = new HumanReadableTimeFormat();
         //format
         for(Questions questions1:questions){
-            questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormat(new Date().getTime() - questions1.getQuestionAskedTime().getTime()));
+            questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
+          //questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByTimestamp(questions1.getQuestionAskedTime().getTime()));
         }
         model.addAttribute("questions", questions);
         return "/index";

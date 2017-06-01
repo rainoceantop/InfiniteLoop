@@ -6,13 +6,17 @@ import com.InfinitelyLoop.service.impl.LanguageService;
 import com.InfinitelyLoop.service.impl.UserAccountService;
 import com.InfinitelyLoop.service.impl.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/user")
@@ -24,6 +28,8 @@ public class UserController {
     private UserDetailService userDetailService;
     @Autowired
     private LanguageService languageService;
+    @Autowired
+    private HttpServletRequest request;
 
 
     //跳转到注册页面
@@ -90,8 +96,23 @@ public class UserController {
         return "/userDetailUpdate";
     }
 
+    //处理用户资料更新
     @RequestMapping("detailHandle")
-    public String detailHandle(UserDetail userDetail){
+    public String detailHandle(UserDetail userDetail, MultipartFile avatar){
+        if(!avatar.isEmpty()){
+            String pic_r_path = "/static/avatar/";
+            String pic_a_path = request.getSession().getServletContext().getRealPath("/") + pic_r_path;
+            System.out.println(pic_a_path + "----------------------------------");
+            String originalName = avatar.getOriginalFilename();
+            String newFileName = userDetail.getUserId() + originalName.substring(originalName.lastIndexOf("."));
+            File file = new File(pic_a_path+newFileName);
+            try {
+                avatar.transferTo(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            userDetail.setUserAvatar(pic_r_path+newFileName);
+        }
         userDetailService.updateByPrimaryKeySelective(userDetail);
         return "redirect:/user/detail";
     }

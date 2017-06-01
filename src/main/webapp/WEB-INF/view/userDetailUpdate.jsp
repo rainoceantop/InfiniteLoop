@@ -18,7 +18,7 @@
 <body>
 <form action="/user/detailHandle" method="post" enctype="multipart/form-data">
     <input type="hidden" name="userId" value="${userDetail.userId}">
-    头像：<input type="file" name="userAvatar">
+    头像：<input type="file" name="avatar"  value="${userDetail.userAvatar}">
     性别：<input type="radio" name="userSex" value="1">男
          <input type="radio" name="userSex" value="0">女
     生日：<input type="datetime" name="userBirthday" value="${userDetail.userBirthday}">
