@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ed5dd8d7-6bc8-48bd-8ce5-fb8601e101c6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/QuestionsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/QuestionsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userDetailUpdate.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userDetailUpdate.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/tool/humanReadableTimeFormat.java" afterPath="$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/tool/HumanReadableTimeFormat.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -400,8 +394,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1252,7 +1247,8 @@
       <workItem from="1496227122412" duration="12998000" />
       <workItem from="1496291000678" duration="3065000" />
       <workItem from="1496320993138" duration="1254000" />
-      <workItem from="1496326552253" duration="148000" />
+      <workItem from="1496326552253" duration="326000" />
+      <workItem from="1496326907815" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1495549811584</created>
@@ -1380,7 +1376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496211633717</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="页面啥的都还没做，给自己鼓掌o(*￣▽￣*)ブ">
+      <created>1496326701479</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1496326701479</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1416,7 +1419,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138112000" />
+    <option name="totallyTimeSpent" value="138351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -1872,14 +1875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <marker date="1496239142494" expanded="true" signature="4:141" ph="..." />
-            <marker date="1496239142494" expanded="true" signature="217:1289" ph="..." />
-            <marker date="1496239142494" expanded="true" signature="224:528" ph="..." />
-            <marker date="1496239142494" expanded="true" signature="320:520" ph="..." />
-            <marker date="1496239142494" expanded="true" signature="535:1281" ph="..." />
-            <marker date="1496239142494" expanded="true" signature="614:1273" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1917,28 +1912,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <marker date="1496210420279" expanded="true" signature="92:1635" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="99:639" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="195:391" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="646:1627" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="724:1619" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="789:840" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="919:1612" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="954:1582" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="988:1065" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="1102:1361" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="1191:1342" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="1240:1313" ph="..." />
-            <marker date="1496210420279" expanded="true" signature="1483:1567" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/InfinitelyLoop/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
