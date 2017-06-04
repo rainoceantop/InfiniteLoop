@@ -12,7 +12,7 @@ public class HumanReadableTimeFormat {
     private final long ONE_YEAR = ONE_DAY * 365;
     private Date d;
     private long sec;
-    public String TimeFormatByTimestamp(long timestamp) {
+    public String TimeFormatByTimestamp(long timestamp){
         d = new Date();
         sec = (d.getTime() - timestamp)/1000;
         return TimeFormat(sec);

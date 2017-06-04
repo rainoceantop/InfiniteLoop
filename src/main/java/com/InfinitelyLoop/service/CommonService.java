@@ -12,4 +12,5 @@ public interface CommonService<T> {
     int updateByPrimaryKeySelective(T record);
 
     int updateByPrimaryKey(T record);
+
 }

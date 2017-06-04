@@ -4,17 +4,18 @@
   <resultMap id="BaseResultMap" type="UserDetail">
     <id column="user_detail_id" jdbcType="INTEGER" property="userDetailId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
     <result column="user_avatar" jdbcType="VARCHAR" property="userAvatar" />
     <result column="user_sex" jdbcType="TINYINT" property="userSex" />
     <result column="user_birthday" jdbcType="VARCHAR" property="userBirthday" />
     <result column="user_profession" jdbcType="VARCHAR" property="userProfession" />
     <result column="user_living_city" jdbcType="VARCHAR" property="userLivingCity" />
     <result column="user_motto" jdbcType="VARCHAR" property="userMotto" />
-    <result column="user_languages_attention" jdbcType="INTEGER" property="userLanguagesAttention" />
+    <result column="user_languages_attention" jdbcType="VARCHAR" property="userLanguagesAttention" />
   </resultMap>
   <sql id="Base_Column_List">
-    user_detail_id, user_id, user_avatar, user_sex, user_birthday, user_profession, user_living_city, 
-    user_motto, user_languages_attention
+    user_detail_id, user_id, user_nickname, user_avatar, user_sex, user_birthday, user_profession, 
+    user_living_city, user_motto, user_languages_attention
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -33,14 +34,14 @@
     where user_detail_id = #{userDetailId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="UserDetail">
-    insert into user_detail (user_detail_id, user_id, user_avatar, 
-      user_sex, user_birthday, user_profession, 
-      user_living_city, user_motto, user_languages_attention
-      )
-    values (#{userDetailId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userAvatar,jdbcType=VARCHAR}, 
-      #{userSex,jdbcType=TINYINT}, #{userBirthday,jdbcType=VARCHAR}, #{userProfession,jdbcType=VARCHAR}, 
-      #{userLivingCity,jdbcType=VARCHAR}, #{userMotto,jdbcType=VARCHAR}, #{userLanguagesAttention,jdbcType=INTEGER}
-      )
+    insert into user_detail (user_detail_id, user_id, user_nickname, 
+      user_avatar, user_sex, user_birthday, 
+      user_profession, user_living_city, user_motto, 
+      user_languages_attention)
+    values (#{userDetailId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userNickname,jdbcType=VARCHAR}, 
+      #{userAvatar,jdbcType=VARCHAR}, #{userSex,jdbcType=TINYINT}, #{userBirthday,jdbcType=VARCHAR}, 
+      #{userProfession,jdbcType=VARCHAR}, #{userLivingCity,jdbcType=VARCHAR}, #{userMotto,jdbcType=VARCHAR}, 
+      #{userLanguagesAttention,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="UserDetail">
     insert into user_detail
@@ -50,6 +51,9 @@
       </if>
       <if test="userId != null">
         user_id,
+      </if>
+      <if test="userNickname != null">
+        user_nickname,
       </if>
       <if test="userAvatar != null">
         user_avatar,
@@ -80,6 +84,9 @@
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
+      <if test="userNickname != null">
+        #{userNickname,jdbcType=VARCHAR},
+      </if>
       <if test="userAvatar != null">
         #{userAvatar,jdbcType=VARCHAR},
       </if>
@@ -99,15 +106,18 @@
         #{userMotto,jdbcType=VARCHAR},
       </if>
       <if test="userLanguagesAttention != null">
-        #{userLanguagesAttention,jdbcType=INTEGER},
+        #{userLanguagesAttention,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="UserDetail">
+  <update id="updateByUserIdSelective" parameterType="UserDetail">
     update user_detail
     <set>
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userNickname != null">
+        user_nickname = #{userNickname,jdbcType=VARCHAR},
       </if>
       <if test="userAvatar != null">
         user_avatar = #{userAvatar,jdbcType=VARCHAR},
@@ -128,21 +138,51 @@
         user_motto = #{userMotto,jdbcType=VARCHAR},
       </if>
       <if test="userLanguagesAttention != null">
-        user_languages_attention = #{userLanguagesAttention,jdbcType=INTEGER},
+        user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR},
       </if>
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+  <update id="updateByPrimaryKeySelective" parameterType="UserDetail">
+    update user_detail
+    <set>
+      <if test="userNickname != null">
+        user_nickname = #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatar != null">
+        user_avatar = #{userAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        user_sex = #{userSex,jdbcType=TINYINT},
+      </if>
+      <if test="userBirthday != null">
+        user_birthday = #{userBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="userProfession != null">
+        user_profession = #{userProfession,jdbcType=VARCHAR},
+      </if>
+      <if test="userLivingCity != null">
+        user_living_city = #{userLivingCity,jdbcType=VARCHAR},
+      </if>
+      <if test="userMotto != null">
+        user_motto = #{userMotto,jdbcType=VARCHAR},
+      </if>
+      <if test="userLanguagesAttention != null">
+        user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_detail_id = #{userDetailId,jdbcType=INTEGER}
+  </update>
   <update id="updateByPrimaryKey" parameterType="UserDetail">
     update user_detail
-    set user_id = #{userId,jdbcType=INTEGER},
+    set user_nickname = #{userNickname,jdbcType=VARCHAR},
       user_avatar = #{userAvatar,jdbcType=VARCHAR},
       user_sex = #{userSex,jdbcType=TINYINT},
       user_birthday = #{userBirthday,jdbcType=VARCHAR},
       user_profession = #{userProfession,jdbcType=VARCHAR},
       user_living_city = #{userLivingCity,jdbcType=VARCHAR},
       user_motto = #{userMotto,jdbcType=VARCHAR},
-      user_languages_attention = #{userLanguagesAttention,jdbcType=INTEGER}
+      user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR}
     where user_detail_id = #{userDetailId,jdbcType=INTEGER}
   </update>
 </mapper>

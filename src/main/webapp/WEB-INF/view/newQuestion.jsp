@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ZJX
@@ -13,6 +12,8 @@
     <jsp:include page="staticHtml/header.jsp">
         <jsp:param name="title" value="提问问题"/>
     </jsp:include>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 </head>
 <body>
 <%@include file="staticHtml/nav.jsp"%>

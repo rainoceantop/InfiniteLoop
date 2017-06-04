@@ -12,6 +12,7 @@
     <association property="userDetail" javaType="UserDetail">
       <id column="user_detail_id" jdbcType="INTEGER" property="userDetailId"/>
       <result column="user_id" jdbcType="INTEGER" property="userId"/>
+      <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
       <result column="user_avatar" jdbcType="VARCHAR" property="userAvatar"/>
       <result column="user_sex" jdbcType="TINYINT" property="userSex"/>
       <result column="user_birthday" jdbcType="VARCHAR" property="userBirthday"/>

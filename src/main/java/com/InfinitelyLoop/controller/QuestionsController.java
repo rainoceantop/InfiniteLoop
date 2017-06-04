@@ -27,10 +27,8 @@ public class QuestionsController {
     public String queryItems(Model model) throws Exception {
         List<Questions> questions = questionsService.selectAllWithoutBlobs();
         HumanReadableTimeFormat hr = new HumanReadableTimeFormat();
-        //format
         for(Questions questions1:questions){
             questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
-          //questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByTimestamp(questions1.getQuestionAskedTime().getTime()));
         }
         model.addAttribute("questions", questions);
         return "/index";
@@ -57,8 +55,8 @@ public class QuestionsController {
         questions.setQuestionAskedTime(new Date());
         String lan = StringUtils.join(language,",");
         questions.setQuestionLanguage(lan);
-       questionsService.insertSelective(questions);
-       return "redirect:/";
+        questionsService.insertSelective(questions);
+        return "redirect:/";
     }
 
 }
