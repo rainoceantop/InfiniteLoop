@@ -11,3 +11,6 @@
 
 2017/5/28
 写了个问题提问的时间人性化显示的类 -->  questionAskedTimeHumanReadableFormat
+
+2017/6/4
+头像上传问题解决
