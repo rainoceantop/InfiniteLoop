@@ -1,7 +1,10 @@
 package com.InfinitelyLoop.tool;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 
+@Service
 public class HumanReadableTimeFormat {
     private final long ONE_SECOND = 1;
     private final long ONE_MINUTE = ONE_SECOND * 60;

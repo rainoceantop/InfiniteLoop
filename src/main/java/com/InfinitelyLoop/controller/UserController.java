@@ -5,6 +5,7 @@ import com.InfinitelyLoop.pojo.UserDetail;
 import com.InfinitelyLoop.service.impl.LanguageService;
 import com.InfinitelyLoop.service.impl.UserAccountService;
 import com.InfinitelyLoop.service.impl.UserDetailService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -86,13 +88,20 @@ public class UserController {
     @RequestMapping("/detail")
     public String detail(HttpSession httpSession,Model model){
         UserDetail userDetail = userDetailService.selectByUserId((Integer) httpSession.getAttribute("userId"));
+        java.util.List<String> userLanguage = languageService.selectColumnName();
+        userLanguage.remove("language_id");
+        userLanguage.remove("user_id");
+        userLanguage.remove("question_id");
+        model.addAttribute("userLanguage", userLanguage);
         model.addAttribute("userDetail", userDetail);
         return "/userDetail";
     }
 
     //处理用户资料更新
     @RequestMapping("detailHandle")
-    public String detailHandle(UserDetail userDetail, MultipartFile avatar) {
+    public String detailHandle(UserDetail userDetail, MultipartFile avatar, String[] language) {
+        String lan = StringUtils.join(language,",");
+        userDetail.setUserLanguagesAttention(lan);
         if(!avatar.isEmpty()){
             String pic_r_path = "/static/avatar/";
             String pic_a_path = request.getSession().getServletContext().getRealPath("/") + pic_r_path;

@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
@@ -21,12 +22,13 @@ public class QuestionsController {
     private QuestionsService questionsService;
     @Autowired
     private LanguageService languageService;
+    @Autowired
+    private HumanReadableTimeFormat hr;
 
     //主页
     @RequestMapping("/")
     public String queryItems(Model model) throws Exception {
         List<Questions> questions = questionsService.selectAllWithoutBlobs();
-        HumanReadableTimeFormat hr = new HumanReadableTimeFormat();
         for(Questions questions1:questions){
             questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
         }
@@ -57,6 +59,14 @@ public class QuestionsController {
         questions.setQuestionLanguage(lan);
         questionsService.insertSelective(questions);
         return "redirect:/";
+    }
+
+    @RequestMapping("/question/{questionId}/{questionTitle}")
+    public String questionDetail(Model model, @PathVariable("questionId") Integer questionId){
+        Questions question = questionsService.selectByPrimaryKey(questionId);
+        question.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(question.getQuestionAskedTime()));
+        model.addAttribute("question", question);
+        return "/question";
     }
 
 }

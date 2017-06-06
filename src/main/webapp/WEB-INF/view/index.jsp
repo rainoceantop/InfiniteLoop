@@ -27,7 +27,7 @@
     <c:forEach items="${questions}" var="question">
         <div class="question_box">
             <div class="q_title">
-                <a href="#">${question.questionTitle}</a>
+                <a href="/question/${question.questionId}/${question.questionTitle}">${question.questionTitle}</a>
             </div>
             <div class="q_language">
                 <c:forEach items="${question.questionLanguage}" var="question_language">

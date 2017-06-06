@@ -16,13 +16,12 @@
     </jsp:include>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
     <link rel="stylesheet" href="/static/css/fileinput.min.css"/>
-    <link rel="stylesheet" href="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/css/Jcrop.min.css"/>
     <link rel="stylesheet" href="/static/css/userDetail.css">
     <script src="/static/js/fileinput.min.js"></script>
     <script src="/static/js/zh.js"></script>
     <script src="/static/js/userDetail.js"></script>
-    <script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.min.js"></script>
 </head>
 <body>
 <!-- 导航条 -->
@@ -35,21 +34,40 @@
                 <strong>${userDetail.userNickname}</strong>
             </p>
         </div>
-        <div class="col-md-9 user-detail-display">
-            <p><strong>用户性别：</strong><c:if test="${userDetail.userSex eq 1}">男</c:if><c:if test="${userDetail.userSex eq 0}">女</c:if></p>
-            <p><strong>用户生日：</strong>${userDetail.userBirthday}</p>
-            <p><strong>用户职业：</strong>${userDetail.userProfession}</p>
-            <p><strong>现居城市：</strong>${userDetail.userLivingCity}</p>
-            <strong>关注语言：</strong>
-            <div class="u_language">
-                <c:forEach items="${userDetail.userLanguagesAttention}" var="user_language">
-                    <div class="u_language_box">
-                            ${user_language}
+        <div class="col-md-9 user-detail-display text-overflow">
+            <dl class="dl-horizontal">
+                <dt>用户性别：</dt>
+                <dd><c:if test="${userDetail.userSex eq 1}">男</c:if><c:if test="${userDetail.userSex eq 0}">女</c:if></dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>用户生日：</dt>
+                <dd>${userDetail.userBirthday}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>用户职业：</dt>
+                <dd>${userDetail.userProfession}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>现居城市：</dt>
+                <dd>${userDetail.userLivingCity}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>关注语言：</dt>
+                <dd>
+                    <div class="u_language">
+                        <c:forEach items="${userDetail.userLanguagesAttention}" var="user_language">
+                            <div class="u_language_box">
+                                ${user_language}
+                            </div>
+                        </c:forEach>
                     </div>
-                </c:forEach>
-            </div>
-            <p><strong>箴言/座右铭：</strong>${userDetail.userMotto}</p>
-            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#detail-update">
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>箴言/座右铭：</dt>
+                <dd>${userDetail.userMotto}</dd>
+            </dl>
+            <button type="button" class="btn btn-primary btn-md" style="margin-left: 20%" data-toggle="modal" data-target="#detail-update">
                 修改
             </button>
         </div>
@@ -66,7 +84,7 @@
                             <input type="hidden" name="userId" value="${userDetail.userId}">
                             <div class="form-group">
                                 <img src="#" style="display: none;" class="img-responsive user-image center-block" id="user_image">
-                                <label>头像(大小不超过1M)</label>
+                                <label>头像(只支持jpg,png,gif大小不超过1M)</label>
                                 <input type="file" name="avatar" class="form-control" value="${userDetail.userAvatar}">
                             </div>
                             <div class="form-group">
@@ -85,7 +103,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="birthday">生日</label>
-                                <input id="birthday" type="datetime" class="form-control" name="userBirthday" value="${userDetail.userBirthday}">
+                                <input id="birthday" type="date" class="form-control" name="userBirthday" value="${userDetail.userBirthday}">
                             </div>
                             <div class="form-group">
                                 <label for="profession">职业</label>
@@ -97,7 +115,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="language">语言</label>
-                                <input id="language" type="text" class="form-control" name="userLanguagesAttention" value="${userDetail.userLanguagesAttention}">
+                                <div id="language" class="form-control" style="height: auto;float: left;">
+                                    <c:forEach items="${userLanguage}" var="language">
+                                        <span class="languagebind"><input type="checkbox" name="language" title="${language}" value="${language}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language eq user_language}">checked="checked"</c:if></c:forEach>>${language}</span>
+                                    </c:forEach>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="motto">箴言/座右铭</label>
@@ -114,7 +136,7 @@
                                 showRemove:false,
                                 showUpload:false,
                                 autoReplace:true,
-                                allowedFileExtensions:["jpg","jpeg","png","gif"]
+                                allowedFileExtensions:["jpg","png","gif"]
                             })
                         </script>
                     </div>

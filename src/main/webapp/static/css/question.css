@@ -1,16 +1,21 @@
-.question_box{
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-}
-
-.q_title{
-    font-size: 18px;
+.question-title{
     font-weight: bold;
+    font-size: 25px;
+    border-bottom: 1px solid #EDEDED;
+}
+.question-content{
+    font-size: 15px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EDEDED;
+}
+.post_time{
+    width: auto;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: lightsteelblue;
 }
 .q_language{
-    width: 50%;
-    height: auto;
     float: left;
 }
 .q_language_box{
@@ -27,15 +32,4 @@
     font-weight: bold;
     color: aliceblue;
     padding: 3px 5px;
-}
-.post_time{
-    width: auto;
-    text-align: right;
-    font-size: 12px;
-    font-weight: bold;
-    color: lightsteelblue;
-}
-hr{
-    clear: both;
-    margin: 10px 0;
 }
