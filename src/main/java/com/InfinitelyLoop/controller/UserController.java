@@ -5,6 +5,7 @@ import com.InfinitelyLoop.pojo.UserDetail;
 import com.InfinitelyLoop.service.impl.LanguageService;
 import com.InfinitelyLoop.service.impl.UserAccountService;
 import com.InfinitelyLoop.service.impl.UserDetailService;
+import com.InfinitelyLoop.tool.Languages;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,8 +30,6 @@ public class UserController {
     private UserAccountService userAccountService;
     @Autowired
     private UserDetailService userDetailService;
-    @Autowired
-    private LanguageService languageService;
     @Autowired
     private HttpServletRequest request;
 
@@ -88,11 +87,8 @@ public class UserController {
     @RequestMapping("/detail")
     public String detail(HttpSession httpSession,Model model){
         UserDetail userDetail = userDetailService.selectByUserId((Integer) httpSession.getAttribute("userId"));
-        java.util.List<String> userLanguage = languageService.selectColumnName();
-        userLanguage.remove("language_id");
-        userLanguage.remove("user_id");
-        userLanguage.remove("question_id");
-        model.addAttribute("userLanguage", userLanguage);
+        EnumMap<Languages, String> languagesMap = Languages.getLanguageMap();
+        model.addAttribute("languagesMap", languagesMap);
         model.addAttribute("userDetail", userDetail);
         return "/userDetail";
     }

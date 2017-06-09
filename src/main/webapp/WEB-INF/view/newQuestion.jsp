@@ -21,8 +21,8 @@
     <input type="hidden" name="userId" value="${sessionScope.userId}">
     题目：<input type="text" name="questionTitle"><br>
     内容：<textarea cols="50" rows="20" name="questionContent"></textarea><br>
-    语言：<c:forEach items="${questionLanguage}" var="language">
-            <input type="checkbox" name="language" title="${language}" value="${language}">${language}
+    语言：<c:forEach items="${languagesMap}" var="language">
+            <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
          </c:forEach>
     <input type="submit" value="提交">
 </form>

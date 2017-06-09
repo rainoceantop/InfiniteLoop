@@ -25,8 +25,8 @@ public class LanguageService implements CommonService<Language> {
         return languageMapper.insertSelective(record);
     }
 
-    public Language selectByPrimaryKey(Integer commentId) {
-        return languageMapper.selectByPrimaryKey(commentId);
+    public Language selectByPrimaryKey(Integer primaryKey) {
+        return languageMapper.selectByPrimaryKey(primaryKey);
     }
     public List<String> selectColumnName(){
         return languageMapper.selectColumnName();

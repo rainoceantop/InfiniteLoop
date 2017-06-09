@@ -23,8 +23,8 @@ public class RepliesService implements CommonService<Replies> {
         return repliesMapper.insertSelective(record);
     }
 
-    public Replies selectByPrimaryKey(Integer commentId) {
-        return repliesMapper.selectByPrimaryKey(commentId);
+    public Replies selectByPrimaryKey(Integer primaryKey) {
+        return repliesMapper.selectByPrimaryKey(primaryKey);
     }
 
     public int updateByPrimaryKeySelective(Replies record) {

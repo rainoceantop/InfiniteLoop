@@ -116,8 +116,8 @@
                             <div class="form-group">
                                 <label for="language">语言</label>
                                 <div id="language" class="form-control" style="height: auto;float: left;">
-                                    <c:forEach items="${userLanguage}" var="language">
-                                        <span class="languagebind"><input type="checkbox" name="language" title="${language}" value="${language}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language eq user_language}">checked="checked"</c:if></c:forEach>>${language}</span>
+                                    <c:forEach items="${languagesMap}" var="language">
+                                        <span class="languagebind"><input type="checkbox" name="language" title="${language.value}" value="${language.value}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language.value eq user_language}">checked="checked"</c:if></c:forEach>>${language.value}</span>
                                     </c:forEach>
                                 </div>
                             </div>

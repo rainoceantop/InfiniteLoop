@@ -10,8 +10,8 @@
 <head>
     <% request.setCharacterEncoding("UTF-8"); %>
     <jsp:include page="staticHtml/header.jsp">
-        <jsp:param name="title" value="123"/>
-        <jsp:param name="keywords" value="java,spring,springmvc"/>
+        <jsp:param name="title" value="${question.questionTitle}"/>
+        <jsp:param name="keywords" value="${question.questionLanguage}"/>
         <jsp:param name="description" value="请问这里出了什么错了。。。。"/>
     </jsp:include>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -31,9 +31,11 @@
 
     <div class="q_language">
         <c:forEach items="${question.questionLanguage}" var="question_language">
-            <div class="q_language_box">
-                    ${question_language}
-            </div>
+            <a href="/question/tag/${question_language ne 'c#' ? question_language : 'csharp'}">
+                <div class="q_language_box">
+                        ${question_language}
+                </div>
+            </a>
         </c:forEach>
     </div>
     <div class="post_time">

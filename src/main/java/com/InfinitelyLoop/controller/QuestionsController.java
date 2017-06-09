@@ -2,8 +2,8 @@ package com.InfinitelyLoop.controller;
 
 import com.InfinitelyLoop.pojo.Questions;
 import com.InfinitelyLoop.service.impl.QuestionsService;
-import com.InfinitelyLoop.service.impl.LanguageService;
 import com.InfinitelyLoop.tool.HumanReadableTimeFormat;
+import com.InfinitelyLoop.tool.Languages;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.EnumMap;
 import java.util.List;
 
 @Controller
@@ -21,17 +22,14 @@ public class QuestionsController {
     @Autowired
     private QuestionsService questionsService;
     @Autowired
-    private LanguageService languageService;
-    @Autowired
     private HumanReadableTimeFormat hr;
+
 
     //主页
     @RequestMapping("/")
     public String queryItems(Model model) throws Exception {
         List<Questions> questions = questionsService.selectAllWithoutBlobs();
-        for(Questions questions1:questions){
-            questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
-        }
+        timeformat(questions);
         model.addAttribute("questions", questions);
         return "/index";
     }
@@ -42,12 +40,9 @@ public class QuestionsController {
         if(httpSession.getAttribute("nickname") == null){
             return "redirect:/";
         }
+        EnumMap<Languages,String> languagesMap = Languages.getLanguageMap();
 
-        List<String> questionLanguage = languageService.selectColumnName();
-        questionLanguage.remove("language_id");
-        questionLanguage.remove("user_id");
-        questionLanguage.remove("question_id");
-        model.addAttribute("questionLanguage", questionLanguage);
+        model.addAttribute("languagesMap", languagesMap);
         return "/newQuestion";
     }
 
@@ -61,6 +56,7 @@ public class QuestionsController {
         return "redirect:/";
     }
 
+    //查看问题
     @RequestMapping("/question/{questionId}/{questionTitle}")
     public String questionDetail(Model model, @PathVariable("questionId") Integer questionId){
         Questions question = questionsService.selectByPrimaryKey(questionId);
@@ -69,4 +65,41 @@ public class QuestionsController {
         return "/question";
     }
 
+    //搜索tag, .+解决点号后忽略的问题
+    @RequestMapping("/question/tag/{question_language:.+}")
+    public String queryTag(Model model, @PathVariable("question_language") String question_language){
+        //单独处理c#
+        if(question_language.equals("csharp"))
+            question_language = "c#";
+        String tag = "Tag:" + question_language;
+        List<Questions> questions = questionsService.selectByLanguageTag(question_language);
+        timeformat(questions);
+        model.addAttribute("questions", questions);
+        model.addAttribute("TagOrString", tag);
+        return "/index";
+    }
+
+    //问题搜索
+    @RequestMapping("/question/query")
+    public String queryString(String queryString,Model model){
+        if(queryString.length() > 4 && queryString.substring(0,4).toLowerCase().equals("tag:")){
+            return "forward:/question/tag/" + queryString.substring(4);
+        }
+        EnumMap<Languages,String> languagesMap = Languages.getLanguageMap();
+        if(languagesMap.containsValue(queryString.toLowerCase())){
+            return "forward:/question/tag/" + queryString;
+        }
+        List<Questions> questions = questionsService.selectByQuestionTitle(queryString);
+        timeformat(questions);
+        model.addAttribute("questions", questions);
+        model.addAttribute("TagOrString", queryString);
+        return "/index";
+    }
+
+    //加工时间显示
+    private void timeformat(List<Questions> questions){
+        for(Questions questions1:questions){
+            questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
+        }
+    }
 }

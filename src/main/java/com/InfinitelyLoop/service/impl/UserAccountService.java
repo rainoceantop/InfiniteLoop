@@ -23,8 +23,8 @@ public class UserAccountService implements CommonService<UserAccount>{
         return userAccountMapper.insertSelective(record);
     }
 
-    public UserAccount selectByPrimaryKey(Integer commentId) {
-        return userAccountMapper.selectByPrimaryKey(commentId);
+    public UserAccount selectByPrimaryKey(Integer primaryKey) {
+        return userAccountMapper.selectByPrimaryKey(primaryKey);
     }
     public UserAccount selectByUsername(String username){
         return userAccountMapper.selectByUsername(username);

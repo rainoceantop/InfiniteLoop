@@ -25,8 +25,8 @@ public class CommentsService implements CommonService<Comments> {
         return commentsMapper.insertSelective(record);
     }
 
-    public Comments selectByPrimaryKey(Integer commentId) {
-        return commentsMapper.selectByPrimaryKey(commentId);
+    public Comments selectByPrimaryKey(Integer primaryKey) {
+        return commentsMapper.selectByPrimaryKey(primaryKey);
     }
 
     public int updateByPrimaryKeySelective(Comments record) {

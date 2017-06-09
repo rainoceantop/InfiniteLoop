@@ -26,11 +26,22 @@ public class QuestionsService implements CommonService<Questions> {
         return questionsMapper.insertSelective(record);
     }
 
-    public Questions selectByPrimaryKey(Integer commentId) {
-        return questionsMapper.selectByPrimaryKey(commentId);
+    public Questions selectByPrimaryKey(Integer primaryKey) {
+        return questionsMapper.selectByPrimaryKey(primaryKey);
     }
     public List<Questions> selectAllWithoutBlobs(){
         return questionsMapper.selectAllWithoutBlobs();
+    }
+
+    public List<String> selectQuestionLanguage(){
+        return questionsMapper.selectQuestionLanguage();
+    }
+
+    public List<Questions> selectByLanguageTag(String tag){
+        return questionsMapper.selectByLanguageTag(tag);
+    }
+    public List<Questions> selectByQuestionTitle(String queryString){
+        return questionsMapper.selectByQuestionTitle(queryString);
     }
 
     public int updateByPrimaryKeySelective(Questions record) {

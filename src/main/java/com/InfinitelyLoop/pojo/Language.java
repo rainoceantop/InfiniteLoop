@@ -1,5 +1,8 @@
 package com.InfinitelyLoop.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Language {
     private Integer languageId;
 
@@ -46,6 +49,32 @@ public class Language {
     private Byte perl;
 
     private Integer questionId;
+
+
+    public Language(Integer userId, List<Byte> language, Integer questionId) {
+        this.userId = userId;
+        this.java = language.get(0);
+        this.php = language.get(1);
+        this.python = language.get(2);
+        this.javascript = language.get(3);
+        this.golang = language.get(4);
+        this.c = language.get(5);
+        this.csharp = language.get(6);
+        this.cpp = language.get(7);
+        this.swift = language.get(8);
+        this.h5 = language.get(9);
+        this.css3 = language.get(10);
+        this.kotlin = language.get(11);
+        this.nodejs = language.get(12);
+        this.net = language.get(13);
+        this.ruby = language.get(14);
+        this.sql = language.get(15);
+        this.objectiveC = language.get(16);
+        this.r = language.get(17);
+        this.visualBasic = language.get(18);
+        this.perl = language.get(19);
+        this.questionId = questionId;
+    }
 
     public Integer getLanguageId() {
         return languageId;

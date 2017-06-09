@@ -17,6 +17,10 @@ public interface QuestionsMapper {
 
     List<Questions> selectAllWithoutBlobs();
 
+    List<Questions> selectByLanguageTag(String tag);
+    List<String> selectQuestionLanguage();
+    List<Questions> selectByQuestionTitle(String queryString);
+
     int updateByPrimaryKeySelective(Questions record);
 
     int updateByPrimaryKeyWithBLOBs(Questions record);

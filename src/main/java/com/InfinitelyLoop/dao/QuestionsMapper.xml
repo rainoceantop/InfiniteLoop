@@ -29,7 +29,27 @@
   <select id="selectAllWithoutBlobs" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
+    from questions order by question_asked_time desc
+  </select>
+  <select id="selectByLanguageTag" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
     from questions
+    <where>
+      <if test="_parameter != null">
+        locate(concat(concat('[',#{_parameter}),']'),concat(concat('[',REPLACE(question_language,',','],[')),']')) > 0 order by question_asked_time desc
+      </if>
+    </where>
+  </select>
+  <select id="selectByQuestionTitle" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from questions
+    <where>
+      <if test="_parameter != null">
+        question_title like "%${_parameter}%" order by question_asked_time desc
+      </if>
+    </where>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from questions

@@ -27,9 +27,9 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" action="/question/query" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" name="queryString" class="form-control" placeholder="Search" value="${TagOrString}">
                 </div>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>

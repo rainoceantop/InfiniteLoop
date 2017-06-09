@@ -31,9 +31,11 @@
             </div>
             <div class="q_language">
                 <c:forEach items="${question.questionLanguage}" var="question_language">
-                    <div class="q_language_box">
-                         ${question_language}
-                    </div>
+                    <a href="/question/tag/${question_language ne 'c#' ? question_language : 'csharp'}">
+                        <div class="q_language_box">
+                                ${question_language}
+                        </div>
+                    </a>
                 </c:forEach>
             </div>
             <%-- show formatted asked time(questionAskedTimeHumanReadableFormat) --%>

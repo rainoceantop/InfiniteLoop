@@ -23,8 +23,8 @@ public class UserDetailService implements CommonService<UserDetail> {
         return userDetailMapper.insertSelective(record);
     }
 
-    public UserDetail selectByPrimaryKey(Integer commentId) {
-        return userDetailMapper.selectByPrimaryKey(commentId);
+    public UserDetail selectByPrimaryKey(Integer primaryKey) {
+        return userDetailMapper.selectByPrimaryKey(primaryKey);
     }
     public UserDetail selectByUserId(Integer userId){
         return userDetailMapper.selectByUserId(userId);

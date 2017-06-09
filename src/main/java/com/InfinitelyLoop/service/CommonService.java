@@ -7,7 +7,7 @@ public interface CommonService<T> {
 
     int insertSelective(T record);
 
-    T selectByPrimaryKey(Integer commentId);
+    T selectByPrimaryKey(Integer primaryKey);
 
     int updateByPrimaryKeySelective(T record);
 
