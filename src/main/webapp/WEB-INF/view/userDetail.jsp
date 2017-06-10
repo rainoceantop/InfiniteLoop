@@ -36,23 +36,23 @@
         </div>
         <div class="col-md-9 user-detail-display text-overflow">
             <dl class="dl-horizontal">
-                <dt>用户性别：</dt>
+                <dt>性别：</dt>
                 <dd><c:if test="${userDetail.userSex eq 1}">男</c:if><c:if test="${userDetail.userSex eq 0}">女</c:if></dd>
             </dl>
             <dl class="dl-horizontal">
-                <dt>用户生日：</dt>
+                <dt>生日：</dt>
                 <dd>${userDetail.userBirthday}</dd>
             </dl>
             <dl class="dl-horizontal">
-                <dt>用户职业：</dt>
+                <dt>职业：</dt>
                 <dd>${userDetail.userProfession}</dd>
             </dl>
             <dl class="dl-horizontal">
-                <dt>现居城市：</dt>
+                <dt>城市：</dt>
                 <dd>${userDetail.userLivingCity}</dd>
             </dl>
             <dl class="dl-horizontal">
-                <dt>关注语言：</dt>
+                <dt>语言：</dt>
                 <dd>
                     <div class="u_language">
                         <c:forEach items="${userDetail.userLanguagesAttention}" var="user_language">
@@ -117,7 +117,9 @@
                                 <label for="language">语言</label>
                                 <div id="language" class="form-control" style="height: auto;float: left;">
                                     <c:forEach items="${languagesMap}" var="language">
-                                        <span class="languagebind"><input type="checkbox" name="language" title="${language.value}" value="${language.value}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language.value eq user_language}">checked="checked"</c:if></c:forEach>>${language.value}</span>
+                                        <div class="languageSelect">
+                                            <input type="checkbox" name="language" title="${language.value}" value="${language.value}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language.value eq user_language}">checked="checked"</c:if></c:forEach>>${language.value}
+                                        </div>
                                     </c:forEach>
                                 </div>
                             </div>

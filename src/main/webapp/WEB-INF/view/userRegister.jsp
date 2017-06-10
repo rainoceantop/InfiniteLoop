@@ -16,15 +16,29 @@
     </jsp:include>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <link rel="stylesheet" href="/static/css/lr.css">
+    <script src="/static/js/lr.js"></script>
 </head>
 <body>
-<form method="post" action="/user/registerHandle">
-    用户名：<input type="text" name="userUsername" title="用户名">
-    密码：<input type="password" name="userPassword" title="密码">
-    名称：<input type="text" name="userNickname" title="名称">
-    电子邮箱：<input type="text" name="userEmail" title="电子邮箱">
-    <input type="submit" value="注册">
-</form>
+<!-- 导航条 -->
+<%@include file="staticHtml/nav.jsp"%>
+
+<div class="container" style="text-align: center">
+    <div class="form-register">
+        <form method="post" action="/user/registerHandle">
+            <label for="username" class="pull-left">用户名</label>
+            <input type="text" id="username" class="text-field" name="userUsername" title="用户名" placeholder="账号">
+            <label for="password" class="pull-left">密码</label>
+            <input type="password" id="password" class="text-field" name="userPassword" title="密码" placeholder="密码">
+            <label for="user" class="pull-left">名称</label>
+            <input type="text" id="user" class="text-field" name="userNickname" title="名称" placeholder="名称">
+            <label for="email" class="pull-left">e-mail</label>
+            <input type="email" id="email" class="text-field" name="userEmail" title="e-mail" placeholder="电子邮箱">
+            <a href="javascript:void(0);" class="a-btn" id="login-button">注册</a>
+        </form>
+    </div>
+</div>
+
 
 </body>
 </html>

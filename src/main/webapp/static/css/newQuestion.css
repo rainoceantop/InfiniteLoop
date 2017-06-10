@@ -1,0 +1,40 @@
+.languageSelect{
+    min-width: 40px;
+    height: 25px;
+    border: 1px solid #E0EEEE;
+    border-radius: 8px;
+    background: aliceblue;
+    float: left;
+    text-align: center;
+    margin: -1px 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+    padding: 3px 5px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.languageSelect > input{
+    display: none;
+}
+.a-btn{
+    padding: 8px 23px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    background: #87CEFA;
+    color: #FFFFF0;
+    font-weight: bold;
+    clear: both;
+}
+.a-btn:hover{
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    text-decoration: none;
+    color: #FFFFF0;
+}
+.a-btn:visited{
+     text-decoration: none;
+     color: #FFFFF0;
+ }
+.a-btn:link{
+    text-decoration: none;
+    color: #FFFFF0;
+}

@@ -19,9 +19,7 @@
 
 <div class="container">
     <h3 class="text-left">全部问题</h3>
-    <div class="text-right">
-        <a href="/newQuestion">提问问题</a>
-    </div>
+    <a href="/newQuestion" class="text-right">提问问题</a>
     <hr>
     <!-- 问题陈列 -->
     <c:forEach items="${questions}" var="question">
@@ -33,7 +31,7 @@
                 <c:forEach items="${question.questionLanguage}" var="question_language">
                     <a href="/question/tag/${question_language ne 'c#' ? question_language : 'csharp'}">
                         <div class="q_language_box">
-                                ${question_language}
+                            ${question_language}
                         </div>
                     </a>
                 </c:forEach>

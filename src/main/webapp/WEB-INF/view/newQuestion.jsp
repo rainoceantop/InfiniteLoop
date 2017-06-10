@@ -14,17 +14,36 @@
     </jsp:include>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <link rel="stylesheet" href="/static/css/newQuestion.css">
+    <script src="/static/js/newQuestion.js"></script>
 </head>
 <body>
 <%@include file="staticHtml/nav.jsp"%>
-<form action="/newQuestionHandle" method="post" name="newQuestionForm">
-    <input type="hidden" name="userId" value="${sessionScope.userId}">
-    题目：<input type="text" name="questionTitle"><br>
-    内容：<textarea cols="50" rows="20" name="questionContent"></textarea><br>
-    语言：<c:forEach items="${languagesMap}" var="language">
-            <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
-         </c:forEach>
-    <input type="submit" value="提交">
-</form>
+
+<div class="container">
+    <form action="/newQuestionHandle" method="post" name="newQuestionForm">
+        <input type="hidden" name="userId" value="${sessionScope.userId}">
+        <div class="form-group">
+            <label for="question-title">题目</label>
+            <input id="question-title" type="text" class="form-control" name="questionTitle">
+        </div>
+        <div class="form-group">
+            <label for="question-content">内容</label>
+            <textarea id="question-content" cols="50" rows="20" class="form-control" name="questionContent"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="language-tag">标签</label>
+            <div id="language-tag">
+                <c:forEach items="${languagesMap}" var="language">
+                    <div class="languageSelect">
+                        <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+        <hr style="clear: both">
+        <a href="javascript:void(0);" class="a-btn" id="new-question-button">发表</a>
+    </form>
+</div>
 </body>
 </html>

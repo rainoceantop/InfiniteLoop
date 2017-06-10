@@ -38,7 +38,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${empty sessionScope.userId}">
-                    <li><a href="/user/login">登陆</a></li>
+                    <li><a href="/user/login">登录</a></li>
                     <li><a href="/user/register">注册</a></li>
                 </c:if>
                 <c:if test="${not empty sessionScope.userId}">
