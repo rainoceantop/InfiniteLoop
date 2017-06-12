@@ -2,7 +2,6 @@ package com.InfinitelyLoop.controller;
 
 import com.InfinitelyLoop.pojo.UserAccount;
 import com.InfinitelyLoop.pojo.UserDetail;
-import com.InfinitelyLoop.service.impl.LanguageService;
 import com.InfinitelyLoop.service.impl.UserAccountService;
 import com.InfinitelyLoop.service.impl.UserDetailService;
 import com.InfinitelyLoop.tool.Languages;
@@ -14,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;

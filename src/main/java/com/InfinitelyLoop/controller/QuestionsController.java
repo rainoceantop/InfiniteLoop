@@ -4,17 +4,26 @@ import com.InfinitelyLoop.pojo.Questions;
 import com.InfinitelyLoop.service.impl.QuestionsService;
 import com.InfinitelyLoop.tool.HumanReadableTimeFormat;
 import com.InfinitelyLoop.tool.Languages;
+import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
+import com.qiniu.common.Zone;
+import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.storage.model.DefaultPutRet;
+import com.qiniu.util.Auth;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.EnumMap;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 @Controller
 public class QuestionsController {
@@ -23,6 +32,8 @@ public class QuestionsController {
     private QuestionsService questionsService;
     @Autowired
     private HumanReadableTimeFormat hr;
+    @Autowired
+    private HttpServletRequest request;
 
 
     //主页
@@ -54,6 +65,54 @@ public class QuestionsController {
         questions.setQuestionLanguage(lan);
         questionsService.insertSelective(questions);
         return "redirect:/";
+    }
+    //问题图片处理
+    @ResponseBody
+    @RequestMapping(value = "/questionImgHandle", method = RequestMethod.POST)
+    public String questionImgHandle(@RequestParam("questionContentImg") MultipartFile questionContentImg){
+        Response response = null;
+        if(!questionContentImg.isEmpty()){
+            String[] contentType = {"image/jpeg","image/png","image/gif"};
+            if(isContains(contentType, questionContentImg.getContentType())){
+                //构造一个带指定Zone对象的配置类
+                Configuration cfg = new Configuration(Zone.zone2());
+                //...其他参数参考类注释
+                UploadManager uploadManager = new UploadManager(cfg);
+                //...生成上传凭证，然后准备上传
+                String accessKey = "M2TrolxfManTFNP4Clr3M12JW0tvAaCV0xIbrZk5";
+                String secretKey = "Llh0byt0KDHwiFlcNVvPiTpQSrH8IrZSt5puu1zS";
+                String bucket = "infinitelyloopimg";
+                //默认不指定key的情况下，以文件内容的hash值作为文件名
+                String key = null;
+                Auth auth = Auth.create(accessKey, secretKey);
+                String upToken = auth.uploadToken(bucket);
+                String pic_r_path = "/static/questionImg/";
+                String pic_a_path = request.getSession().getServletContext().getRealPath("/") + pic_r_path;
+                String tempUrl = pic_a_path + questionContentImg.getOriginalFilename();
+                File file = new File(tempUrl);
+                try {
+                    questionContentImg.transferTo(file);
+                    response = uploadManager.put(tempUrl, key, upToken);
+                    if(file.isFile() && file.exists()){
+                        file.delete();
+                    }
+                    //解析上传成功的结果
+                    DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+                    return "orfbw2a1e.bkt.clouddn.com/" + putRet.hash;
+                } catch (QiniuException ex) {
+                    Response r = ex.response;
+                    try {
+                        System.err.println(r.bodyString());
+                    } catch (QiniuException ex2) {
+                        //ignore
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return "ERROR";
+        }
+        return "ERROR";
     }
 
     //查看问题
@@ -101,5 +160,14 @@ public class QuestionsController {
         for(Questions questions1:questions){
             questions1.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(questions1.getQuestionAskedTime()));
         }
+    }
+
+    //数组是否包含
+    private boolean isContains(String[] arr, String s){
+        for(String a : arr){
+            if(a.equals(s))
+                return true;
+        }
+        return false;
     }
 }

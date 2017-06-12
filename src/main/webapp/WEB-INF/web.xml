@@ -30,6 +30,8 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+
+
   
   <!-- 加载spring容器 -->
   <context-param>
@@ -49,6 +51,7 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/springMvc.xml</param-value>
     </init-param>
+
   </servlet>
   <servlet-mapping>
     <servlet-name>springMvc</servlet-name>

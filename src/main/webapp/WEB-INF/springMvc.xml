@@ -23,6 +23,7 @@
 
     <!-- 静态资源解析 -->
     <mvc:resources mapping="/**/**" location="/static"/>
+    <mvc:resources mapping="/**" location="classpath:/questionImg"/>
 
     <!-- 视图解析器，解析jsp页面，默认使用jstl标签，需要引入jstl的包-->
     <!--
@@ -39,6 +40,5 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 设置上传文件的最大尺寸为5MB -->
         <property name="maxUploadSize" value="5242880"/>
-        <property name="uploadTempDir" value="/static/avatar"/>
     </bean>
 </beans>

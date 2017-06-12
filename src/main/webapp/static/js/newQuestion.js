@@ -18,6 +18,43 @@ $(function () {
         }
     })
     $("#new-question-button").click(function () {
+        compile()
         $(this).parents("form").submit()
     })
+
+    $("#upload-question-button").click(function () {
+        $("#img-upload-panel").show()
+    })
+    $("#question-img-button").click(function () {
+        var formdata = new FormData($(this).parents("form")[0])
+        $.ajax({
+            url:"/questionImgHandle",
+            type:"post",
+            async:false,
+            data: formdata,
+            processData:false,
+            contentType:false,
+            success:function (result) {
+                if(result != "ERROR"){
+                    $("#img-upload-panel").hide()
+                    var url = 'http://' + result
+                    $("#question-content").val($("#question-content").val() + "\n![](" + url + ")")
+                }
+                else{
+                    alert(result)
+                }
+            }
+        })
+    })
+
+
+
+    //编译文本域的markdown
+    function compile() {
+        var questionContent = $("#question-content")
+        var text = questionContent.val()
+        var converter = new showdown.Converter()
+        var html = converter.makeHtml(text)
+        questionContent.val(html)
+    }
 })
