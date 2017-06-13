@@ -26,7 +26,7 @@
 <body>
 <!-- 导航条 -->
 <%@include file="staticHtml/nav.jsp"%>
-<div class="container">
+<div class="container user-detail-container">
     <div class="row">
         <div class="col-md-3 text-center">
             <img src="${userDetail.userAvatar}" class="img-responsive user-image center-block"/>
@@ -35,6 +35,10 @@
             </p>
         </div>
         <div class="col-md-9 user-detail-display text-overflow">
+            <dl class="dl-horizontal">
+                <dt>名称：</dt>
+                <dd>${userDetail.userNickname}</dd>
+            </dl>
             <dl class="dl-horizontal">
                 <dt>性别：</dt>
                 <dd><c:if test="${userDetail.userSex eq 1}">男</c:if><c:if test="${userDetail.userSex eq 0}">女</c:if></dd>

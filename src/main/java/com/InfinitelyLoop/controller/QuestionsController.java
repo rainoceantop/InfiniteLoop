@@ -13,6 +13,7 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,7 +70,7 @@ public class QuestionsController {
     //问题图片处理
     @ResponseBody
     @RequestMapping(value = "/questionImgHandle", method = RequestMethod.POST)
-    public String questionImgHandle(@RequestParam("questionContentImg") MultipartFile questionContentImg){
+    public String questionImgHandle(@RequestParam("questionContentImg") MultipartFile questionContentImg,@RequestParam(value = "editType") int editType, @RequestParam(value = "imgWidth",required = false) String w, @RequestParam(value = "imgHeight", required = false) String h){
         Response response = null;
         if(!questionContentImg.isEmpty()){
             String[] contentType = {"image/jpeg","image/png","image/gif"};
@@ -98,7 +99,22 @@ public class QuestionsController {
                     }
                     //解析上传成功的结果
                     DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-                    return "orfbw2a1e.bkt.clouddn.com/" + putRet.hash;
+                    String url = "orfbw2a1e.bkt.clouddn.com/" + putRet.hash;
+                    if (editType == -1){
+                        return url;
+                    }
+                    else{
+                        url += "?imageView2";
+                        if (editType == 0){
+                            url += "/0";
+                        }
+                        if (editType == 1){
+                            url += "/1";
+                        }
+                        url += "/w/" + (w.equals("") ? "500" : w);
+                        url += "/h/" + (h.equals("") ? "300" : h);
+                        return url;
+                    }
                 } catch (QiniuException ex) {
                     Response r = ex.response;
                     try {
