@@ -21,6 +21,9 @@ public class UserDetail {
 
     private String userLanguagesAttention;
 
+    //头像存储版本，每次更新加一
+    private Integer v;
+
     public Integer getUserDetailId() {
         return userDetailId;
     }
@@ -99,5 +102,13 @@ public class UserDetail {
 
     public void setUserLanguagesAttention(String userLanguagesAttention) {
         this.userLanguagesAttention = userLanguagesAttention;
+    }
+
+    public Integer getV() {
+        return v;
+    }
+
+    public void setV(Integer v) {
+        this.v = v;
     }
 }

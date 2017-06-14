@@ -12,10 +12,11 @@
     <result column="user_living_city" jdbcType="VARCHAR" property="userLivingCity" />
     <result column="user_motto" jdbcType="VARCHAR" property="userMotto" />
     <result column="user_languages_attention" jdbcType="VARCHAR" property="userLanguagesAttention" />
+    <result column="v" jdbcType="INTEGER" property="v" />
   </resultMap>
   <sql id="Base_Column_List">
     user_detail_id, user_id, user_nickname, user_avatar, user_sex, user_birthday, user_profession, 
-    user_living_city, user_motto, user_languages_attention
+    user_living_city, user_motto, user_languages_attention, v
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -76,6 +77,9 @@
       <if test="userLanguagesAttention != null">
         user_languages_attention,
       </if>
+      <if test="v != null">
+        v,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="userDetailId != null">
@@ -107,6 +111,9 @@
       </if>
       <if test="userLanguagesAttention != null">
         #{userLanguagesAttention,jdbcType=VARCHAR},
+      </if>
+      <if test="v != null">
+        #{v,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -140,6 +147,9 @@
       <if test="userLanguagesAttention != null">
         user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR},
       </if>
+      <if test="v != null">
+        v = #{v,jdbcType=INTEGER},
+      </if>
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
@@ -170,6 +180,9 @@
       <if test="userLanguagesAttention != null">
         user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR},
       </if>
+      <if test="v != null">
+        v = #{v,jdbcType=INTEGER},
+      </if>
     </set>
     where user_detail_id = #{userDetailId,jdbcType=INTEGER}
   </update>
@@ -183,6 +196,13 @@
       user_living_city = #{userLivingCity,jdbcType=VARCHAR},
       user_motto = #{userMotto,jdbcType=VARCHAR},
       user_languages_attention = #{userLanguagesAttention,jdbcType=VARCHAR}
+      v = #{v,jdbcType=INTEGER}
     where user_detail_id = #{userDetailId,jdbcType=INTEGER}
+  </update>
+  <update id="updateUserAvatarByUserId" parameterType="UserDetail">
+    update user_detail
+    set user_avatar = #{userAvatar,jdbcType=VARCHAR},
+    v = #{v,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

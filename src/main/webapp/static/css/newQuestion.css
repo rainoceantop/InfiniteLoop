@@ -1,3 +1,4 @@
+
 .askQuestionBox{
     margin: 50px 0;
     padding: 25px 20px;
@@ -5,8 +6,18 @@
     width: 100%;
     height: auto;
     box-shadow: 4px 5px 8px rgba(0,0,0,0.4);
+    float: left;
 }
-
+/*.askQuestionBox {
+    margin: 50px 0;
+    padding: 25px 20px;
+    background: #F8F8FF;
+    width: 78%;
+    height: auto;
+    box-shadow: 4px 5px 8px rgba(0,0,0,0.4);
+    float: left;
+    margin-right: 2%;
+}*/
 .languageSelect{
     min-width: 40px;
     height: 25px;
@@ -25,27 +36,6 @@
 }
 .languageSelect > input{
     display: none;
-}
-.a-btn{
-    padding: 8px 23px;
-    box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
-    background: #87CEFA;
-    color: #FFFFF0;
-    font-weight: bold;
-    clear: both;
-}
-.a-btn:hover{
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    text-decoration: none;
-    color: #FFFFF0;
-}
-.a-btn:visited{
-     text-decoration: none;
-     color: #FFFFF0;
- }
-.a-btn:link{
-    text-decoration: none;
-    color: #FFFFF0;
 }
 #question-content{
     resize: vertical;
@@ -97,4 +87,27 @@
     background: none;
     box-shadow: inset 0 0 17px rgba(0,0,0,0.4);
     padding: 12px 14px;
+}
+.previewBox{
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    box-shadow: inset 0 0 17px rgba(0,0,0,0.4);
+    padding: 12px 14px;
+    margin-bottom: 50px;
+    word-wrap: break-word;
+    clear: both;
+}
+.markdown-guide {
+    width: 0;
+    height: 595px;
+    background: lightblue;
+    float: left;
+    margin: 50px 0;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.4);
+}
+.questionBox{
+    width: 100%;
+    height: auto;
+    float: left;
 }

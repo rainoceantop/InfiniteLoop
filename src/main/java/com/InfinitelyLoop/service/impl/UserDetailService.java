@@ -39,5 +39,7 @@ public class UserDetailService implements CommonService<UserDetail> {
     public int updateByPrimaryKey(UserDetail record) {
         return userDetailMapper.updateByPrimaryKey(record);
     }
-
+    public int updateUserAvatarByUserId(UserDetail record){
+        return userDetailMapper.updateUserAvatarByUserId(record);
+    }
 }

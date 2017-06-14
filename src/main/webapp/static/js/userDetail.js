@@ -20,6 +20,34 @@ $(function () {
             form.submit()
         }
     })
+
+
+    $("#avatar-update-button").click(function () {
+        $("#userAvatarField").click()
+    })
+
+    $("#userAvatarField").on("change",function () {
+        var formdata = new FormData($(this).parents("form")[0])
+        $.ajax({
+            url:"/user/userAvatarUpdate",
+            type:"post",
+            async:false,
+            data: formdata,
+            processData:false,
+            contentType:false,
+            success:function (result) {
+                if(result != "ERROR"){
+                    $("#userAvatar").fadeOut(500,function () {
+                        $(this).attr("src",result)
+                    }).show(1000)
+                }
+                else{
+                    alert(result)
+                }
+            }
+        })
+    })
+
     //语言选取框判定及动画
     $(".languageSelect").each(function () {
         if($(this).children("input").attr("checked"))

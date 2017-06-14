@@ -23,31 +23,41 @@
 <%@include file="staticHtml/nav.jsp"%>
 
 <div class="container">
-    <div class="askQuestionBox">
-        <form action="/newQuestionHandle" method="post" name="newQuestionForm">
-            <input type="hidden" name="userId" value="${sessionScope.userId}">
-            <div class="form-group">
-                <label for="question-title">题目</label>
-                <input id="question-title" type="text" name="questionTitle">
-            </div>
-            <div class="form-group">
-                <label for="question-content">内容</label>
-                <textarea id="question-content" contenteditable="true" name="questionContent"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="language-tag">标签</label>
-                <div id="language-tag">
-                    <c:forEach items="${languagesMap}" var="language">
-                        <div class="languageSelect">
-                            <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
-                        </div>
-                    </c:forEach>
+    <div class="questionBox">
+        <div class="askQuestionBox">
+            <form action="/newQuestionHandle" method="post" name="newQuestionForm">
+                <input type="hidden" name="userId" value="${sessionScope.userId}">
+                <div class="form-group">
+                    <label for="question-title">题目</label>
+                    <input id="question-title" type="text" name="questionTitle">
                 </div>
-            </div>
-            <hr style="clear: both">
-            <a href="javascript:void(0);" class="a-btn" id="upload-question-button">图片</a>
-            <a href="javascript:void(0);" class="a-btn" id="new-question-button">发表</a>
-        </form>
+                <div class="form-group">
+                    <label for="question-content">内容</label>
+                    <textarea id="question-content" contenteditable="true" name="questionContent"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="language-tag">标签</label>
+                    <div id="language-tag">
+                        <c:forEach items="${languagesMap}" var="language">
+                            <div class="languageSelect">
+                                <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+                <hr style="clear: both">
+                <a href="javascript:void(0);" class="a-btn" id="upload-question-button">图片</a>
+                <a href="javascript:void(0);" class="a-btn" id="new-question-button">发表</a>
+            </form>
+        </div>
+        <div class="markdown-guide" style="display: none">
+
+        </div>
+    </div>
+
+
+    <div class="previewBox">
+
     </div>
 
     <div id="img-upload-panel">

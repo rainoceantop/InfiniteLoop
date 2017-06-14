@@ -18,4 +18,5 @@ public interface UserDetailMapper {
     int updateByPrimaryKeySelective(UserDetail record);
 
     int updateByPrimaryKey(UserDetail record);
+    int updateUserAvatarByUserId(UserDetail record);
 }

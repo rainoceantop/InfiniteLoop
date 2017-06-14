@@ -17,10 +17,7 @@
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-    <link rel="stylesheet" href="/static/css/fileinput.min.css"/>
     <link rel="stylesheet" href="/static/css/userDetail.css">
-    <script src="/static/js/fileinput.min.js"></script>
-    <script src="/static/js/zh.js"></script>
     <script src="/static/js/userDetail.js"></script>
 </head>
 <body>
@@ -29,10 +26,16 @@
 <div class="container user-detail-container">
     <div class="row">
         <div class="col-md-3 text-center">
-            <img src="${userDetail.userAvatar}" class="img-responsive user-image center-block"/>
+            <img src="${userDetail.userAvatar}" id="userAvatar" class="img-responsive user-image center-block"/>
             <p class="text-info">
                 <strong>${userDetail.userNickname}</strong>
             </p>
+            <hr>
+            <form action="/user/userAvatarUpdate" METHOD="post" ENCTYPE="multipart/form-data">
+                <input type="hidden" name="userId" value="${userDetail.userId}">
+                <input type="file" name="userAvatar" id="userAvatarField" style="display: none">
+                <a href="javascript:void(0);" class="a-btn" id="avatar-update-button">修改头像</a>
+            </form>
         </div>
         <div class="col-md-9 user-detail-display text-overflow">
             <dl class="dl-horizontal">
@@ -60,9 +63,11 @@
                 <dd>
                     <div class="u_language">
                         <c:forEach items="${userDetail.userLanguagesAttention}" var="user_language">
-                            <div class="u_language_box">
-                                ${user_language}
-                            </div>
+                            <a href="/question/tag/${user_language ne 'c#' ? user_language : 'csharp'}">
+                                <div class="u_language_box">
+                                        ${user_language}
+                                </div>
+                            </a>
                         </c:forEach>
                     </div>
                 </dd>
@@ -84,13 +89,8 @@
                         <h4 class="modal-title">修改个人资料</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="/user/detailHandle" id="detail-update-form" method="post" enctype="multipart/form-data">
+                        <form action="/user/detailHandle" id="detail-update-form" method="post">
                             <input type="hidden" name="userId" value="${userDetail.userId}">
-                            <div class="form-group">
-                                <img src="#" style="display: none;" class="img-responsive user-image center-block" id="user_image">
-                                <label>头像(只支持jpg,png,gif大小不超过1M)</label>
-                                <input type="file" name="avatar" class="form-control" value="${userDetail.userAvatar}">
-                            </div>
                             <div class="form-group">
                                 <label for="nickname">名称</label>
                                 <input id="nickname" class="form-control" name="userNickname" value="${userDetail.userNickname}">
@@ -132,19 +132,6 @@
                                 <textarea id="motto" class="form-control" name="userMotto">${userDetail.userMotto}</textarea>
                             </div>
                         </form>
-                        <script>
-                            $("input[name=avatar]").fileinput({
-                                language:"zh",
-                                uploadUrl:"#",
-                                maxFileSize:1024,
-                                maxFileCount:1,
-                                showPreview:false,
-                                showRemove:false,
-                                showUpload:false,
-                                autoReplace:true,
-                                allowedFileExtensions:["jpg","png","gif"]
-                            })
-                        </script>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

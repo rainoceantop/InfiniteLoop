@@ -5,12 +5,22 @@ import com.InfinitelyLoop.pojo.UserDetail;
 import com.InfinitelyLoop.service.impl.UserAccountService;
 import com.InfinitelyLoop.service.impl.UserDetailService;
 import com.InfinitelyLoop.tool.Languages;
+import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
+import com.qiniu.common.Zone;
+import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.storage.model.DefaultPutRet;
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +41,7 @@ public class UserController {
     private HttpServletRequest request;
 
 
+
     //跳转到注册页面
     @RequestMapping("/register")
     public String register(){
@@ -44,6 +55,7 @@ public class UserController {
         UserDetail userDetail = new UserDetail();
         userDetail.setUserId(userAccount.getUserId());
         userDetail.setUserNickname(userAccount.getUserNickname());
+        userDetail.setV(1);
         userDetailService.insertSelective(userDetail);
         return "redirect:/";
     }
@@ -91,27 +103,85 @@ public class UserController {
     }
 
     //处理用户资料更新
-    @RequestMapping("detailHandle")
-    public String detailHandle(UserDetail userDetail, MultipartFile avatar, String[] language) {
+    @RequestMapping("/detailHandle")
+    public String detailHandle(UserDetail userDetail,UserAccount userAccount,String[] language, HttpSession httpSession) {
         String lan = StringUtils.join(language,",");
         userDetail.setUserLanguagesAttention(lan);
-        if(!avatar.isEmpty()){
-            String pic_r_path = "/static/avatar/";
-            String pic_a_path = request.getSession().getServletContext().getRealPath("/") + pic_r_path;
-            System.out.println(pic_a_path + "----------------------------------");
-            String originalName = avatar.getOriginalFilename();
-
-            String newFileName = userDetail.getUserId() + originalName.substring(originalName.lastIndexOf("."));
-            File file = new File(pic_a_path+newFileName);
-            try {
-                avatar.transferTo(file);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            userDetail.setUserAvatar(pic_r_path+newFileName);
-        }
         userDetailService.updateByUserIdSelective(userDetail);
+        int r = userAccountService.updateByPrimaryKeySelective(userAccount);
+        if(r == 1){
+            httpSession.removeAttribute("nickname");
+            httpSession.setAttribute("nickname", userAccount.getUserNickname());
+        }
         return "redirect:/user/detail";
+    }
+
+    @ResponseBody
+    @RequestMapping("/userAvatarUpdate")
+    public String userAvatarUpdate(MultipartFile userAvatar, int userId){
+        UserDetail userDetail = userDetailService.selectByUserId(userId);
+        Response response = null;
+        if(!userAvatar.isEmpty()){
+            String[] contentType = {"image/jpeg","image/png","image/gif"};
+            if(isContains(contentType, userAvatar.getContentType())){
+                //构造一个带指定Zone对象的配置类
+                Configuration cfg = new Configuration(Zone.zone2());
+                //...其他参数参考类注释
+                UploadManager uploadManager = new UploadManager(cfg);
+                //...生成上传凭证，然后准备上传
+                String accessKey = "M2TrolxfManTFNP4Clr3M12JW0tvAaCV0xIbrZk5";
+                String secretKey = "Llh0byt0KDHwiFlcNVvPiTpQSrH8IrZSt5puu1zS";
+                String bucket = "infinitelyloopimg";
+                //默认不指定key的情况下，以文件内容的hash值作为文件名
+                String key = "avatar-user-" + userId;
+                Auth auth = Auth.create(accessKey, secretKey);
+                String upToken = auth.uploadToken(bucket,key,3600,new StringMap().put("insertOnly",0));
+                System.out.println(upToken);
+                String pic_r_path = "/static/avatar/";
+                String pic_a_path = request.getSession().getServletContext().getRealPath("/") + pic_r_path;
+                String tempUrl = pic_a_path + userAvatar.getOriginalFilename();
+                File file = new File(tempUrl);
+                try {
+                    //头像移至缓冲区
+                    userAvatar.transferTo(file);
+                    //上传新的头像
+                    response = uploadManager.put(tempUrl, key, upToken);
+                    //删除缓冲区头像
+                    if(file.isFile() && file.exists()){
+                        file.delete();
+                    }
+                    //解析上传成功的结果
+                    DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+                    String url = "http://orfbw2a1e.bkt.clouddn.com/" + key + "?imageView2/0/w/400&v=" + userDetail.getV();
+                    userDetail.setUserId(userId);
+                    userDetail.setUserAvatar(url);
+                    //更新头像版本，让cdn可立即获取到最新上传的头像
+                    userDetail.setV(userDetail.getV() + 1);
+                    userDetailService.updateUserAvatarByUserId(userDetail);
+                    return url;
+
+                } catch (QiniuException ex) {
+                    Response r = ex.response;
+                    try {
+                        System.err.println(r.bodyString());
+                    } catch (QiniuException ex2) {
+                        //ignore
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return "ERROR";
+        }
+        return "ERROR";
+    }
+
+    //数组是否包含
+    private boolean isContains(String[] arr, String s){
+        for(String a : arr){
+            if(a.equals(s))
+                return true;
+        }
+        return false;
     }
 }
