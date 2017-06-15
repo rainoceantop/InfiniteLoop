@@ -21,3 +21,11 @@
     text-decoration: none;
     color: #FFFFF0;
 }
+pre{
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+hr{
+    margin: 5px 0;
+}

@@ -83,12 +83,18 @@ $(function () {
         if($(window).width() > 950){
             $(".askQuestionBox").css("width","78%").css("-webkit-transition","width 1s").css("margin-right","2%")
             $(".markdown-guide").show().css("width","20%").css("-webkit-transition","width 1s").css("-webkit-transition-delay","0.1s")
+            $(".guideBox").delay(1000).slideDown(500)
         }
     }).on("input",function () {
         var text = $(this).val()
         var converter = new showdown.Converter()
         var html = converter.makeHtml(text)
         $(".previewBox").html(html)
+    }).on("keydown",function (e) {
+        if(e.keyCode == 9){
+            $(this).val($(this).val() + "     ")
+            e.preventDefault()
+        }
     })
     /*on("blur",function () {
         if($(window).width() > 950){
