@@ -6,4 +6,5 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 

@@ -10,6 +10,6 @@
     <!-- 配置别名 -->
     <typeAliases>
         <!-- 批量扫描po包下的文件并以文件名首字母大小写自动配置别名 -->
-        <package name="com.InfinitelyLoop.pojo"/>
+        <package name="com.InfiniteLoop.pojo"/>
     </typeAliases>
 </configuration>

@@ -82,7 +82,7 @@ $(function () {
         //如果屏幕大于950，只显示一次,不消失
         if($(window).width() > 950){
             $(".askQuestionBox").css("width","78%").css("-webkit-transition","width 1s").css("margin-right","2%")
-            $(".markdown-guide").show().css("width","20%").css("-webkit-transition","width 1s").css("-webkit-transition-delay","0.1s")
+            $(".markdown-guide").delay(1000).fadeIn(500)
             $(".guideBox").delay(1000).slideDown(500)
         }
     }).on("input",function () {
@@ -95,6 +95,26 @@ $(function () {
             $(this).val($(this).val() + "     ")
             e.preventDefault()
         }
+    })
+    $("#tags-filter-icon").click(function () {
+        $(this).hide()
+        $(this).next().show(500)
+    })
+    $("#tags-filter").on("input",function () {
+        var filter = $(this).val()
+        $(".languageSelect").each(function () {
+            if($(this).children("input").val().length >= filter.length){
+                if($(this).children("input").val().substr(0,filter.length) != filter.toLowerCase()){
+                    $(this).hide()
+                }
+                else{
+                    $(this).show()
+                }
+            }
+            else{
+                $(this).hide()
+            }
+        })
     })
     /*on("blur",function () {
         if($(window).width() > 950){

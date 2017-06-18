@@ -43,6 +43,8 @@
                                 <input type="checkbox" name="language" title="${language.value}" value="${language.value}">${language.value}
                             </div>
                         </c:forEach>
+                        <i id="tags-filter-icon" class="fa fa-search pull-right" aria-hidden="true"></i>
+                        <input type="text" id="tags-filter" style="border-radius: 8px; padding: 0 5px; width: 100px; outline: none;background: none; box-shadow: 0 0 5px rgba(0,0,0,0.4); display: none;" class="pull-right" width="20px" placeholder="过滤标签">
                     </div>
                 </div>
                 <hr style="clear: both">
@@ -226,6 +228,7 @@
         </form>
     </div>
 </div>
+
 </body>
 <style>
     .panel{

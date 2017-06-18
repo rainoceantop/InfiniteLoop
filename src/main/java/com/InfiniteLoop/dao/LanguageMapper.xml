@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.InfiniteLoop.dao.LanguageMapper">
+  <resultMap id="BaseResultMap" type="Language">
+    <id column="language_id" jdbcType="INTEGER" property="languageId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="Java" jdbcType="TINYINT" property="java" />
+    <result column="PHP" jdbcType="TINYINT" property="php" />
+    <result column="Python" jdbcType="TINYINT" property="python" />
+    <result column="Javascript" jdbcType="TINYINT" property="javascript" />
+    <result column="Golang" jdbcType="TINYINT" property="golang" />
+    <result column="C" jdbcType="TINYINT" property="c" />
+    <result column="CSharp" jdbcType="TINYINT" property="csharp" />
+    <result column="Cpp" jdbcType="TINYINT" property="cpp" />
+    <result column="Swift" jdbcType="TINYINT" property="swift" />
+    <result column="H5" jdbcType="TINYINT" property="h5" />
+    <result column="CSS3" jdbcType="TINYINT" property="css3" />
+    <result column="Kotlin" jdbcType="TINYINT" property="kotlin" />
+    <result column="Nodejs" jdbcType="TINYINT" property="nodejs" />
+    <result column="Net" jdbcType="TINYINT" property="net" />
+    <result column="Ruby" jdbcType="TINYINT" property="ruby" />
+    <result column="SQL" jdbcType="TINYINT" property="sql" />
+    <result column="Objective-C" jdbcType="TINYINT" property="objectiveC" />
+    <result column="R" jdbcType="TINYINT" property="r" />
+    <result column="Visual Basic" jdbcType="TINYINT" property="visualBasic" />
+    <result column="Perl" jdbcType="TINYINT" property="perl" />
+    <result column="question_id" jdbcType="INTEGER" property="questionId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    language_id, user_id, Java, PHP, Python, Javascript, Golang, C, CSharp, Cpp, Swift, 
+    H5, CSS3, Kotlin, Nodejs, Net, Ruby, SQL, Objective-C, R, "Visual Basic", Perl, question_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from language
+    where language_id = #{languageId,jdbcType=INTEGER}
+  </select>
+  <select id="selectColumnName" resultType="java.lang.String">
+    select column_name  from information_schema.columns where table_name='language'
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from language
+    where language_id = #{languageId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="Language">
+    insert into language (language_id, user_id, Java, 
+      PHP, Python, Javascript, 
+      Golang, C, CSharp, 
+      Cpp, Swift, H5, CSS3, 
+      Kotlin, Nodejs, Net, 
+      Ruby, SQL, Objective-C, 
+      R, "Visual Basic", Perl, 
+      question_id)
+    values (#{languageId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{java,jdbcType=TINYINT}, 
+      #{php,jdbcType=TINYINT}, #{python,jdbcType=TINYINT}, #{javascript,jdbcType=TINYINT}, 
+      #{golang,jdbcType=TINYINT}, #{c,jdbcType=TINYINT}, #{csharp,jdbcType=TINYINT}, 
+      #{cpp,jdbcType=TINYINT}, #{swift,jdbcType=TINYINT}, #{h5,jdbcType=TINYINT}, #{css3,jdbcType=TINYINT}, 
+      #{kotlin,jdbcType=TINYINT}, #{nodejs,jdbcType=TINYINT}, #{net,jdbcType=TINYINT}, 
+      #{ruby,jdbcType=TINYINT}, #{sql,jdbcType=TINYINT}, #{objectiveC,jdbcType=TINYINT}, 
+      #{r,jdbcType=TINYINT}, #{visualBasic,jdbcType=TINYINT}, #{perl,jdbcType=TINYINT}, 
+      #{questionId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="Language">
+    insert into language
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="languageId != null">
+        language_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="java != null">
+        Java,
+      </if>
+      <if test="php != null">
+        PHP,
+      </if>
+      <if test="python != null">
+        Python,
+      </if>
+      <if test="javascript != null">
+        Javascript,
+      </if>
+      <if test="golang != null">
+        Golang,
+      </if>
+      <if test="c != null">
+        C,
+      </if>
+      <if test="csharp != null">
+        CSharp,
+      </if>
+      <if test="cpp != null">
+        Cpp,
+      </if>
+      <if test="swift != null">
+        Swift,
+      </if>
+      <if test="h5 != null">
+        H5,
+      </if>
+      <if test="css3 != null">
+        CSS3,
+      </if>
+      <if test="kotlin != null">
+        Kotlin,
+      </if>
+      <if test="nodejs != null">
+        Nodejs,
+      </if>
+      <if test="net != null">
+        Net,
+      </if>
+      <if test="ruby != null">
+        Ruby,
+      </if>
+      <if test="sql != null">
+        SQL,
+      </if>
+      <if test="objectiveC != null">
+        Objective-C,
+      </if>
+      <if test="r != null">
+        R,
+      </if>
+      <if test="visualBasic != null">
+        "Visual Basic",
+      </if>
+      <if test="perl != null">
+        Perl,
+      </if>
+      <if test="questionId != null">
+        question_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="languageId != null">
+        #{languageId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="java != null">
+        #{java,jdbcType=TINYINT},
+      </if>
+      <if test="php != null">
+        #{php,jdbcType=TINYINT},
+      </if>
+      <if test="python != null">
+        #{python,jdbcType=TINYINT},
+      </if>
+      <if test="javascript != null">
+        #{javascript,jdbcType=TINYINT},
+      </if>
+      <if test="golang != null">
+        #{golang,jdbcType=TINYINT},
+      </if>
+      <if test="c != null">
+        #{c,jdbcType=TINYINT},
+      </if>
+      <if test="csharp != null">
+        #{csharp,jdbcType=TINYINT},
+      </if>
+      <if test="cpp != null">
+        #{cpp,jdbcType=TINYINT},
+      </if>
+      <if test="swift != null">
+        #{swift,jdbcType=TINYINT},
+      </if>
+      <if test="h5 != null">
+        #{h5,jdbcType=TINYINT},
+      </if>
+      <if test="css3 != null">
+        #{css3,jdbcType=TINYINT},
+      </if>
+      <if test="kotlin != null">
+        #{kotlin,jdbcType=TINYINT},
+      </if>
+      <if test="nodejs != null">
+        #{nodejs,jdbcType=TINYINT},
+      </if>
+      <if test="net != null">
+        #{net,jdbcType=TINYINT},
+      </if>
+      <if test="ruby != null">
+        #{ruby,jdbcType=TINYINT},
+      </if>
+      <if test="sql != null">
+        #{sql,jdbcType=TINYINT},
+      </if>
+      <if test="objectiveC != null">
+        #{objectiveC,jdbcType=TINYINT},
+      </if>
+      <if test="r != null">
+        #{r,jdbcType=TINYINT},
+      </if>
+      <if test="visualBasic != null">
+        #{visualBasic,jdbcType=TINYINT},
+      </if>
+      <if test="perl != null">
+        #{perl,jdbcType=TINYINT},
+      </if>
+      <if test="questionId != null">
+        #{questionId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Language">
+    update language
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="java != null">
+        Java = #{java,jdbcType=TINYINT},
+      </if>
+      <if test="php != null">
+        PHP = #{php,jdbcType=TINYINT},
+      </if>
+      <if test="python != null">
+        Python = #{python,jdbcType=TINYINT},
+      </if>
+      <if test="javascript != null">
+        Javascript = #{javascript,jdbcType=TINYINT},
+      </if>
+      <if test="golang != null">
+        Golang = #{golang,jdbcType=TINYINT},
+      </if>
+      <if test="c != null">
+        C = #{c,jdbcType=TINYINT},
+      </if>
+      <if test="csharp != null">
+        CSharp = #{csharp,jdbcType=TINYINT},
+      </if>
+      <if test="cpp != null">
+        Cpp = #{cpp,jdbcType=TINYINT},
+      </if>
+      <if test="swift != null">
+        Swift = #{swift,jdbcType=TINYINT},
+      </if>
+      <if test="h5 != null">
+        H5 = #{h5,jdbcType=TINYINT},
+      </if>
+      <if test="css3 != null">
+        CSS3 = #{css3,jdbcType=TINYINT},
+      </if>
+      <if test="kotlin != null">
+        Kotlin = #{kotlin,jdbcType=TINYINT},
+      </if>
+      <if test="nodejs != null">
+        Nodejs = #{nodejs,jdbcType=TINYINT},
+      </if>
+      <if test="net != null">
+        Net = #{net,jdbcType=TINYINT},
+      </if>
+      <if test="ruby != null">
+        Ruby = #{ruby,jdbcType=TINYINT},
+      </if>
+      <if test="sql != null">
+        SQL = #{sql,jdbcType=TINYINT},
+      </if>
+      <if test="objectiveC != null">
+        Objective-C = #{objectiveC,jdbcType=TINYINT},
+      </if>
+      <if test="r != null">
+        R = #{r,jdbcType=TINYINT},
+      </if>
+      <if test="visualBasic != null">
+        "Visual Basic" = #{visualBasic,jdbcType=TINYINT},
+      </if>
+      <if test="perl != null">
+        Perl = #{perl,jdbcType=TINYINT},
+      </if>
+      <if test="questionId != null">
+        question_id = #{questionId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where language_id = #{languageId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Language">
+    update language
+    set user_id = #{userId,jdbcType=INTEGER},
+      Java = #{java,jdbcType=TINYINT},
+      PHP = #{php,jdbcType=TINYINT},
+      Python = #{python,jdbcType=TINYINT},
+      Javascript = #{javascript,jdbcType=TINYINT},
+      Golang = #{golang,jdbcType=TINYINT},
+      C = #{c,jdbcType=TINYINT},
+      CSharp = #{csharp,jdbcType=TINYINT},
+      Cpp = #{cpp,jdbcType=TINYINT},
+      Swift = #{swift,jdbcType=TINYINT},
+      H5 = #{h5,jdbcType=TINYINT},
+      CSS3 = #{css3,jdbcType=TINYINT},
+      Kotlin = #{kotlin,jdbcType=TINYINT},
+      Nodejs = #{nodejs,jdbcType=TINYINT},
+      Net = #{net,jdbcType=TINYINT},
+      Ruby = #{ruby,jdbcType=TINYINT},
+      SQL = #{sql,jdbcType=TINYINT},
+      Objective-C = #{objectiveC,jdbcType=TINYINT},
+      R = #{r,jdbcType=TINYINT},
+      "Visual Basic" = #{visualBasic,jdbcType=TINYINT},
+      Perl = #{perl,jdbcType=TINYINT},
+      question_id = #{questionId,jdbcType=INTEGER}
+    where language_id = #{languageId,jdbcType=INTEGER}
+  </update>
+</mapper>

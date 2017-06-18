@@ -27,6 +27,6 @@
     </tx:advice>
     <!-- 定义切面 -->
     <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.InfinitelyLoop.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.InfiniteLoop.service.impl.*.*(..))"/>
     </aop:config>
 </beans>

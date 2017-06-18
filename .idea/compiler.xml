@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="InfiniteLoop" />
         <module name="InfinitelyLoop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="InfiniteLoop" target="1.5" />
       <module name="InfinitelyLoop" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -67,6 +67,28 @@ $(function () {
         }
     })
 
+    $("#tags-filter-icon").click(function () {
+        $(this).hide()
+        $(this).next().show(500)
+    })
+    //标签过滤
+    $("#tags-filter").on("input",function () {
+        var filter = $(this).val()
+        $(".languageSelect").each(function () {
+            if($(this).children("input").val().length >= filter.length){
+                if($(this).children("input").val().substr(0,filter.length) != filter.toLowerCase()){
+                    $(this).hide()
+                }
+                else{
+                    $(this).show()
+                }
+            }
+            else{
+                $(this).hide()
+            }
+        })
+    })
+
 })
 
 //获取文件相对路径
@@ -81,5 +103,6 @@ function getObjectURL(file) {
     }
     return url ;
 }
+
 
 

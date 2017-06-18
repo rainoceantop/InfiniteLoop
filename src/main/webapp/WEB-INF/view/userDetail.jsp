@@ -125,6 +125,8 @@
                                             <input type="checkbox" name="language" title="${language.value}" value="${language.value}"<c:forEach items="${userDetail.userLanguagesAttention}" var="user_language"> <c:if test="${language.value eq user_language}">checked="checked"</c:if></c:forEach>>${language.value}
                                         </div>
                                     </c:forEach>
+                                    <i id="tags-filter-icon" class="fa fa-search pull-right" aria-hidden="true"></i>
+                                    <input type="text" id="tags-filter" style="border-radius: 8px; padding: 0 5px; width: 100px; outline: none;background: none; box-shadow: 0 0 5px rgba(0,0,0,0.4); display: none;" class="pull-right" width="20" placeholder="标签过滤">
                                 </div>
                             </div>
                             <div class="form-group">
