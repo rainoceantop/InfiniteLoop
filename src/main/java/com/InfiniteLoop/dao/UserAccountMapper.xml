@@ -38,6 +38,22 @@
     from user_account
     where user_username = #{userUsername,jdbcType=VARCHAR}
   </select>
+  <select id="selectByKeyword" parameterType="UserAccount" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user_account
+    <trim prefix="where ">
+      <if test="userUsername != null">
+        user_username = #{userUsername,jdbcType=VARCHAR}
+      </if>
+      <if test="userNickname != null">
+        user_nickname = #{userNickname,jdbcType=VARCHAR}
+      </if>
+      <if test="userEmail != null">
+        user_email = #{userEmail,jdbcType=VARCHAR}
+      </if>
+    </trim>
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_account

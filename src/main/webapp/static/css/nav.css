@@ -25,6 +25,15 @@ pre{
     word-wrap: break-word;
     max-height: 300px;
     overflow-y: scroll;
+    background: #2d2d2d;
+    border: none;
+    color: #cccccc;
+    padding: 0.5em;
+    line-height: 1.42857143;
+}
+code{
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 14px;
 }
 hr{
     margin: 5px 0;

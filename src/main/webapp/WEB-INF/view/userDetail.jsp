@@ -93,7 +93,7 @@
                             <input type="hidden" name="userId" value="${userDetail.userId}">
                             <div class="form-group">
                                 <label for="nickname">名称</label>
-                                <input id="nickname" class="form-control" name="userNickname" value="${userDetail.userNickname}">
+                                <input id="nickname" class="form-control" name="userNickname" value="${userDetail.userNickname}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="sex">性别</label>

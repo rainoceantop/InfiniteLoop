@@ -27,11 +27,12 @@
     <div class="form-login">
         <form method="post" action="/user/loginHandle">
             <div>
-                <label for="username" class="pull-left">用户名</label>
-                <input type="text" id="username" class="text-field" name="userUsername" title="用户名" placeholder="账号">
-                <label for="password" class="pull-left">密码</label>
-                <input type="password" id="password" class="text-field" name="userPassword" title="密码" placeholder="密码">
+                <label class="pull-left">用户名</label>
+                <input type="text" class="text-field" name="userUsername" title="用户名" placeholder="账号">
+                <label class="pull-left">密码</label>
+                <input type="password" class="text-field" name="userPassword" title="密码" placeholder="密码">
                 <a href="javascript:void(0);" class="a-btn" id="login-button">登录</a>
+                <input type="submit" style="display: none">
             </div>
         </form>
     </div>

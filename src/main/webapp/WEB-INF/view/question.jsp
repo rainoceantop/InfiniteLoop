@@ -16,6 +16,8 @@
     </jsp:include>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/static/css/question.css">
+    <link rel="stylesheet" href="/static/css/tomorrow-night-eighties.css">
+    <script src="/static/js/highlight.pack.js"></script>
 </head>
 <body>
 <!-- 导航条 -->
@@ -42,5 +44,11 @@
         ${question.questionAskedTimeHumanReadableFormat}
     </div>
 </div>
+<script>hljs.initHighlightingOnLoad();</script>
+<style>
+    .hljs{
+        padding: 0;
+    }
+</style>
 </body>
 </html>

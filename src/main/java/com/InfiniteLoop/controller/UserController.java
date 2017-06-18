@@ -59,6 +59,23 @@ public class UserController {
         return "redirect:/";
     }
 
+    //注册预处理
+    @ResponseBody
+    @RequestMapping(value = "/registerPreHandle", method = RequestMethod.POST)
+    public String usernameHandle(String username,String user,String email){
+        UserAccount ua = new UserAccount();
+        ua.setUserUsername(username);
+        ua.setUserNickname(user);
+        ua.setUserEmail(email);
+        UserAccount result = userAccountService.selectByKeyword(ua);
+        if(result == null){
+            return "SUCCESS";
+        }
+        return "ERROR";
+    }
+
+
+
 
     //跳转到登陆页面
     @RequestMapping("/login")
@@ -103,15 +120,10 @@ public class UserController {
 
     //处理用户资料更新
     @RequestMapping("/detailHandle")
-    public String detailHandle(UserDetail userDetail,UserAccount userAccount,String[] language, HttpSession httpSession) {
+    public String detailHandle(UserDetail userDetail,String[] language) {
         String lan = StringUtils.join(language,",");
         userDetail.setUserLanguagesAttention(lan);
         userDetailService.updateByUserIdSelective(userDetail);
-        int r = userAccountService.updateByPrimaryKeySelective(userAccount);
-        if(r == 1){
-            httpSession.removeAttribute("nickname");
-            httpSession.setAttribute("nickname", userAccount.getUserNickname());
-        }
         return "redirect:/user/detail";
     }
 

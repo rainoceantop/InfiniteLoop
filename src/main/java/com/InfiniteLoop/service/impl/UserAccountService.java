@@ -29,6 +29,9 @@ public class UserAccountService implements CommonService<UserAccount>{
     public UserAccount selectByUsername(String username){
         return userAccountMapper.selectByUsername(username);
     }
+    public UserAccount selectByKeyword(UserAccount record){
+        return userAccountMapper.selectByKeyword(record);
+    }
 
     public int updateByPrimaryKeySelective(UserAccount record) {
         return userAccountMapper.updateByPrimaryKeySelective(record);

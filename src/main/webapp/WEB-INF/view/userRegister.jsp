@@ -25,20 +25,19 @@
 
 <div class="container" style="text-align: center">
     <div class="form-register">
-        <form method="post" action="/user/registerHandle">
+        <form method="post" action="/user/registerHandle" id="register-form">
             <label for="username" class="pull-left">用户名</label>
-            <input type="text" id="username" class="text-field" name="userUsername" title="用户名" placeholder="账号">
+            <input type="text" id="username" class="text-field" name="userUsername" title="用户名:6-15位字母数字组成" placeholder="账号" autocomplete="on" required pattern="\w{6,15}">
             <label for="password" class="pull-left">密码</label>
-            <input type="password" id="password" class="text-field" name="userPassword" title="密码" placeholder="密码">
-            <label for="user" class="pull-left">名称</label>
-            <input type="text" id="user" class="text-field" name="userNickname" title="名称" placeholder="名称">
+            <input type="password" id="password" class="text-field" name="userPassword" title="密码:6-15位字符组成" placeholder="密码" required pattern=".{6,15}">
+            <label for="user" class="pull-left">名称(不可修改)</label>
+            <input type="text" id="user" autocomplete="on" class="text-field" name="userNickname" title="名称:1-15位字符组成" placeholder="名称" required pattern=".{1,15}">
             <label for="email" class="pull-left">e-mail</label>
-            <input type="email" id="email" class="text-field" name="userEmail" title="e-mail" placeholder="电子邮箱">
-            <a href="javascript:void(0);" class="a-btn" id="login-button">注册</a>
+            <input type="email" autocomplete="on" id="email" class="text-field" name="userEmail" title="e-mail" placeholder="电子邮箱" required pattern="^[\w-]+@[\w-]+(\.[\w-]+)+$">
+            <a href="javascript:void(0);" class="a-btn" id="register-button">注册</a>
+            <input type="submit" style="display: none">
         </form>
     </div>
 </div>
-
-
 </body>
 </html>
