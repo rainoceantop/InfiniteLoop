@@ -1,4 +1,4 @@
-# InfinitelyLoop
+# InfiniteLoop
 
 2017/5/23
 使用maven创建项目
