@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed5dd8d7-6bc8-48bd-8ce5-fb8601e101c6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userDetail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userDetail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/question.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/question.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/userDetail.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/userDetail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/userDetail.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/userDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,12 +66,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="userDetail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/userDetail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="58" column="74" lean-forward="false" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="551">
+                <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -163,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/lr.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userRegister.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userLogin.jsp" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/nav.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/newQuestion.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/newQuestion.js" />
@@ -186,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/userDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/userDetail.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/userDetail.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -922,7 +922,7 @@
       <workItem from="1497960513981" duration="4034000" />
       <workItem from="1498018359078" duration="21257000" />
       <workItem from="1498090395445" duration="85000" />
-      <workItem from="1498136513219" duration="3226000" />
+      <workItem from="1498136513219" duration="3381000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1495549811584</created>
@@ -1141,7 +1141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498090458723</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="------&gt;&gt;&gt;&gt;&gt;&gt;生死由命">
+      <created>1498139829469</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1498139829469</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1177,7 +1184,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424764000" />
+    <option name="totallyTimeSpent" value="424919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -1261,7 +1268,8 @@
     <MESSAGE value="markdown指南做好了。。。今天比较懒只做了一个功能，可能连功能都不算。。。" />
     <MESSAGE value="。。。" />
     <MESSAGE value="新增标签过滤，还有注册页面的验证功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增标签过滤，还有注册页面的验证功能" />
+    <MESSAGE value="------&gt;&gt;&gt;&gt;&gt;&gt;生死由命" />
+    <option name="LAST_COMMIT_MESSAGE" value="------&gt;&gt;&gt;&gt;&gt;&gt;生死由命" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1438,16 +1446,6 @@
             <marker date="1497780778056" expanded="true" signature="972:1452" ph="..." />
             <marker date="1497780778056" expanded="true" signature="1419:1432" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="26">
-            <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1973,9 +1971,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/userDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="-775">
           <caret line="58" column="74" lean-forward="false" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-          <folding />
+          <folding>
+            <marker date="1498139432116" expanded="true" signature="14:2800" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="70:257" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="165:251" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="306:655" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="424:598" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="480:525" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="543:588" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="612:649" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="708:753" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="806:1420" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="887:1413" ph="{&quot;url&quot;: &quot;/user/userAvatarUpdate&quot;...}" />
+            <marker date="1498139432116" expanded="true" signature="1109:1403" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1148:1315" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1211:1285" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1336:1389" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1482:1613" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1633:2147" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1688:1909" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1794:1886" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="1923:2141" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2028:2118" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2195:2258" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2316:2796" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2399:2789" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2472:2716" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2573:2627" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2648:2702" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2733:2779" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2842:3212" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="2908:2967" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="3000:3074" ph="{...}" />
+            <marker date="1498139432116" expanded="true" signature="3113:3193" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="551">
+            <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
