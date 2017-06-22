@@ -51,7 +51,7 @@ $(function () {
     //语言选取框判定及动画
     $(".languageSelect").each(function () {
         if($(this).children("input").attr("checked"))
-           $(this).css("background","#1C86EE").css("color","aliceblue")
+           $(this).css("background","#FDF5E6").css("color","#8F8F8F")
     }).click(function () {
         if($(this).children("input").attr("checked")){
             $(this).children("input").attr("checked",false)
@@ -62,7 +62,7 @@ $(function () {
         else {
             $(this).children("input").attr("checked",true)
             $(this).fadeOut(200,function () {
-                $(this).css("background","#1C86EE").css("color","aliceblue")
+                $(this).css("background","#FDF5E6").css("color","#8F8F8F")
             }).fadeIn(500)
         }
     })

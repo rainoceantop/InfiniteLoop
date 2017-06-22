@@ -19,18 +19,18 @@
 }
 .q_language_box{
     width: auto;
-    height: 25px;
-    min-width: 40px;
-    border: 1px solid 	#E0EEEE;
-    border-radius: 8px;
-    background: #1C86EE;
+    height: 20px;
+    min-width: 30px;
+    border: none;
+    background-color: #FDF5E6;
     float: left;
     text-align: center;
     margin: 3px 3px;
     font-size: 12px;
     font-weight: bold;
-    color: aliceblue;
+    color: #8F8F8F;
     padding: 3px 5px;
+    line-height: 1;
 }
 img{
     max-width: 100%;
@@ -38,6 +38,7 @@ img{
 #comment-panel{
     width: 100%;
     height: 300px;
+    margin-bottom: 20px;
 }
 .comments{
     margin: 25px 0;

@@ -12,18 +12,18 @@ dt{
 }
 .u_language_box{
     width: auto;
-    height: 25px;
-    min-width: 40px;
-    border: 1px solid #E0EEEE;
-    border-radius: 8px;
-    background: #1C86EE;
+    height: 20px;
+    min-width: 30px;
+    border: none;
+    background-color: #FDF5E6;
     float: left;
     text-align: center;
-    margin: -1px 3px;
+    margin: 3px 3px;
     font-size: 12px;
     font-weight: bold;
-    color: aliceblue;
+    color: #8F8F8F;
     padding: 3px 5px;
+    line-height: 1;
 }
 .languagebind{
     display: block;
@@ -31,10 +31,9 @@ dt{
     float: left;
 }
 .languageSelect{
-    min-width: 40px;
-    height: 25px;
-    border: 1px solid #E0EEEE;
-    border-radius: 8px;
+    min-width: 30px;
+    height: 20px;
+    border: none;
     background: aliceblue;
     float: left;
     text-align: center;
@@ -44,6 +43,7 @@ dt{
     color: #333333;
     padding: 3px 5px;
     margin-bottom: 3px;
+    line-height: 1;
     cursor: pointer;
 }
 .languageSelect > input{

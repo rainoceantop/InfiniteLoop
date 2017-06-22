@@ -30,7 +30,7 @@
             <p class="text-info">
                 <strong>${userDetail.userNickname}</strong>
             </p>
-            <hr>
+            <hr style="margin-bottom: 16px">
             <form action="/user/userAvatarUpdate" METHOD="post" ENCTYPE="multipart/form-data">
                 <input type="hidden" name="userId" value="${userDetail.userId}">
                 <input type="file" name="userAvatar" id="userAvatarField" style="display: none">
@@ -40,23 +40,23 @@
         <div class="col-md-9 user-detail-display text-overflow">
             <dl class="dl-horizontal">
                 <dt>名称：</dt>
-                <dd>${userDetail.userNickname}</dd>
+                <dd>${not empty userDetail.userNickname ? userDetail.userNickname : "未填写"}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>性别：</dt>
-                <dd><c:if test="${userDetail.userSex eq 1}">男</c:if><c:if test="${userDetail.userSex eq 0}">女</c:if></dd>
+                <dd>${not empty userDetail.userSex ? (userDetail.userSex eq 1 ? "男" : "女") : "未填写"}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>生日：</dt>
-                <dd>${userDetail.userBirthday}</dd>
+                <dd>${not empty userDetail.userBirthday ? userDetail.userBirthday : "未填写"}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>职业：</dt>
-                <dd>${userDetail.userProfession}</dd>
+                <dd>${not empty userDetail.userProfession ? userDetail.userProfession : "未填写"}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>城市：</dt>
-                <dd>${userDetail.userLivingCity}</dd>
+                <dd>${not empty userDetail.userLivingCity ? userDetail.userLivingCity : "未填写"}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>语言：</dt>
@@ -74,7 +74,7 @@
             </dl>
             <dl class="dl-horizontal">
                 <dt>箴言/座右铭：</dt>
-                <dd>${userDetail.userMotto}</dd>
+                <dd>${not empty userDetail.userMotto ? userDetail.userMotto : "未填写"}</dd>
             </dl>
             <button type="button" class="btn btn-primary btn-md" style="margin-left: 20%" data-toggle="modal" data-target="#detail-update">
                 修改
