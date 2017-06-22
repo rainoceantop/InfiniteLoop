@@ -54,6 +54,7 @@ public class UserController {
         UserDetail userDetail = new UserDetail();
         userDetail.setUserId(userAccount.getUserId());
         userDetail.setUserNickname(userAccount.getUserNickname());
+        userDetail.setUserAvatar("http://orfbw2a1e.bkt.clouddn.com/avatar-default.jpg");
         userDetail.setV(1);
         userDetailService.insertSelective(userDetail);
         return "redirect:/";

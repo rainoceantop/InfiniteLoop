@@ -6,6 +6,8 @@ import com.InfiniteLoop.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class CommentsService implements CommonService<Comments> {
@@ -27,6 +29,9 @@ public class CommentsService implements CommonService<Comments> {
 
     public Comments selectByPrimaryKey(Integer primaryKey) {
         return commentsMapper.selectByPrimaryKey(primaryKey);
+    }
+    public List<Comments> selectByQuestionId(Integer questionId){
+        return commentsMapper.selectByQuestionId(questionId);
     }
 
     public int updateByPrimaryKeySelective(Comments record) {

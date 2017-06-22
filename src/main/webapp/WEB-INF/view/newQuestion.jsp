@@ -47,7 +47,7 @@
                         <input type="text" id="tags-filter" style="border-radius: 8px; padding: 0 5px; width: 100px; outline: none;background: none; box-shadow: 0 0 5px rgba(0,0,0,0.4); display: none;" class="pull-right" width="20px" placeholder="过滤标签">
                     </div>
                 </div>
-                <hr style="clear: both">
+                <hr style="clear: both;margin-bottom: 20px">
                 <a href="javascript:void(0);" class="a-btn" id="upload-question-button">图片</a>
                 <a href="javascript:void(0);" class="a-btn" id="new-question-button">发表</a>
             </form>

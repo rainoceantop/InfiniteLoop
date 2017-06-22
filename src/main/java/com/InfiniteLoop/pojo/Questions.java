@@ -25,6 +25,8 @@ public class Questions {
     private String questionContent;
     private String questionLanguage;
 
+    private UserDetail userDetail;
+
     public Integer getQuestionId() {
         return questionId;
     }
@@ -85,4 +87,11 @@ public class Questions {
         return questionAskedTimeHumanReadableFormat;
     }
 
+    public UserDetail getUserDetail() {
+        return userDetail;
+    }
+
+    public void setUserDetail(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
 }

@@ -1,4 +1,5 @@
 
+    <link rel="shortcut icon" href="/static/img/infiniteloop.ico">
     <title><%=request.getParameter("title")%></title>
     <meta name="keywords" content="<%=request.getParameter("keywords")%>">
     <meta name="description" content="<%=request.getParameter("description")%>">

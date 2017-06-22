@@ -1,7 +1,11 @@
 package com.InfiniteLoop.controller;
 
+import com.InfiniteLoop.pojo.Comments;
 import com.InfiniteLoop.pojo.Questions;
+import com.InfiniteLoop.pojo.UserDetail;
+import com.InfiniteLoop.service.impl.CommentsService;
 import com.InfiniteLoop.service.impl.QuestionsService;
+import com.InfiniteLoop.service.impl.UserDetailService;
 import com.InfiniteLoop.tool.HumanReadableTimeFormat;
 import com.InfiniteLoop.tool.Languages;
 import com.google.gson.Gson;
@@ -30,6 +34,10 @@ public class QuestionsController {
     @Autowired
     private QuestionsService questionsService;
     @Autowired
+    private CommentsService commentsService;
+    @Autowired
+    private UserDetailService userDetailService;
+    @Autowired
     private HumanReadableTimeFormat hr;
     @Autowired
     private HttpServletRequest request;
@@ -40,6 +48,9 @@ public class QuestionsController {
     public String queryItems(Model model) throws Exception {
         List<Questions> questions = questionsService.selectAllWithoutBlobs();
         timeformat(questions);
+        for(Questions q : questions){
+            q.setUserDetail(userDetailService.selectByUserId(q.getUserId()));
+        }
         model.addAttribute("questions", questions);
         return "/index";
     }
@@ -133,8 +144,18 @@ public class QuestionsController {
     @RequestMapping("/question/{questionId}/{questionTitle}")
     public String questionDetail(Model model, @PathVariable("questionId") Integer questionId){
         Questions question = questionsService.selectByPrimaryKey(questionId);
+        List<Comments> comments = commentsService.selectByQuestionId(questionId);
+        //获取每个回答的user资料
+        for(Comments c : comments){
+            c.setUserDetail(userDetailService.selectByUserId(c.getUserId()));
+            c.setCommentedTimeHumanReadableFormat(new HumanReadableTimeFormat().TimeFormatByDate(c.getCommentedTime()));
+        }
+        int commentsCount = comments.size();
         question.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(question.getQuestionAskedTime()));
+        question.setUserDetail(userDetailService.selectByUserId(question.getUserId()));
         model.addAttribute("question", question);
+        model.addAttribute("comments", comments);
+        model.addAttribute("commentsCount",commentsCount);
         return "/question";
     }
 

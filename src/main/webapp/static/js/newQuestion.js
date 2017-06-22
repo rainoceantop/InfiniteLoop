@@ -2,18 +2,18 @@ $(function () {
     //语言选取框判定及动画
     $(".languageSelect").each(function () {
         if($(this).children("input").attr("checked"))
-            $(this).css("background","#1C86EE").css("color","aliceblue")
+            $(this).css("background-color","#FDF5E6").css("color","#8F8F8F")
     }).click(function () {
         if($(this).children("input").attr("checked")){
             $(this).children("input").attr("checked",false)
             $(this).fadeOut(200,function () {
-                $(this).css("background","aliceblue").css("color","#333333")
+                $(this).css("background-color","aliceblue").css("color","#333333")
             }).fadeIn(500)
         }
         else {
             $(this).children("input").attr("checked",true)
             $(this).fadeOut(200,function () {
-                $(this).css("background","#1C86EE").css("color","aliceblue")
+                $(this).css("background-color","#FDF5E6").css("color","#8F8F8F")
             }).fadeIn(500)
         }
     })

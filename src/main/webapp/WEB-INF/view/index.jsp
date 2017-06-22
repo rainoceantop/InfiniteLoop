@@ -36,9 +36,9 @@
                     </a>
                 </c:forEach>
             </div>
-            <%-- show formatted asked time(questionAskedTimeHumanReadableFormat) --%>
+
             <div class="post_time">
-                ${question.questionAskedTimeHumanReadableFormat}
+             ${question.questionAskedTimeHumanReadableFormat} &middot; <a href="#">${question.userDetail.userNickname}</a>
             </div>
         </div>
         <hr>

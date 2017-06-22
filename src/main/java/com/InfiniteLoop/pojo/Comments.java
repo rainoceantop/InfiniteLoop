@@ -15,6 +15,10 @@ public class Comments {
 
     private String content;
 
+    private UserDetail userDetail;
+
+    private String commentedTimeHumanReadableFormat;
+
     public Integer getCommentId() {
         return commentId;
     }
@@ -61,5 +65,21 @@ public class Comments {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public UserDetail getUserDetail() {
+        return userDetail;
+    }
+
+    public void setUserDetail(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
+
+    public String getCommentedTimeHumanReadableFormat() {
+        return commentedTimeHumanReadableFormat;
+    }
+
+    public void setCommentedTimeHumanReadableFormat(String questionAskedTimeHumanReadableFormat) {
+        this.commentedTimeHumanReadableFormat = questionAskedTimeHumanReadableFormat;
     }
 }
