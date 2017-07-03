@@ -26,6 +26,7 @@ public class Questions {
     private String questionLanguage;
 
     private UserDetail userDetail;
+    private String description;
 
     public Integer getQuestionId() {
         return questionId;
@@ -93,5 +94,13 @@ public class Questions {
 
     public void setUserDetail(UserDetail userDetail) {
         this.userDetail = userDetail;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

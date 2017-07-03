@@ -23,7 +23,6 @@
 
     <!-- 静态资源解析 -->
     <mvc:resources mapping="/**/**" location="/static"/>
-    <mvc:resources mapping="/**" location="classpath:/questionImg"/>
 
     <!-- 视图解析器，解析jsp页面，默认使用jstl标签，需要引入jstl的包-->
     <!--

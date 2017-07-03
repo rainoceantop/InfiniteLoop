@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="/static/img/infiniteloop.png" style="height: 100%;"></a>
+            <a class="navbar-brand" href="/"><img src="/static/img/infiniteloop.png" style="height: 100%;"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

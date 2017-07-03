@@ -2,7 +2,6 @@ package com.InfiniteLoop.controller;
 
 import com.InfiniteLoop.pojo.Comments;
 import com.InfiniteLoop.pojo.Questions;
-import com.InfiniteLoop.pojo.UserDetail;
 import com.InfiniteLoop.service.impl.CommentsService;
 import com.InfiniteLoop.service.impl.QuestionsService;
 import com.InfiniteLoop.service.impl.UserDetailService;
@@ -42,6 +41,9 @@ public class QuestionsController {
     @Autowired
     private HttpServletRequest request;
 
+    //过滤html标签正则表达式
+    private String filterHtml = "</?[a-zA-z]+>|</?h.+?>";
+
 
     //主页
     @RequestMapping("/")
@@ -73,6 +75,7 @@ public class QuestionsController {
         questions.setQuestionAskedTime(new Date());
         String lan = StringUtils.join(language,",");
         questions.setQuestionLanguage(lan);
+        questions.setQuestionLikes(0);
         questionsService.insertSelective(questions);
         return "redirect:/";
     }
@@ -80,7 +83,7 @@ public class QuestionsController {
     @ResponseBody
     @RequestMapping(value = "/questionImgHandle", method = RequestMethod.POST)
     public String questionImgHandle(@RequestParam("questionContentImg") MultipartFile questionContentImg,@RequestParam(value = "editType") int editType, @RequestParam(value = "imgWidth",required = false) String w, @RequestParam(value = "imgHeight", required = false) String h){
-        Response response = null;
+        Response response ;
         if(!questionContentImg.isEmpty()){
             String[] contentType = {"image/jpeg","image/png","image/gif"};
             if(isContains(contentType, questionContentImg.getContentType())){
@@ -153,6 +156,8 @@ public class QuestionsController {
         int commentsCount = comments.size();
         question.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(question.getQuestionAskedTime()));
         question.setUserDetail(userDetailService.selectByUserId(question.getUserId()));
+        String result = question.getQuestionContent().replaceAll(filterHtml,"").replaceAll("\"","'").replaceAll("[ ]{2,}"," ").replaceAll("\\\\s*|\\t|\\r|\\n","");
+        question.setDescription(result.substring(0,result.length()>100?100:result.length()));
         model.addAttribute("question", question);
         model.addAttribute("comments", comments);
         model.addAttribute("commentsCount",commentsCount);

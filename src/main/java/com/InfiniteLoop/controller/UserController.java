@@ -132,7 +132,7 @@ public class UserController {
     @RequestMapping("/userAvatarUpdate")
     public String userAvatarUpdate(MultipartFile userAvatar, int userId){
         UserDetail userDetail = userDetailService.selectByUserId(userId);
-        Response response = null;
+        Response response = null ;
         if(!userAvatar.isEmpty()){
             String[] contentType = {"image/jpeg","image/png","image/gif"};
             if(isContains(contentType, userAvatar.getContentType())){

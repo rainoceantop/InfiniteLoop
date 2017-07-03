@@ -38,3 +38,6 @@ code{
 hr{
     margin: 5px 0;
 }
+.container{
+    min-width: 750px;
+}

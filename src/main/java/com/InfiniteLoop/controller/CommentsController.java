@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.Date;
 
 @Controller
@@ -21,8 +20,12 @@ public class CommentsController {
     public String questionCommentsHandle(Comments comments){
         comments.setCommentedTime(new Date());
         comments.setCommentLikes(0);
-        commentsService.insert(comments);
-        return "SUCCESS";
+        try {
+            commentsService.insert(comments);
+            return "SUCCESS";
+        }catch (Exception e){
+            return "ERROR";
+        }
     }
 
     @ResponseBody
