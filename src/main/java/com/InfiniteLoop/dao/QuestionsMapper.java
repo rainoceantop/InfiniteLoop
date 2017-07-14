@@ -4,6 +4,7 @@ import com.InfiniteLoop.pojo.Questions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface QuestionsMapper {
@@ -18,12 +19,24 @@ public interface QuestionsMapper {
     List<Questions> selectAllWithoutBlobs();
 
     List<Questions> selectByLanguageTag(String tag);
+
     List<String> selectQuestionLanguage();
+
     List<Questions> selectByQuestionTitle(String queryString);
 
+    String selectQuestionUpId(Integer questionId);
+
+    String selectQuestionDownId(Integer questionId);
+
     int updateByPrimaryKeySelective(Questions record);
+
+    int updateQuestionLikesByQuestionId(Map m);
 
     int updateByPrimaryKeyWithBLOBs(Questions record);
 
     int updateByPrimaryKey(Questions record);
+
+    int updateQuestionUpId(Map m);
+
+    int updateQuestionDownId(Map m);
 }

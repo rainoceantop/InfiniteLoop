@@ -24,7 +24,7 @@
 pre{
     word-wrap: break-word;
     max-height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
     background: #2d2d2d;
     border: none;
     color: #cccccc;

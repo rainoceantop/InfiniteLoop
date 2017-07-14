@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class QuestionsService implements CommonService<Questions> {
@@ -43,9 +44,17 @@ public class QuestionsService implements CommonService<Questions> {
     public List<Questions> selectByQuestionTitle(String queryString){
         return questionsMapper.selectByQuestionTitle(queryString);
     }
-
+    public String selectQuestionUpId(Integer questionId){
+        return questionsMapper.selectQuestionUpId(questionId);
+    }
+    public String selectQuestionDownId(Integer questionId){
+        return questionsMapper.selectQuestionDownId(questionId);
+    }
     public int updateByPrimaryKeySelective(Questions record) {
         return questionsMapper.updateByPrimaryKeySelective(record);
+    }
+    public int updateQuestionLikesByQuestionId(Map m){
+        return questionsMapper.updateQuestionLikesByQuestionId(m);
     }
     public int updateByPrimaryKey(Questions record) {
         return questionsMapper.updateByPrimaryKey(record);
@@ -53,5 +62,11 @@ public class QuestionsService implements CommonService<Questions> {
 
     public int updateByPrimaryKeyWithBLOBs(Questions record){
         return questionsMapper.updateByPrimaryKeyWithBLOBs(record);
+    }
+    public int updateQuestionUpId(Map m){
+        return questionsMapper.updateQuestionUpId(m);
+    }
+    public int updateQuestionDownId(Map m){
+        return questionsMapper.updateQuestionDownId(m);
     }
 }

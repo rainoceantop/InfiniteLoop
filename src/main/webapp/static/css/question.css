@@ -6,7 +6,6 @@
 .question-content{
     font-size: 15px;
     padding: 10px 20px;
-    border-bottom: 1px solid #EDEDED;
 }
 .question-attr{
     width: 100%;
@@ -50,9 +49,7 @@ img{
 }
 .comments{
     margin: 25px 0;
-    background-color: #FCFCFC;
     padding: 10px 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 .comment{
     width: 100%;
@@ -82,6 +79,9 @@ i:hover{
     margin-bottom: 10px;
 }
 .answer-count-display{
+    width: 100%;
     border-bottom: 1px solid #F0F3FF;
-    width: 100%
+}
+.question-rank-button{
+    color: #2d2d2d;
 }

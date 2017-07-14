@@ -1,8 +1,8 @@
 package com.InfiniteLoop.controller;
 
-import com.InfiniteLoop.pojo.Comments;
+import com.InfiniteLoop.pojo.Answers;
 import com.InfiniteLoop.pojo.Questions;
-import com.InfiniteLoop.service.impl.CommentsService;
+import com.InfiniteLoop.service.impl.AnswersService;
 import com.InfiniteLoop.service.impl.QuestionsService;
 import com.InfiniteLoop.service.impl.UserDetailService;
 import com.InfiniteLoop.tool.HumanReadableTimeFormat;
@@ -16,6 +16,7 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,7 @@ public class QuestionsController {
     @Autowired
     private QuestionsService questionsService;
     @Autowired
-    private CommentsService commentsService;
+    private AnswersService answersService;
     @Autowired
     private UserDetailService userDetailService;
     @Autowired
@@ -76,6 +77,8 @@ public class QuestionsController {
         String lan = StringUtils.join(language,",");
         questions.setQuestionLanguage(lan);
         questions.setQuestionLikes(0);
+        questions.setQuestionUpId("0");
+        questions.setQuestionDownId("0");
         questionsService.insertSelective(questions);
         return "redirect:/";
     }
@@ -147,21 +150,49 @@ public class QuestionsController {
     @RequestMapping("/question/{questionId}/{questionTitle}")
     public String questionDetail(Model model, @PathVariable("questionId") Integer questionId){
         Questions question = questionsService.selectByPrimaryKey(questionId);
-        List<Comments> comments = commentsService.selectByQuestionId(questionId);
+        List<Answers> answers = answersService.selectByQuestionId(questionId);
         //获取每个回答的user资料
-        for(Comments c : comments){
+        for(Answers c : answers){
             c.setUserDetail(userDetailService.selectByUserId(c.getUserId()));
-            c.setCommentedTimeHumanReadableFormat(new HumanReadableTimeFormat().TimeFormatByDate(c.getCommentedTime()));
+            c.setAnsweredTimeHumanReadableFormat(new HumanReadableTimeFormat().TimeFormatByDate(c.getAnsweredTime()));
         }
-        int commentsCount = comments.size();
+        int answersCount = answers.size();
         question.setQuestionAskedTimeHumanReadableFormat(hr.TimeFormatByDate(question.getQuestionAskedTime()));
         question.setUserDetail(userDetailService.selectByUserId(question.getUserId()));
         String result = question.getQuestionContent().replaceAll(filterHtml,"").replaceAll("\"","'").replaceAll("[ ]{2,}"," ").replaceAll("\\\\s*|\\t|\\r|\\n","");
         question.setDescription(result.substring(0,result.length()>100?100:result.length()));
         model.addAttribute("question", question);
-        model.addAttribute("comments", comments);
-        model.addAttribute("commentsCount",commentsCount);
+        model.addAttribute("answers", answers);
+        model.addAttribute("answersCount",answersCount);
         return "/question";
+    }
+    //like处理
+    @ResponseBody
+    @RequestMapping(value = "/question/likesHandle",method = RequestMethod.POST)
+    public String likesHandle(@Param("questionId") Integer questionId,@Param("rank") String rank,@Param("userId") Integer userId){
+        String[] a = questionsService.selectQuestionUpId(questionId).split(",");
+        if(isContains(a,userId.toString())){
+            return "ERROR";
+        }
+        String[] b = questionsService.selectQuestionDownId(questionId).split(",");
+        if(isContains(b,userId.toString())){
+            return "ERROR";
+        }
+        Map m = new HashMap();
+        m.put("questionId",questionId);
+        m.put("rank",rank);
+        m.put("userId",userId);
+        try {
+            questionsService.updateQuestionLikesByQuestionId(m);
+            if(rank.equals("up"))
+                questionsService.updateQuestionUpId(m);
+            if(rank.equals("down"))
+                questionsService.updateQuestionDownId(m);
+            return "SUCCESS";
+        }
+        catch (Exception e){
+            return "ERROR";
+        }
     }
 
     //搜索tag, .+解决点号后忽略的问题

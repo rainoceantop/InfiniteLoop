@@ -33,7 +33,12 @@
 
         <div class="question-attr">
             <div class="q_language pull-right">
-                <div class="up-down"><i class="fa fa-plus" aria-hidden="true"></i>&emsp;<span>${question.questionLikes}</span>&emsp;<i class="fa fa-minus" aria-hidden="true"></i></div>
+                <!-- rank -->
+                <div class="up-down">
+                    <a class="question-rank-button" data-rank="up" data-question_id="${question.questionId}" data-user_id="${sessionScope.userId}" href="javascript:void(0);"><i class="fa fa-plus" aria-hidden="true"></i></a>&emsp;
+                    <span class="rank-count">${question.questionLikes}</span>&emsp;
+                    <a class="question-rank-button" data-rank="down" data-question_id="${question.questionId}" data-user_id="${sessionScope.userId}" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                </div>
                 <c:forEach items="${question.questionLanguage}" var="question_language">
                     <a href="/question/tag/${question_language ne 'c#' ? question_language : 'csharp'}">
                         <div class="q_language_box">
@@ -53,35 +58,35 @@
         </div>
     </div>
     <div class="comments">
-            <div class="answer-count-display">
-                <c:if test="${not empty comments}">
-                <h4><span class="answer-count">${commentsCount}</span>个回答</h4>
-                </c:if>
+            <div class="answer-count-display" ${answersCount > 0 ? "" : 'style="display:none;"'}>
+                <h4><span class="answer-count">${answersCount}</span>个回答</h4>
             </div>
-        <c:if test="${empty comments}">
-            <p class="text-center if-not-answer">暂无评论</p>
-        </c:if>
-        <c:forEach items="${comments}" var="comment">
+        <%--<c:if test="${empty answers}">--%>
+            <%--<p class="text-center if-not-answer">暂无评论</p>--%>
+        <%--</c:if>--%>
+        <c:if test="${not empty answers}">
+        <c:forEach items="${answers}" var="answer">
             <div class="comment">
                 <div class="comment-content">
-                    ${comment.content}
+                    ${answer.content}
                 </div>
                 <div class="comment-footer">
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <c:if test="${comment.commentLikes > 0}">
-                        <span>${comment.commentLikes}</span>
+                    <c:if test="${answer.answerLikes > 0}">
+                        <span>${answer.answerLikes}</span>
                     </c:if>
-                    <span class="pull-right time-user">${comment.commentedTimeHumanReadableFormat} &middot; <a
-                            href="#">${comment.userDetail.userNickname}</a></span>
+                    <span class="pull-right time-user">${answer.answeredTimeHumanReadableFormat} &middot; <a
+                            href="#">${answer.userDetail.userNickname}</a></span>
                 </div>
             </div>
         </c:forEach>
+        </c:if>
         <div id="newComment"></div>
     </div>
 
-    <div class="question-comments">
+    <div class="question-answers">
         <h3><label for="comment-panel">你的回答</label></h3>
-        <form action="/comments/questionCommentsHandle" method="post">
+        <form action="/answers/questionAnswersHandle" method="post">
             <input type="hidden" name="questionId" value="${question.questionId}">
             <input type="hidden" name="userId" value="${sessionScope.userId}">
             <input type="hidden" name="userNickname" value="${sessionScope.nickname}">

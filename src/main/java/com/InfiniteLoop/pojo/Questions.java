@@ -5,25 +5,14 @@ import java.util.Date;
 
 public class Questions {
     private Integer questionId;
-
     private Integer userId;
-
-    //store in the database
     private Date questionAskedTime;
-    //get questionAskedTime from database and format it then show this var instead of questionAskedTime
-    private String questionAskedTimeHumanReadableFormat;
-
-    //format
-    public void setQuestionAskedTimeHumanReadableFormat(String questionAskedTimeHumanReadableFormat) {
-        this.questionAskedTimeHumanReadableFormat = questionAskedTimeHumanReadableFormat;
-    }
-
     private String questionTitle;
-
     private Integer questionLikes;
-
     private String questionContent;
     private String questionLanguage;
+    private String questionUpId;
+    private String questionDownId;
 
     private UserDetail userDetail;
     private String description;
@@ -88,6 +77,22 @@ public class Questions {
         return questionAskedTimeHumanReadableFormat;
     }
 
+    public String getQuestionUpId() {
+        return questionUpId;
+    }
+
+    public void setQuestionUpId(String questionUpId) {
+        this.questionUpId = questionUpId;
+    }
+
+    public String getQuestionDownId() {
+        return questionDownId;
+    }
+
+    public void setQuestionDownId(String questionDownId) {
+        this.questionDownId = questionDownId;
+    }
+
     public UserDetail getUserDetail() {
         return userDetail;
     }
@@ -95,6 +100,15 @@ public class Questions {
     public void setUserDetail(UserDetail userDetail) {
         this.userDetail = userDetail;
     }
+
+    //get questionAskedTime from database and format it then show this var instead of questionAskedTime
+    private String questionAskedTimeHumanReadableFormat;
+
+    //format
+    public void setQuestionAskedTimeHumanReadableFormat(String questionAskedTimeHumanReadableFormat) {
+        this.questionAskedTimeHumanReadableFormat = questionAskedTimeHumanReadableFormat;
+    }
+
 
     public String getDescription() {
         return description;

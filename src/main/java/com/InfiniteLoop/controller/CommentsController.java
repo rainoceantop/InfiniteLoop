@@ -1,7 +1,7 @@
 package com.InfiniteLoop.controller;
 
-import com.InfiniteLoop.pojo.Comments;
-import com.InfiniteLoop.service.impl.CommentsService;
+import com.InfiniteLoop.pojo.Answers;
+import com.InfiniteLoop.service.impl.AnswersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +13,15 @@ import java.util.Date;
 public class CommentsController {
 
     @Autowired
-    private CommentsService commentsService;
+    private AnswersService answersService;
 
     @ResponseBody
     @RequestMapping("/questionCommentsHandle")
-    public String questionCommentsHandle(Comments comments){
-        comments.setCommentedTime(new Date());
-        comments.setCommentLikes(0);
+    public String questionCommentsHandle(Answers answers){
+        answers.setAnsweredTime(new Date());
+        answers.setAnswerLikes(0);
         try {
-            commentsService.insert(comments);
+            answersService.insert(answers);
             return "SUCCESS";
         }catch (Exception e){
             return "ERROR";
@@ -30,8 +30,8 @@ public class CommentsController {
 
     @ResponseBody
     @RequestMapping("/commentLikesUpdate")
-    public String commentLikesUpdate(Comments comments){
-        commentsService.updateByPrimaryKeySelective(comments);
+    public String commentLikesUpdate(Answers answers){
+        answersService.updateByPrimaryKeySelective(answers);
         return "SUCCESS";
     }
 }

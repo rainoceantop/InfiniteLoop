@@ -1,23 +1,22 @@
 $(function () {
+    //发表评论按钮点击事件
     $("#comment-button").click(function () {
         var form = new FormData($(this).parents("form")[0])
         var content = $("#comment-panel").val()
-        var ifNotAnswer = $("p[class='text-center if-not-answer']")
-        var ifAnswerCount = $("span[class='answer-count']")
-        var answerCount = 1
         $("#comment-panel").val("")
-        if(ifNotAnswer.is(":visible")){
-            ifNotAnswer.hide()
-            $(".answer-count-display").html('<h4><span class="answer-count">1</span>个回答</h4>')
+        var acd = $("div[class='answer-count-display']")
+        var ac = $("span[class='answer-count']")
+        if(acd.css("display") === "none" && parseInt(ac.text()) === 0){
+            acd.show()
+            ac.text(1)
             newComment(content)
+            setTimeout(ajx,500)
         }
         else{
-            answerCount = parseInt(ifAnswerCount.text()) + 1
-            ifAnswerCount.text(answerCount)
+            ac.text(parseInt(ac.text()) + 1)
             newComment(content)
+            setTimeout(ajx,500)
         }
-
-        setTimeout(ajx,500)
 
         function ajx() {
             $.ajax({
@@ -28,17 +27,14 @@ $(function () {
                 processData:false,
                 contentType:false,
                 success:function (result) {
-                    alert(result)
                     if(result === "SUCCESS"){
                         $("#newComment").css("opacity","1")
                     }
                     else{
-                        answerCount -= 1
-                        ifAnswerCount.text(answerCount)
+                        ac.text(parseInt(ac.text()) - 1)
                         $("#newComment").hide()
-                        if(answerCount === 0){
-                            $(".answer-count-display").html("")
-                            ifNotAnswer.show()
+                        if(parseInt(ac.text()) === 0){
+                            acd.hide()
                         }
                     }
                 }
@@ -46,6 +42,7 @@ $(function () {
         }
     })
 
+    //发表回答的内容
     function newComment(content) {
         $("#newComment").css("opacity",".5").html(
             '<div class="comment">'+
@@ -60,5 +57,32 @@ $(function () {
             '</div>'
         )
     }
+
+    //rank按钮点击事件
+    $(".question-rank-button").click(function () {
+        ajx($(this).data("rank"),$(this).data("question_id"),$(this).data("user_id"))
+        function ajx(rank,questionId,userId) {
+            $.ajax({
+                url:"/question/likesHandle",
+                type:"post",
+                async:false,
+                data:"questionId=" + questionId + "&" + "rank=" + rank + "&" + "userId=" + userId,
+                success:function (result) {
+                    if(result === "SUCCESS"){
+                        if(rank === "up"){
+                            $(".rank-count").text(parseInt($(".rank-count").text()) + 1)
+                        }
+                        else
+                            $(".rank-count").text(parseInt($(".rank-count").text()) - 1)
+                    }
+                    if(result === "ERROR"){
+                        alert("您已操作过此问题的排位，不可重复操作")
+                    }
+                }
+            })
+        }
+    })
+
+
 
 })

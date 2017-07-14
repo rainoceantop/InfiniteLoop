@@ -8,6 +8,8 @@
     <result column="question_title" jdbcType="VARCHAR" property="questionTitle" />
     <result column="question_likes" jdbcType="INTEGER" property="questionLikes" />
     <result column="question_language" jdbcType="VARCHAR" property="questionLanguage" />
+    <result column="question_up_id" jdbcType="LONGVARCHAR" property="questionUpId" />
+    <result column="question_down_id" jdbcType="LONGVARCHAR" property="questionDownId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="Questions">
     <result column="question_content" jdbcType="LONGVARCHAR" property="questionContent" />
@@ -51,6 +53,12 @@
       </if>
     </where>
   </select>
+  <select id="selectQuestionUpId" parameterType="java.lang.Integer" resultType="java.lang.String">
+    select question_up_id from questions where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
+  <select id="selectQuestionDownId" parameterType="java.lang.Integer" resultType="java.lang.String">
+    select question_down_id from questions where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from questions
     where question_id = #{questionId,jdbcType=INTEGER}
@@ -87,6 +95,12 @@
       <if test="questionContent != null">
         question_content,
       </if>
+      <if test="questionUpId != null">
+        question_up_id,
+      </if>
+      <if test="questionDownId != null">
+        question_down_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="questionId != null">
@@ -108,7 +122,13 @@
         #{questionLanguage,jdbcType=VARCHAR},
       </if>
       <if test="questionContent != null">
-        #{questionContent,jdbcType=LONGVARCHAR},
+      #{questionContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionUpId != null">
+        #{questionUpId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionDownId != null">
+        #{questionDownId,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -136,6 +156,18 @@
     </set>
     where question_id = #{questionId,jdbcType=INTEGER}
   </update>
+  <update id="updateQuestionLikesByQuestionId" parameterType="Map">
+    update questions
+    <set>
+      <if test="rank == 'up'">
+        question_likes = question_likes + 1,
+      </if>
+      <if test="rank == 'down'">
+        question_likes = question_likes - 1,
+      </if>
+    </set>
+    where question_id = #{questionId}
+  </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="Questions">
     update questions
     set user_id = #{userId,jdbcType=INTEGER},
@@ -153,6 +185,16 @@
       question_title = #{questionTitle,jdbcType=VARCHAR},
       question_likes = #{questionLikes,jdbcType=INTEGER},
       question_language = #{questionLanguage,jdbcType=VARCHAR}
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateQuestionUpId" parameterType="Map">
+    update questions
+    set question_up_id = concat(question_up_id,concat(",",#{userId,jdbcType=INTEGER}))
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateQuestionDownId" parameterType="Map">
+    update questions
+    set question_Down_id = concat(question_down_id,concat(",",#{userId,jdbcType=INTEGER}))
     where question_id = #{questionId,jdbcType=INTEGER}
   </update>
 </mapper>
