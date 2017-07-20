@@ -28,10 +28,13 @@
     from questions
     where question_id = #{questionId,jdbcType=INTEGER}
   </select>
-  <select id="selectAllWithoutBlobs" resultMap="BaseResultMap">
+  <select id="recordsCount" resultType="java.lang.Integer">
+    select count(*) from questions
+  </select>
+  <select id="selectAllWithoutBlobs" parameterType="Map" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
-    from questions order by question_asked_time desc
+    from questions order by question_asked_time desc limit #{beginIndex},#{recordsPerPage}
   </select>
   <select id="selectByLanguageTag" parameterType="java.lang.String" resultMap="BaseResultMap">
     select

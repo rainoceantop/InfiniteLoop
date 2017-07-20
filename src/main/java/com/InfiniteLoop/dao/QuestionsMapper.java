@@ -14,9 +14,11 @@ public interface QuestionsMapper {
 
     int insertSelective(Questions record);
 
+    int recordsCount();
+
     Questions selectByPrimaryKey(Integer questionId);
 
-    List<Questions> selectAllWithoutBlobs();
+    List<Questions> selectAllWithoutBlobs(Map<String,Integer> map);
 
     List<Questions> selectByLanguageTag(String tag);
 

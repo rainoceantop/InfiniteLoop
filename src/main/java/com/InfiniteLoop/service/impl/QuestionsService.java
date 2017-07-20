@@ -30,8 +30,11 @@ public class QuestionsService implements CommonService<Questions> {
     public Questions selectByPrimaryKey(Integer primaryKey) {
         return questionsMapper.selectByPrimaryKey(primaryKey);
     }
-    public List<Questions> selectAllWithoutBlobs(){
-        return questionsMapper.selectAllWithoutBlobs();
+    public int recordsCount(){
+        return questionsMapper.recordsCount();
+    }
+    public List<Questions> selectAllWithoutBlobs(Map<String,Integer> map){
+        return questionsMapper.selectAllWithoutBlobs(map);
     }
 
     public List<String> selectQuestionLanguage(){

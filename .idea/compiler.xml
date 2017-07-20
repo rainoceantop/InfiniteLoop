@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="InfiniteLoop" target="1.5" />
-      <module name="InfinitelyLoop" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

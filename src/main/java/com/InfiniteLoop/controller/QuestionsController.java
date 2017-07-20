@@ -7,6 +7,7 @@ import com.InfiniteLoop.service.impl.QuestionsService;
 import com.InfiniteLoop.service.impl.UserDetailService;
 import com.InfiniteLoop.tool.HumanReadableTimeFormat;
 import com.InfiniteLoop.tool.Languages;
+import com.InfiniteLoop.tool.Page;
 import com.google.gson.Gson;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
@@ -41,20 +42,36 @@ public class QuestionsController {
     private HumanReadableTimeFormat hr;
     @Autowired
     private HttpServletRequest request;
+    @Autowired
+    private Page page;
 
     //过滤html标签正则表达式
     private String filterHtml = "</?[a-zA-z]+>|</?h.+?>";
 
 
     //主页
-    @RequestMapping("/")
-    public String queryItems(Model model) throws Exception {
-        List<Questions> questions = questionsService.selectAllWithoutBlobs();
+    @RequestMapping({"/","/questions","/questions/page/{p}"})
+    public String queryItems(Model model,@PathVariable(value = "p",required = false) Integer p) throws Exception {
+        int recordsCount = questionsService.recordsCount();
+        page.setRecords(recordsCount);
+        page.setRecordsPerPage(2);
+        if (p != null){
+            page.setCurrentPage(p);
+        }
+        else{
+            page.setCurrentPage(page.getFirstPage());
+        }
+        Map<String,Integer> map = new HashMap<String, Integer>();
+        System.out.println(page.getBeginIndex());
+        map.put("beginIndex",page.getBeginIndex());
+        map.put("recordsPerPage",page.getRecordsPerPage());
+        List<Questions> questions = questionsService.selectAllWithoutBlobs(map);
         timeformat(questions);
         for(Questions q : questions){
             q.setUserDetail(userDetailService.selectByUserId(q.getUserId()));
         }
         model.addAttribute("questions", questions);
+        model.addAttribute("page",page);
         return "/index";
     }
 

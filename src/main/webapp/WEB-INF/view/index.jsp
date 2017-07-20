@@ -43,6 +43,15 @@
         </div>
         <hr>
     </c:forEach>
+    <c:if test="${page.currentPage ne page.firstPage}">
+        <a href="/questions/page/${page.prePage}">pre</a>
+    </c:if>
+    <c:forEach var="p" begin="1" end="${page.pages}" step="1">
+        <a href="/questions/page/${p}">${p}</a>
+    </c:forEach>
+    <c:if test="${page.currentPage ne page.lastPage}">
+        <a href="/questions/page/${page.nextPage}">next</a>
+    </c:if>
 </div>
 </body>
 </html>
