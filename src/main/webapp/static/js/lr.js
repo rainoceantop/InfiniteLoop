@@ -6,7 +6,7 @@ $(function () {
     var emailCheck = 0
 
     $("#register-button").click(function () {
-        if(usernameCheck + passwordCheck + userCheck + emailCheck == 4)
+        if(usernameCheck + passwordCheck + userCheck + emailCheck === 4)
             $(this).next().click()
         else
             alert("信息填写错误，请检查")
@@ -55,11 +55,11 @@ $(function () {
     })
     function preHandle(object,key,val) {
         var data
-        if(key == "username")
+        if(key === "username")
             data = {username:val}
-        if(key == "user")
+        if(key === "user")
             data = {user:val}
-        if(key == "email")
+        if(key === "email")
             data = {email:val}
         setTimeout(function () {
             $.ajax({
@@ -68,22 +68,22 @@ $(function () {
                 method:"POST",
                 data:data,
                 success:function (result) {
-                    if (result == "SUCCESS"){
+                    if (result === "SUCCESS"){
                         object.css("box-shadow","0px 1px 0 #98FB98")
-                        if(key == "username")
+                        if(key === "username")
                             usernameCheck = 1
-                        if(key == "user")
+                        if(key === "user")
                             userCheck = 1
-                        if(key == "email")
+                        if(key === "email")
                             emailCheck = 1
                     }
                     else{
                         object.css("box-shadow","0px 1px 0 #FF3030")
-                        if(key == "username")
+                        if(key === "username")
                             usernameCheck = 0
-                        if(key == "user")
+                        if(key === "user")
                             userCheck = 0
-                        if(key == "email")
+                        if(key === "email")
                             emailCheck = 0
                     }
                 }

@@ -33,6 +33,9 @@ public class QuestionsService implements CommonService<Questions> {
     public int recordsCount(){
         return questionsMapper.recordsCount();
     }
+    public int selectTagRecordsCount(String queryString){
+        return questionsMapper.selectTagRecordsCount(queryString);
+    }
     public List<Questions> selectAllWithoutBlobs(Map<String,Integer> map){
         return questionsMapper.selectAllWithoutBlobs(map);
     }
@@ -41,11 +44,16 @@ public class QuestionsService implements CommonService<Questions> {
         return questionsMapper.selectQuestionLanguage();
     }
 
-    public List<Questions> selectByLanguageTag(String tag){
-        return questionsMapper.selectByLanguageTag(tag);
+    public List<Questions> selectByLanguageTag(Map map){
+        return questionsMapper.selectByLanguageTag(map);
     }
-    public List<Questions> selectByQuestionTitle(String queryString){
-        return questionsMapper.selectByQuestionTitle(queryString);
+
+    public int selectTitleRecordsCount(String queryString){
+        return questionsMapper.selectTitleRecordsCount(queryString);
+    }
+
+    public List<Questions> selectByQuestionTitle(Map map){
+        return questionsMapper.selectByQuestionTitle(map);
     }
     public String selectQuestionUpId(Integer questionId){
         return questionsMapper.selectQuestionUpId(questionId);

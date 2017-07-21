@@ -15,9 +15,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">问题</a></li>
+                <li><a href="/questions">问题</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">语言 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">语言 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">python</a></li>
                         <li><a href="#">java</a></li>
@@ -27,9 +27,9 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left" action="/question/query" method="get">
+            <form class="navbar-form navbar-left" action="/question/query">
                 <div class="form-group">
-                    <input type="text" name="queryString" class="form-control" placeholder="Search" value="${TagOrString}">
+                    <input type="search" name="queryString" class="form-control" placeholder="Search" value="${TagOrString}">
                 </div>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>
@@ -43,7 +43,7 @@
                 </c:if>
                 <c:if test="${not empty sessionScope.userId}">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><c:if test="${not empty sessionScope.nickname}">${sessionScope.nickname}</c:if><span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><c:if test="${not empty sessionScope.nickname}">${sessionScope.nickname}</c:if><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/user/detail">个人资料</a></li>
                             <li><a href="#">。。。</a></li>

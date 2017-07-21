@@ -14,17 +14,24 @@ public interface QuestionsMapper {
 
     int insertSelective(Questions record);
 
+    //总记录数
     int recordsCount();
+
+    //搜索标签后的总记录数
+    int selectTagRecordsCount(String queryString);
+
+    //搜索标题后的总记录数
+    int selectTitleRecordsCount(String queryString);
 
     Questions selectByPrimaryKey(Integer questionId);
 
     List<Questions> selectAllWithoutBlobs(Map<String,Integer> map);
 
-    List<Questions> selectByLanguageTag(String tag);
+    List<Questions> selectByLanguageTag(Map map);
 
     List<String> selectQuestionLanguage();
 
-    List<Questions> selectByQuestionTitle(String queryString);
+    List<Questions> selectByQuestionTitle(Map map);
 
     String selectQuestionUpId(Integer questionId);
 

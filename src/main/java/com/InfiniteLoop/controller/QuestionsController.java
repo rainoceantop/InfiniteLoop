@@ -17,7 +17,6 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,29 +44,23 @@ public class QuestionsController {
     @Autowired
     private Page page;
 
+
     //过滤html标签正则表达式
     private String filterHtml = "</?[a-zA-z]+>|</?h.+?>";
+    //当前的相对位置
+    private String rurl = "";
+    //url是否已经带参
+    private boolean isParam = false;
 
 
     //主页
-    @RequestMapping({"/","/questions","/questions/page/{p}"})
-    public String queryItems(Model model,@PathVariable(value = "p",required = false) Integer p) throws Exception {
-        int recordsCount = questionsService.recordsCount();
-        page.setRecords(recordsCount);
+    @RequestMapping({"/","/questions"})
+    public String queryItems(Model model,@RequestParam(value = "page",required = false) Integer p) throws Exception {
+        page.setRecords(questionsService.recordsCount());
         page.setRecordsPerPage(4);
-        if (p != null){
-            if(p > page.getPages())
-                page.setCurrentPage(page.getPages());
-            else if(p < 1)
-                page.setCurrentPage(1);
-            else
-                page.setCurrentPage(p);
-        }
-        else{
-            page.setCurrentPage(1);
-        }
+        System.out.println(p);
+        pageResolve(p);
         Map<String,Integer> map = new HashMap<String, Integer>();
-        System.out.println(page.getBeginIndex());
         map.put("beginIndex",page.getBeginIndex());
         map.put("recordsPerPage",page.getRecordsPerPage());
         List<Questions> questions = questionsService.selectAllWithoutBlobs(map);
@@ -75,8 +68,12 @@ public class QuestionsController {
         for(Questions q : questions){
             q.setUserDetail(userDetailService.selectByUserId(q.getUserId()));
         }
+        rurl = request.getServletPath();
+        isParam = false;
         model.addAttribute("questions", questions);
         model.addAttribute("page",page);
+        model.addAttribute("rurl",rurl);
+        model.addAttribute("isParam",isParam);
         return "/index";
     }
 
@@ -191,7 +188,7 @@ public class QuestionsController {
     //like处理
     @ResponseBody
     @RequestMapping(value = "/question/likesHandle",method = RequestMethod.POST)
-    public String likesHandle(@Param("questionId") Integer questionId,@Param("rank") String rank,@Param("userId") Integer userId){
+    public String likesHandle(@RequestParam("questionId") Integer questionId,@RequestParam("rank") String rank,@RequestParam("userId") Integer userId){
         String[] a = questionsService.selectQuestionUpId(questionId).split(",");
         if(isContains(a,userId.toString())){
             return "ERROR";
@@ -219,21 +216,36 @@ public class QuestionsController {
 
     //搜索tag, .+解决点号后忽略的问题
     @RequestMapping("/question/tag/{question_language:.+}")
-    public String queryTag(Model model, @PathVariable("question_language") String question_language){
+    public String queryTag(Model model, @PathVariable("question_language") String question_language,@RequestParam(value = "page",required = false) Integer p){
         //单独处理c#
         if(question_language.equals("csharp"))
             question_language = "c#";
         String tag = "Tag:" + question_language;
-        List<Questions> questions = questionsService.selectByLanguageTag(question_language);
+        page.setRecords(questionsService.selectTagRecordsCount(question_language));
+        page.setBeginIndex(0);
+        pageResolve(p);
+        Map map = new HashMap();
+        map.put("beginIndex",page.getBeginIndex());
+        map.put("recordsPerPage",page.getRecordsPerPage());
+        map.put("tag",question_language);
+        List<Questions> questions = questionsService.selectByLanguageTag(map);
         timeformat(questions);
+        for(Questions q : questions){
+            q.setUserDetail(userDetailService.selectByUserId(q.getUserId()));
+        }
+        rurl = request.getServletPath();
+        isParam = false;
         model.addAttribute("questions", questions);
         model.addAttribute("TagOrString", tag);
+        model.addAttribute("page",page);
+        model.addAttribute("rurl",rurl);
+        model.addAttribute("isParam",isParam);
         return "/index";
     }
 
     //问题搜索
     @RequestMapping("/question/query")
-    public String queryString(String queryString,Model model){
+    public String queryString(String queryString,Model model,@RequestParam(value = "page",required = false) Integer p){
         if(queryString.length() > 4 && queryString.substring(0,4).toLowerCase().equals("tag:")){
             return "forward:/question/tag/" + queryString.substring(4);
         }
@@ -241,10 +253,25 @@ public class QuestionsController {
         if(languagesMap.containsValue(queryString.toLowerCase())){
             return "forward:/question/tag/" + queryString;
         }
-        List<Questions> questions = questionsService.selectByQuestionTitle(queryString);
+        page.setRecords(questionsService.selectTitleRecordsCount(queryString));
+        page.setBeginIndex(0);
+        pageResolve(p);
+        Map map = new HashMap();
+        map.put("beginIndex",page.getBeginIndex());
+        map.put("recordsPerPage",page.getRecordsPerPage());
+        map.put("queryString",queryString);
+        List<Questions> questions = questionsService.selectByQuestionTitle(map);
         timeformat(questions);
+        for(Questions q : questions){
+            q.setUserDetail(userDetailService.selectByUserId(q.getUserId()));
+        }
+        rurl = request.getServletPath()+"?queryString=" + queryString;
+        isParam = true;
         model.addAttribute("questions", questions);
         model.addAttribute("TagOrString", queryString);
+        model.addAttribute("page",page);
+        model.addAttribute("rurl",rurl);
+        model.addAttribute("isParam",isParam);
         return "/index";
     }
 
@@ -263,4 +290,20 @@ public class QuestionsController {
         }
         return false;
     }
+
+    //判断页数传参
+    private void pageResolve(Integer p){
+        if (p != null){
+            if(p > page.getPages())
+                page.setCurrentPage(page.getPages());
+            else if(p < 1)
+                page.setCurrentPage(1);
+            else
+                page.setCurrentPage(p);
+        }
+        else{
+            page.setCurrentPage(1);
+        }
+    }
+
 }

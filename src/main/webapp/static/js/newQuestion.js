@@ -58,7 +58,7 @@ $(function () {
                 processData:false,
                 contentType:false,
                 success:function (result) {
-                    if(result != "ERROR"){
+                    if(result !== "ERROR"){
                         $("#img-upload-panel").hide()
                         var url = 'http://' + result
                         $("#question-content").val($("#question-content").val() + "\n![](" + url + ")")
@@ -71,7 +71,7 @@ $(function () {
     })
     //单选按钮选中事件
     $("input[name='editType']").change(function () {
-        if($(this).val() != -1)
+        if($(this).val() !== -1)
             $("#w-h-setting").show()
         else
             $("#w-h-setting").hide()
@@ -91,7 +91,7 @@ $(function () {
         var html = converter.makeHtml(text)
         $(".previewBox").html(html)
     }).on("keydown",function (e) {
-        if(e.keyCode == 9){
+        if(e.keyCode === 9){
             $(this).val($(this).val() + "     ")
             e.preventDefault()
         }
@@ -104,7 +104,7 @@ $(function () {
         var filter = $(this).val()
         $(".languageSelect").each(function () {
             if($(this).children("input").val().length >= filter.length){
-                if($(this).children("input").val().substr(0,filter.length) != filter.toLowerCase()){
+                if($(this).children("input").val().substr(0,filter.length) !== filter.toLowerCase()){
                     $(this).hide()
                 }
                 else{

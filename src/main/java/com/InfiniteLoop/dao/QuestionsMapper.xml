@@ -36,23 +36,40 @@
     <include refid="Base_Column_List"/>
     from questions order by question_asked_time desc limit #{beginIndex},#{recordsPerPage}
   </select>
-  <select id="selectByLanguageTag" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from questions
+  <select id="selectTagRecordsCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) from questions
     <where>
       <if test="_parameter != null">
-        locate(concat(concat('[',#{_parameter}),']'),concat(concat('[',REPLACE(question_language,',','],[')),']')) > 0 order by question_asked_time desc
+        locate(concat(concat('[',#{_parameter}),']'),concat(concat('[',REPLACE(question_language,',','],[')),']')) > 0
       </if>
     </where>
   </select>
-  <select id="selectByQuestionTitle" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByLanguageTag" parameterType="Map" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from questions
     <where>
       <if test="_parameter != null">
-        question_title like "%${_parameter}%" order by question_asked_time desc
+        locate(concat(concat('[',#{tag}),']'),concat(concat('[',REPLACE(question_language,',','],[')),']')) > 0
+        order by question_asked_time desc limit #{beginIndex},#{recordsPerPage}
+      </if>
+    </where>
+  </select>
+  <select id="selectTitleRecordsCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) from questions
+    <where>
+      <if test="_parameter != null">
+        question_title like "%${_parameter}%"
+      </if>
+    </where>
+  </select>
+  <select id="selectByQuestionTitle" parameterType="Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from questions
+    <where>
+      <if test="_parameter != null">
+        question_title like "%${queryString}%" order by question_asked_time desc limit #{beginIndex},#{recordsPerPage}
       </if>
     </where>
   </select>
