@@ -16,10 +16,6 @@ public class Page {
     private int prePage;
     //下一页
     private int nextPage;
-    //首页
-    private int firstPage = 1;
-    //尾页
-    private int lastPage;
     //索引开始下标
     private int beginIndex = 0;
 
@@ -69,22 +65,6 @@ public class Page {
 
     public void setNextPage(int nextPage) {
         this.nextPage = nextPage;
-    }
-
-    public int getFirstPage() {
-        return firstPage;
-    }
-
-    public void setFirstPage(int firstPage) {
-        this.firstPage = firstPage;
-    }
-
-    public int getLastPage() {
-        return getPages();
-    }
-
-    public void setLastPage(int lastPage) {
-        this.lastPage = lastPage;
     }
 
     public int getBeginIndex() {

@@ -54,12 +54,17 @@ public class QuestionsController {
     public String queryItems(Model model,@PathVariable(value = "p",required = false) Integer p) throws Exception {
         int recordsCount = questionsService.recordsCount();
         page.setRecords(recordsCount);
-        page.setRecordsPerPage(2);
+        page.setRecordsPerPage(4);
         if (p != null){
-            page.setCurrentPage(p);
+            if(p > page.getPages())
+                page.setCurrentPage(page.getPages());
+            else if(p < 1)
+                page.setCurrentPage(1);
+            else
+                page.setCurrentPage(p);
         }
         else{
-            page.setCurrentPage(page.getFirstPage());
+            page.setCurrentPage(1);
         }
         Map<String,Integer> map = new HashMap<String, Integer>();
         System.out.println(page.getBeginIndex());
