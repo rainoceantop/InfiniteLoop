@@ -34,6 +34,9 @@
     color: #ABABAB;
     text-align: right;
 }
+.questions{
+    margin-bottom: 15px;
+}
 hr{
     clear: both;
 }
@@ -42,4 +45,28 @@ a{
 }
 a:hover{
     text-decoration: none;
+}
+.a-page{
+    padding: 3px 7px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    background: #87CEFA;
+    color: #FFFFF0;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.a-page:hover{
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    text-decoration: none;
+    color: #FFFFF0;
+}
+.a-page:visited{
+    text-decoration: none;
+    color: #FFFFF0;
+}
+.a-page:focus{
+    background: #FFC125;
+}
+.a-page:link{
+    text-decoration: none;
+    color: #FFFFF0;
 }

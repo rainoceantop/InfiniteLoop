@@ -22,6 +22,7 @@
     <a href="/newQuestion" class="text-right">提问问题</a>
     <hr>
     <!-- 问题陈列 -->
+    <div class="questions">
     <c:forEach items="${questions}" var="question">
         <div class="question_box">
             <div class="q_title">
@@ -43,55 +44,57 @@
         </div>
         <hr>
     </c:forEach>
+    </div>
     <c:if test="${page.pages > 1}">
         <c:if test="${page.currentPage ne 1}">
-            <a href="${rurl}${isParam?"&":"?"}page=${page.prePage}">pre</a>
+            <a href="${rurl}${isParam?"&":"?"}page=${page.prePage}" class="a-page">pre</a>
         </c:if>
         <%--当总页数小于5页时--%>
         <c:if test="${page.pages < 5}">
             <c:forEach var="p" begin="1" end="${page.pages}" step="1">
-                <a href="${rurl}${isParam?"&":"?"}page=${p}">${p}</a>
+                <a href="${rurl}${isParam?"&":"?"}page=${p}" class="a-page">${p}</a>
             </c:forEach>
         </c:if>
+        <%--当总页数等于5页时--%>
         <c:if test="${page.pages == 5}">
             <c:forEach var="p" begin="1" end="5" step="1">
-                <a href="${rurl}${isParam?"&":"?"}page=${p}">${p}</a>
+                <a href="${rurl}${isParam?"&":"?"}page=${p}" class="a-page">${p}</a>
             </c:forEach>
         </c:if>
         <%--当总页数大于5页时--%>
         <c:if test="${page.pages > 5}">
             <%--如果当前页加上2页减去5页大于一页，则用省略号省略中间页数--%>
             <c:if test="${page.currentPage + 2 - 5 > 1}">
-                <a href="${rurl}${isParam?"&":"?"}page=1">1</a>
+                <a href="${rurl}${isParam?"&":"?"}page=1" class="a-page">1</a>
                 &hellip;
             </c:if>
             <%--如果当前页加上2页减去5页小于等于一页，则显示前5页--%>
             <c:if test="${page.currentPage + 2 - 5 <= 1}">
                 <c:forEach var="p" begin="1" end="${page.pages >= 5 ? 5 : page.pages}" step="1">
-                    <a href="${rurl}${isParam?"&":"?"}page=${p}">${p}</a>
+                    <a href="${rurl}${isParam?"&":"?"}page=${p}" class="a-page">${p}</a>
                 </c:forEach>
             </c:if>
             <%--如果当前页加上2页减去5页大于第1页并且当前页减去2页加上5页小于最后一页，则显示中间的5页--%>
             <c:if test="${page.currentPage + 2 - 5 > 1 and page.currentPage -2 + 5 < page.pages}">
                 <c:forEach var="p" begin="${page.currentPage - 2}" end="${page.currentPage + 2}" step="1">
-                    <a href="${rurl}${isParam?"&":"?"}page=${p}">${p}</a>
+                    <a href="${rurl}${isParam?"&":"?"}page=${p}" class="a-page">${p}</a>
                 </c:forEach>
             </c:if>
             <%--如果当前页减去2页加上5页大于最后一页，则显示最后5页--%>
             <c:if test="${page.currentPage -2 + 5 >= page.pages}">
                 <%--这里所有数字都是由1，2，5组成，但是显示最后5页的时候，要减去4，4，4!!!让我很不爽，所以，我玩英雄联盟去了--%>
                 <c:forEach var="p" begin="${page.pages > 5 ? page.pages - 4 : 1}" end="${page.pages}" step="1">
-                    <a href="${rurl}${isParam?"&":"?"}page=${p}">${p}</a>
+                    <a href="${rurl}${isParam?"&":"?"}page=${p}" class="a-page">${p}</a>
                 </c:forEach>
             </c:if>
             <%--如果当前页减去2页加上5页小于最后一页，则用省略号省略中间页数--%>
             <c:if test="${page.currentPage -2 + 5 < page.pages}">
                 &hellip;
-                <a href="${rurl}${isParam?"&":"?"}page=${page.pages}">${page.pages}</a>
+                <a href="${rurl}${isParam?"&":"?"}page=${page.pages}" class="a-page">${page.pages}</a>
             </c:if>
         </c:if>
         <c:if test="${page.currentPage ne page.pages}">
-            <a href="${rurl}${isParam?"&":"?"}page=${page.nextPage}">next</a>
+            <a href="${rurl}${isParam?"&":"?"}page=${page.nextPage}" class="a-page">next</a>
         </c:if>
     </c:if>
 </div>

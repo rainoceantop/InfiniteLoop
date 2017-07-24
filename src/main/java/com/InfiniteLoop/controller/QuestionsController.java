@@ -57,7 +57,7 @@ public class QuestionsController {
     @RequestMapping({"/","/questions"})
     public String queryItems(Model model,@RequestParam(value = "page",required = false) Integer p) throws Exception {
         page.setRecords(questionsService.recordsCount());
-        page.setRecordsPerPage(4);
+        page.setRecordsPerPage(15);
         System.out.println(p);
         pageResolve(p);
         Map<String,Integer> map = new HashMap<String, Integer>();
