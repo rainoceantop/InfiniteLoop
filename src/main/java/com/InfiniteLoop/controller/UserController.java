@@ -49,7 +49,7 @@ public class UserController {
 
     //注册数据处理
     @RequestMapping(value = "/registerHandle", method = RequestMethod.POST)
-    public String registerHandle(UserAccount userAccount){
+    public String registerHandle(UserAccount userAccount,Model model){
         userAccountService.insertSelective(userAccount);
         UserDetail userDetail = new UserDetail();
         userDetail.setUserId(userAccount.getUserId());
@@ -57,7 +57,8 @@ public class UserController {
         userDetail.setUserAvatar("http://orfbw2a1e.bkt.clouddn.com/avatar-default.jpg");
         userDetail.setV(1);
         userDetailService.insertSelective(userDetail);
-        return "redirect:/";
+        model.addAttribute("userAcount",userAccount);
+        return "forward:/user/loginHandle";
     }
 
     //注册预处理
@@ -74,9 +75,6 @@ public class UserController {
         }
         return "ERROR";
     }
-
-
-
 
     //跳转到登陆页面
     @RequestMapping("/login")

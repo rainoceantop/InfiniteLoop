@@ -56,6 +56,7 @@
                 </div>
             </div>
         </div>
+            <a href="#">回复</a>
     </div>
     <div class="comments">
             <div class="answer-count-display" ${answersCount > 0 ? "" : 'style="display:none;"'}>
@@ -78,6 +79,7 @@
                     <span class="pull-right time-user">${answer.answeredTimeHumanReadableFormat} &middot; <a
                             href="#">${answer.userDetail.userNickname}</a></span>
                 </div>
+                <a href="#">回复</a>
             </div>
         </c:forEach>
         </c:if>
